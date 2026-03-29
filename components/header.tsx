@@ -105,7 +105,7 @@ export function Header() {
             href="#hero"
             className="-m-1 flex items-center p-1 lg:-m-1.5 lg:p-1.5"
           >
-            <SiteLogo priority className="h-10 w-auto md:h-11 lg:h-14" />
+            <SiteLogo priority className="h-14 w-auto md:h-16 lg:h-20" />
           </Link>
         </div>
 

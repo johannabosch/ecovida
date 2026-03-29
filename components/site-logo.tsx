@@ -14,8 +14,8 @@ export function SiteLogo({ className, priority }: SiteLogoProps) {
     <Image
       src="/logo-header.png"
       alt="Ecovida"
-      width={320}
-      height={96}
+      width={400}
+      height={120}
       className={cn("h-8 w-auto md:h-10", className)}
       priority={priority}
     />
