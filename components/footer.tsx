@@ -38,8 +38,8 @@ export function Footer() {
               <SiteLogo className="h-9 w-auto md:h-10" />
             </Link>
             <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-              Designing refined, ecological spaces rooted in wellness and place. 
-              Based in Costa Rica, serving clients worldwide.
+              Spatial Enhanced Wellness Living. Based in Costa Rica and Hawaii,
+              serving clients worldwide.
             </p>
             <div className="mt-6 flex gap-4">
               {navigation.social.map((item) => (
@@ -119,12 +119,22 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="https://eco-vidadesigns.com"
+                  href="https://www.eco-vidadesigns.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-sm text-muted-foreground transition-colors hover:text-foreground"
                 >
                   eco-vidadesigns.com
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://wa.me/18026968230"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                >
+                  WhatsApp +1 802 696 8230
                 </a>
               </li>
             </ul>
@@ -135,7 +145,7 @@ export function Footer() {
         <div className="mt-16 border-t border-border pt-8">
           <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
             <p className="text-xs text-muted-foreground">
-              &copy; {new Date().getFullYear()} Ecovida Design Studio. All rights reserved.
+              &copy; {new Date().getFullYear()} Eco-Vida Designs. All rights reserved.
             </p>
             <div className="flex gap-6">
               <Link

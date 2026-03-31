@@ -7,7 +7,7 @@ import { Compass, Grid3X3, Leaf, MessageSquare } from "lucide-react"
 const services = [
   {
     icon: Compass,
-    title: "Architectural Design",
+    title: "EcoArchitectural design, suited for any climate in any region of the world",
     description:
       "Full-service architectural design from concept through construction documentation, tailored to tropical climates and ecological principles.",
     features: [
@@ -126,7 +126,7 @@ export function Services() {
               <div className="flex h-12 w-12 items-center justify-center border border-border text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
                 <service.icon className="h-6 w-6" strokeWidth={1.5} />
               </div>
-              <h3 className="mt-6 font-serif text-2xl text-foreground">
+              <h3 className="mt-6 font-serif text-xl leading-snug text-foreground text-balance md:text-2xl">
                 {service.title}
               </h3>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">

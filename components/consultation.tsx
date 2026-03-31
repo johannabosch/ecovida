@@ -8,7 +8,7 @@ const benefits = [
   "Understand the complete design-build process from vision to completion",
   "Gain clarity on realistic timelines and budget considerations",
   "Explore your project goals with an experienced architectural perspective",
-  "Receive expert guidance tailored to Costa Rica's unique context",
+  "Receive expert guidance tailored to your region, including Costa Rica, Hawaii, and beyond",
   "Learn how ecological design can enhance both value and experience",
 ]
 
@@ -113,7 +113,7 @@ export function Consultation() {
             <div className="border-l-2 border-primary-foreground/20 pl-8">
               <Quote className="h-8 w-8 text-primary-foreground/30" />
               <blockquote className="mt-6 font-serif text-xl leading-relaxed text-primary-foreground/90 md:text-2xl">
-                &ldquo;Working with Ecovida transformed our vision into something far 
+                &ldquo;Working with Eco-Vida Designs transformed our vision into something far 
                 more beautiful and thoughtful than we imagined. Their deep 
                 understanding of ecological systems and refined aesthetics created 
                 a home that feels both luxurious and completely at peace with its 

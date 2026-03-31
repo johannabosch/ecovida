@@ -24,24 +24,30 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$vercel$2f$
 ;
 ;
 const metadata = {
-    title: 'Ecovida | Ecological Architecture & Design Studio',
-    description: 'Designing refined, ecological spaces rooted in wellness and place. Luxury residential and retreat design in Costa Rica.',
+    title: 'Eco-Vida Designs | EcoArchitecture, EcoHome & EcoRetreat Design',
+    description: 'Designing refined, ecological spaces rooted in wellness and place in Costa Rica, Hawaii, and the world. Where ecoluxury and enhanced wellness living come to life.',
     keywords: [
         'architecture',
         'ecological design',
         'Costa Rica',
-        'luxury homes',
+        'Hawaii',
+        'eco home',
+        'eco resort',
+        'eco retreat',
+        'ecoluxury',
+        'wellness design',
         'sustainable architecture',
-        'wellness design'
+        'luxury homes',
+        'worldwide'
     ],
     authors: [
         {
-            name: 'Ecovida Design Studio'
+            name: 'Eco-Vida Designs'
         }
     ],
     openGraph: {
-        title: 'Ecovida | Ecological Architecture & Design Studio',
-        description: 'Designing refined, ecological spaces rooted in wellness and place.',
+        title: 'Eco-Vida Designs | EcoArchitecture & Enhanced Wellness Living',
+        description: 'Ecoluxury and enhanced wellness living in Costa Rica, Hawaii, and beyond.',
         type: 'website',
         locale: 'en_US'
     }
@@ -60,18 +66,18 @@ function RootLayout({ children }) {
                 children,
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$vercel$2f$analytics$2f$dist$2f$next$2f$index$2e$mjs__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Analytics"], {}, void 0, false, {
                     fileName: "[project]/app/layout.tsx",
-                    lineNumber: 41,
+                    lineNumber: 56,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/app/layout.tsx",
-            lineNumber: 39,
+            lineNumber: 54,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/app/layout.tsx",
-        lineNumber: 38,
+        lineNumber: 53,
         columnNumber: 5
     }, this);
 }

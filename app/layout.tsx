@@ -11,13 +11,28 @@ import '@fontsource/playfair-display/latin-700.css'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Ecovida | Ecological Architecture & Design Studio',
-  description: 'Designing refined, ecological spaces rooted in wellness and place. Luxury residential and retreat design in Costa Rica.',
-  keywords: ['architecture', 'ecological design', 'Costa Rica', 'luxury homes', 'sustainable architecture', 'wellness design'],
-  authors: [{ name: 'Ecovida Design Studio' }],
+  title: 'Eco-Vida Designs | EcoArchitecture, EcoHome & EcoRetreat Design',
+  description:
+    'Designing refined, ecological spaces rooted in wellness and place in Costa Rica, Hawaii, and the world. Where ecoluxury and enhanced wellness living come to life.',
+  keywords: [
+    'architecture',
+    'ecological design',
+    'Costa Rica',
+    'Hawaii',
+    'eco home',
+    'eco resort',
+    'eco retreat',
+    'ecoluxury',
+    'wellness design',
+    'sustainable architecture',
+    'luxury homes',
+    'worldwide',
+  ],
+  authors: [{ name: 'Eco-Vida Designs' }],
   openGraph: {
-    title: 'Ecovida | Ecological Architecture & Design Studio',
-    description: 'Designing refined, ecological spaces rooted in wellness and place.',
+    title: 'Eco-Vida Designs | EcoArchitecture & Enhanced Wellness Living',
+    description:
+      'Ecoluxury and enhanced wellness living in Costa Rica, Hawaii, and beyond.',
     type: 'website',
     locale: 'en_US',
   },

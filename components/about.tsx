@@ -43,7 +43,7 @@ export function About() {
           >
             <Image
               src="/images/about.jpg"
-              alt="Ecovida architectural studio"
+              alt="Eco-Vida Designs architectural studio"
               fill
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 50vw"
@@ -58,7 +58,7 @@ export function About() {
                 isVisible && "animate-fade-in-up"
               )}
             >
-              About Ecovida
+              About Eco-Vida Designs
             </span>
             <h2
               className={cn(
@@ -66,7 +66,7 @@ export function About() {
                 isVisible && "animate-fade-in-up animation-delay-200"
               )}
             >
-              <span className="text-balance">Architecture in Harmony with Nature</span>
+              <span className="text-balance">EcoArchitecture in harmony with nature</span>
             </h2>
             <div
               className={cn(
@@ -86,9 +86,10 @@ export function About() {
                 greater purpose of creating environments that restore and inspire.
               </p>
               <p className="leading-relaxed">
-                From private residences to wellness retreats, our work across Costa Rica
-                shows sustainable design and refined aesthetics working together as
-                essential partners.
+                From private residences to wellness retreats, our work across Costa Rica,
+                Hawaii, and the wider world shows sustainable design and refined
+                aesthetics working together as essential partners. Our designs have been
+                built around the world.
               </p>
             </div>
             <div

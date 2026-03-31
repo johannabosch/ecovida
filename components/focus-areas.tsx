@@ -11,7 +11,7 @@ const areas = [
     id: "accomplishments",
     title: "Accomplishments",
     description:
-      "From coastal residences to hospitality and retreat work across Costa Rica, our portfolio reflects a consistent focus on craft, climate, and context.",
+      "From coastal residences to hospitality and retreat work across Costa Rica, Hawaii, and beyond, our portfolio reflects a consistent focus on craft, climate, and context.",
   },
   {
     id: "interior",

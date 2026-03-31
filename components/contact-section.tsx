@@ -42,6 +42,17 @@ export function ContactSection() {
                 info@eco-vidadesigns.com
               </a>
             </p>
+            <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
+              <span className="font-medium text-foreground">WhatsApp:</span>{" "}
+              <a
+                href="https://wa.me/18026968230"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary underline-offset-4 hover:underline"
+              >
+                +1 802 696 8230
+              </a>
+            </p>
             <p className="mt-4 rounded-md border border-border bg-background/80 px-4 py-3 text-xs text-muted-foreground leading-relaxed">
               <span className="font-medium text-foreground">Preview note:</span>{" "}
               This form is for design review only. Submissions are not emailed yet;

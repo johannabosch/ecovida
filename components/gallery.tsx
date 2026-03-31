@@ -13,47 +13,43 @@ import {
 
 const featuredProjects = [
   {
-    id: "casa-monteverde",
-    category: "Residential",
-    title: "Casa Monteverde",
-    tagline:
-      "Forest-edge residence with passive cooling and local stone.",
+    id: "hale-hawaii-ecohome",
+    category: "EcoResidential",
+    title: "Hale Hawaii EcoHome Project",
+    tagline: "Modern design with integrated off-grid systems",
     images: ["/images/casa1.jpg"],
     detail:
-      "Casa Monteverde is a private residence at the forest edge, composed as a calm counterpart to its setting. The plan emphasizes passive cooling, local stone, and views mediated by native canopy. The work reflects a commitment to durable, climate-responsive living in the Monteverde highlands.",
+      "The Hale Hawaii EcoHome Project pairs a crisp modern plan with integrated off-grid systems for power, water, and comfort. Roofs and envelope are tuned to trade winds and sun; outdoor rooms extend daily living into the landscape. The work demonstrates how ecological performance and refined space can coexist in a residential setting.",
     scrollId: "residences" as const,
   },
   {
-    id: "nosara-retreat",
-    category: "Retreat resort",
-    title: "Nosara Wellness Retreat",
-    tagline:
-      "Hospitality and wellness woven into coastal jungle context.",
+    id: "enhanced-ecoliving-hospitality",
+    category: "EcoLuxury Wellness Retreat",
+    title: "Enhanced ecoliving and natural hospitality",
+    tagline: "Natural hospitality and enhanced ecoliving",
     images: ["/images/casa3.jpg"],
     detail:
-      "This retreat organizes guest pavilions, movement studios, and shared gathering spaces within a disciplined landscape framework. Roofs and overhangs are calibrated for shade and ocean breeze; outdoor rooms read as primary amenity. The project illustrates how refined hospitality and ecological restraint can reinforce one another on the Pacific coast.",
+      "This retreat-forward concept centers natural hospitality: guest experiences, movement, and rest are organized around landscape and light. Shared and private volumes are composed for calm circulation and low-impact operations. The project frames wellness as an everyday rhythm tied to place rather than an add-on amenity.",
     scrollId: "resorts" as const,
   },
   {
-    id: "rainforest-pavilion",
-    category: "Residential",
-    title: "Rainforest Pavilion",
-    tagline:
-      "Elevated living among the canopy with minimal ground impact.",
+    id: "north-shore-yoga-ecoretreat",
+    category: "Retreat / Residential",
+    title: "North Shore Yoga EcoRetreat",
+    tagline: "Elevated ecoliving and low impact harmony",
     images: ["/images/casa2.jpg"],
     detail:
-      "Rainforest Pavilion elevates primary living above the forest floor to reduce site disturbance while maintaining immersion in the canopy. Structure and enclosure are kept legible; glass and deep eaves balance prospect, shelter, and privacy. The residence is intended as a light, long-lived insertion within a sensitive watershed context.",
+      "North Shore Yoga EcoRetreat balances elevated living with a light footprint: studios and lodging are arranged for views and breeze while minimizing site disturbance. Paths, outdoor practice areas, and water-wise planting reinforce a sense of harmony between built form and coastal ecology.",
     scrollId: undefined,
   },
   {
-    id: "peninsula-residence",
-    category: "Residential",
-    title: "Peninsula Residence",
-    tagline:
-      "Ocean-facing living with deep overhangs and seamless indoor-outdoor rooms.",
+    id: "kona-mauka-ecohome",
+    category: "EcoResidential",
+    title: "Kona Mauka EcoHome",
+    tagline: "Ocean view living with spatial eco harmony",
     images: ["/images/casa4.jpg"],
     detail:
-      "Peninsula Residence addresses a coastal lot with continuous horizontal emphasis and generous protection from sun and rain. Interior volumes open to covered terraces so daily life moves easily between inside and out. Materials and detailing are selected for longevity in a maritime climate.",
+      "Kona Mauka EcoHome orients living spaces toward ocean views while preserving spatial calm inland. Deep overhangs, natural ventilation, and careful material choices support comfort without competing with the setting. The composition reads as a single gesture: shelter, prospect, and connection to land.",
     scrollId: undefined,
   },
 ] as const
@@ -207,7 +203,7 @@ export function Gallery() {
               isVisible && "animate-fade-in-up animation-delay-400"
             )}
           >
-            Four signature works: three residences and a retreat resort. Select a
+            Four signature works across residential and retreat hospitality. Select a
             project to view a concise project summary.
           </p>
         </div>

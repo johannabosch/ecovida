@@ -175,3 +175,9 @@ html {
 .animation-delay-600 {
   animation-delay: 600ms;
 }
+
+/* Hero background: object-cover defaults to center; pin crop to the top edge of the photo */
+.hero-background-image {
+  object-fit: cover !important;
+  object-position: center top !important;
+}

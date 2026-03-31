@@ -31,9 +31,9 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$
 function SiteLogo({ className, priority }) {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
         src: "/logo-header.png",
-        alt: "Ecovida",
-        width: 320,
-        height: 96,
+        alt: "Eco-Vida Designs",
+        width: 400,
+        height: 120,
         className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["cn"])("h-8 w-auto md:h-10", className),
         priority: priority
     }, void 0, false, {
@@ -198,7 +198,7 @@ function Header() {
                             className: "-m-1 flex items-center p-1 lg:-m-1.5 lg:p-1.5",
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$site$2d$logo$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SiteLogo"], {
                                 priority: true,
-                                className: "h-10 w-auto md:h-11 lg:h-14"
+                                className: "h-14 w-auto md:h-16 lg:h-20"
                             }, void 0, false, {
                                 fileName: "[project]/components/header.tsx",
                                 lineNumber: 108,
@@ -561,135 +561,167 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$
 ;
 ;
 ;
+const heroSlides = [
+    "/images/casa2.jpg",
+    "/images/hero2.jpg",
+    "/images/hero3.jpg",
+    "/images/hero4.jpg"
+];
 function Hero() {
     const [isLoaded, setIsLoaded] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [activeSlide, setActiveSlide] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(0);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
         setIsLoaded(true);
+    }, []);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
+        const timer = setInterval(()=>{
+            setActiveSlide((current)=>(current + 1) % heroSlides.length);
+        }, 4500);
+        return ()=>clearInterval(timer);
     }, []);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
         id: "hero",
         className: "relative h-screen w-full scroll-mt-0 overflow-hidden",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "absolute inset-0",
+                className: "absolute inset-x-0 top-20 bottom-0 md:top-24 lg:top-28",
                 children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
-                        src: "/images/hero.jpg",
-                        alt: "Luxury eco-resort architecture in tropical setting",
-                        fill: true,
-                        className: "object-cover object-top",
-                        priority: true,
-                        sizes: "100vw"
-                    }, void 0, false, {
-                        fileName: "[project]/components/hero.tsx",
-                        lineNumber: 22,
-                        columnNumber: 9
-                    }, this),
+                    heroSlides.map((slide, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                            src: slide,
+                            alt: "EcoLuxury ecoresort and eco-home design",
+                            fill: true,
+                            className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["cn"])("hero-background-image transition-opacity duration-1000", activeSlide === index ? "opacity-100" : "opacity-0"),
+                            priority: index === 0,
+                            sizes: "100vw"
+                        }, slide, false, {
+                            fileName: "[project]/components/hero.tsx",
+                            lineNumber: 39,
+                            columnNumber: 11
+                        }, this)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "absolute inset-0 bg-foreground/30"
                     }, void 0, false, {
                         fileName: "[project]/components/hero.tsx",
-                        lineNumber: 30,
+                        lineNumber: 52,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/hero.tsx",
-                lineNumber: 21,
+                lineNumber: 37,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "relative z-10 flex h-full flex-col items-center justify-center px-6 text-center",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "max-w-4xl",
+                        className: "mx-auto flex w-full max-w-4xl flex-col items-center",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
                                 className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["cn"])("font-serif text-5xl tracking-tight text-primary-foreground opacity-0 md:text-7xl lg:text-8xl", isLoaded && "animate-fade-in-up"),
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                    className: "block text-balance",
-                                    children: "Spatial Eco Living"
-                                }, void 0, false, {
+                                    className: "relative block min-h-[1.2em] w-full",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                            className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["cn"])("absolute left-1/2 -translate-x-1/2 whitespace-nowrap text-center transition-opacity duration-700", activeSlide % 2 === 0 ? "opacity-100" : "opacity-0"),
+                                            children: "Enhanced Wellness"
+                                        }, void 0, false, {
+                                            fileName: "[project]/components/hero.tsx",
+                                            lineNumber: 65,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                            className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["cn"])("absolute left-1/2 -translate-x-1/2 whitespace-nowrap text-center transition-opacity duration-700", activeSlide % 2 === 0 ? "opacity-0" : "opacity-100"),
+                                            children: "EcoLiving Design"
+                                        }, void 0, false, {
+                                            fileName: "[project]/components/hero.tsx",
+                                            lineNumber: 73,
+                                            columnNumber: 15
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
                                     fileName: "[project]/components/hero.tsx",
-                                    lineNumber: 42,
+                                    lineNumber: 64,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/components/hero.tsx",
-                                lineNumber: 36,
+                                lineNumber: 58,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                 className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["cn"])("mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-primary-foreground/90 opacity-0 md:text-xl", isLoaded && "animate-fade-in-up animation-delay-200"),
-                                children: "Designing refined, ecological spaces rooted in wellness and place"
+                                children: "Spatial Enhanced Wellness Living"
                             }, void 0, false, {
                                 fileName: "[project]/components/hero.tsx",
-                                lineNumber: 44,
+                                lineNumber: 83,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["cn"])("mt-10 opacity-0", isLoaded && "animate-fade-in-up animation-delay-400"),
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                                     href: "#contact",
-                                    className: "inline-flex items-center justify-center border border-primary-foreground/30 bg-primary-foreground/10 px-8 py-4 text-sm font-medium tracking-widest text-primary-foreground uppercase backdrop-blur-sm transition-all hover:bg-primary-foreground/20",
+                                    className: "inline-flex items-center justify-center rounded-sm border border-primary-foreground/60 bg-primary-foreground px-8 py-4 text-sm font-semibold tracking-widest text-primary uppercase shadow-lg transition-all hover:bg-primary-foreground/90 hover:shadow-xl",
                                     children: "Start Your Project"
                                 }, void 0, false, {
                                     fileName: "[project]/components/hero.tsx",
-                                    lineNumber: 58,
+                                    lineNumber: 97,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/components/hero.tsx",
-                                lineNumber: 52,
+                                lineNumber: 91,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/hero.tsx",
-                        lineNumber: 35,
+                        lineNumber: 57,
                         columnNumber: 9
                     }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["cn"])("absolute bottom-10 left-1/2 -translate-x-1/2 opacity-0", isLoaded && "animate-fade-in animation-delay-600"),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                        href: "#about",
+                        "aria-label": "Scroll to next section",
+                        className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["cn"])("absolute bottom-10 left-1/2 -translate-x-1/2 rounded-full bg-foreground/45 px-6 py-3 opacity-0 shadow-md backdrop-blur-xs transition-all hover:bg-foreground/55", isLoaded && "animate-fade-in animation-delay-600"),
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "flex flex-col items-center gap-2",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                    className: "text-xs tracking-widest text-primary-foreground/60 uppercase",
+                                    className: "text-[11px] font-medium tracking-[0.2em] text-primary-foreground/90 uppercase",
                                     children: "Scroll"
                                 }, void 0, false, {
                                     fileName: "[project]/components/hero.tsx",
-                                    lineNumber: 75,
+                                    lineNumber: 116,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "h-12 w-px bg-primary-foreground/30"
+                                    className: "h-10 w-px bg-primary-foreground/65"
                                 }, void 0, false, {
                                     fileName: "[project]/components/hero.tsx",
-                                    lineNumber: 78,
+                                    lineNumber: 119,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/hero.tsx",
-                            lineNumber: 74,
+                            lineNumber: 115,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/hero.tsx",
-                        lineNumber: 68,
+                        lineNumber: 107,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/hero.tsx",
-                lineNumber: 34,
+                lineNumber: 56,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/hero.tsx",
-        lineNumber: 16,
+        lineNumber: 32,
         columnNumber: 5
     }, this);
 }
@@ -740,7 +772,7 @@ function About() {
                         className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["cn"])("relative aspect-[4/5] overflow-hidden opacity-0", isVisible && "animate-fade-in-up"),
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                             src: "/images/about.jpg",
-                            alt: "Ecovida architectural studio",
+                            alt: "Eco-Vida Designs architectural studio",
                             fill: true,
                             className: "object-cover",
                             sizes: "(max-width: 1024px) 100vw, 50vw"
@@ -759,7 +791,7 @@ function About() {
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                 className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["cn"])("text-xs tracking-widest text-muted-foreground uppercase opacity-0", isVisible && "animate-fade-in-up"),
-                                children: "About Ecovida"
+                                children: "About Eco-Vida Designs"
                             }, void 0, false, {
                                 fileName: "[project]/components/about.tsx",
                                 lineNumber: 55,
@@ -769,7 +801,7 @@ function About() {
                                 className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["cn"])("mt-4 font-serif text-4xl tracking-tight text-foreground opacity-0 md:text-5xl", isVisible && "animate-fade-in-up animation-delay-200"),
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                     className: "text-balance",
-                                    children: "Architecture in Harmony with Nature"
+                                    children: "EcoArchitecture in harmony with nature"
                                 }, void 0, false, {
                                     fileName: "[project]/components/about.tsx",
                                     lineNumber: 69,
@@ -801,7 +833,7 @@ function About() {
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                         className: "leading-relaxed",
-                                        children: "From private residences to wellness retreats, our work across Costa Rica shows sustainable design and refined aesthetics working together as essential partners."
+                                        children: "From private residences to wellness retreats, our work across Costa Rica, Hawaii, and the wider world shows sustainable design and refined aesthetics working together as essential partners. Our designs have been built around the world."
                                     }, void 0, false, {
                                         fileName: "[project]/components/about.tsx",
                                         lineNumber: 88,
@@ -832,23 +864,23 @@ function About() {
                                                 d: "M17 8l4 4m0 0l-4 4m4-4H3"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/about.tsx",
-                                                lineNumber: 111,
+                                                lineNumber: 112,
                                                 columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/components/about.tsx",
-                                            lineNumber: 105,
+                                            lineNumber: 106,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/about.tsx",
-                                    lineNumber: 100,
+                                    lineNumber: 101,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/components/about.tsx",
-                                lineNumber: 94,
+                                lineNumber: 95,
                                 columnNumber: 13
                             }, this)
                         ]
@@ -1059,7 +1091,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 const services = [
     {
         icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$compass$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Compass$3e$__["Compass"],
-        title: "Architectural Design",
+        title: "EcoArchitectural design, suited for any climate in any region of the world",
         description: "Full-service architectural design from concept through construction documentation, tailored to tropical climates and ecological principles.",
         features: [
             "Site analysis & master planning",
@@ -1190,7 +1222,7 @@ function Services() {
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                    className: "mt-6 font-serif text-2xl text-foreground",
+                                    className: "mt-6 font-serif text-xl leading-snug text-foreground text-balance md:text-2xl",
                                     children: service.title
                                 }, void 0, false, {
                                     fileName: "[project]/components/services.tsx",
@@ -1272,7 +1304,7 @@ const areas = [
     {
         id: "accomplishments",
         title: "Accomplishments",
-        description: "From coastal residences to hospitality and retreat work across Costa Rica, our portfolio reflects a consistent focus on craft, climate, and context."
+        description: "From coastal residences to hospitality and retreat work across Costa Rica, Hawaii, and beyond, our portfolio reflects a consistent focus on craft, climate, and context."
     },
     {
         id: "interior",
@@ -1564,47 +1596,47 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$dialog$2
 ;
 const featuredProjects = [
     {
-        id: "casa-monteverde",
-        category: "Residential",
-        title: "Casa Monteverde",
-        tagline: "Forest-edge residence with passive cooling and local stone.",
+        id: "hale-hawaii-ecohome",
+        category: "EcoResidential",
+        title: "Hale Hawaii EcoHome Project",
+        tagline: "Modern design with integrated off-grid systems",
         images: [
             "/images/casa1.jpg"
         ],
-        detail: "Casa Monteverde is a private residence at the forest edge, composed as a calm counterpart to its setting. The plan emphasizes passive cooling, local stone, and views mediated by native canopy. The work reflects a commitment to durable, climate-responsive living in the Monteverde highlands.",
+        detail: "The Hale Hawaii EcoHome Project pairs a crisp modern plan with integrated off-grid systems for power, water, and comfort. Roofs and envelope are tuned to trade winds and sun; outdoor rooms extend daily living into the landscape. The work demonstrates how ecological performance and refined space can coexist in a residential setting.",
         scrollId: "residences"
     },
     {
-        id: "nosara-retreat",
-        category: "Retreat resort",
-        title: "Nosara Wellness Retreat",
-        tagline: "Hospitality and wellness woven into coastal jungle context.",
+        id: "enhanced-ecoliving-hospitality",
+        category: "EcoLuxury Wellness Retreat",
+        title: "Enhanced ecoliving and natural hospitality",
+        tagline: "Natural hospitality and enhanced ecoliving",
         images: [
             "/images/casa3.jpg"
         ],
-        detail: "This retreat organizes guest pavilions, movement studios, and shared gathering spaces within a disciplined landscape framework. Roofs and overhangs are calibrated for shade and ocean breeze; outdoor rooms read as primary amenity. The project illustrates how refined hospitality and ecological restraint can reinforce one another on the Pacific coast.",
+        detail: "This retreat-forward concept centers natural hospitality: guest experiences, movement, and rest are organized around landscape and light. Shared and private volumes are composed for calm circulation and low-impact operations. The project frames wellness as an everyday rhythm tied to place rather than an add-on amenity.",
         scrollId: "resorts"
     },
     {
-        id: "rainforest-pavilion",
-        category: "Residential",
-        title: "Rainforest Pavilion",
-        tagline: "Elevated living among the canopy with minimal ground impact.",
+        id: "north-shore-yoga-ecoretreat",
+        category: "Retreat / Residential",
+        title: "North Shore Yoga EcoRetreat",
+        tagline: "Elevated ecoliving and low impact harmony",
         images: [
             "/images/casa2.jpg"
         ],
-        detail: "Rainforest Pavilion elevates primary living above the forest floor to reduce site disturbance while maintaining immersion in the canopy. Structure and enclosure are kept legible; glass and deep eaves balance prospect, shelter, and privacy. The residence is intended as a light, long-lived insertion within a sensitive watershed context.",
+        detail: "North Shore Yoga EcoRetreat balances elevated living with a light footprint: studios and lodging are arranged for views and breeze while minimizing site disturbance. Paths, outdoor practice areas, and water-wise planting reinforce a sense of harmony between built form and coastal ecology.",
         scrollId: undefined
     },
     {
-        id: "peninsula-residence",
-        category: "Residential",
-        title: "Peninsula Residence",
-        tagline: "Ocean-facing living with deep overhangs and seamless indoor-outdoor rooms.",
+        id: "kona-mauka-ecohome",
+        category: "EcoResidential",
+        title: "Kona Mauka EcoHome",
+        tagline: "Ocean view living with spatial eco harmony",
         images: [
             "/images/casa4.jpg"
         ],
-        detail: "Peninsula Residence addresses a coastal lot with continuous horizontal emphasis and generous protection from sun and rain. Interior volumes open to covered terraces so daily life moves easily between inside and out. Materials and detailing are selected for longevity in a maritime climate.",
+        detail: "Kona Mauka EcoHome orients living spaces toward ocean views while preserving spatial calm inland. Deep overhangs, natural ventilation, and careful material choices support comfort without competing with the setting. The composition reads as a single gesture: shelter, prospect, and connection to land.",
         scrollId: undefined
     }
 ];
@@ -1681,14 +1713,14 @@ function Gallery() {
                         sizes: sizesHint
                     }, void 0, false, {
                         fileName: "[project]/components/gallery.tsx",
-                        lineNumber: 153,
+                        lineNumber: 149,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/20 to-transparent"
                     }, void 0, false, {
                         fileName: "[project]/components/gallery.tsx",
-                        lineNumber: 160,
+                        lineNumber: 156,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1699,7 +1731,7 @@ function Gallery() {
                                 children: project.category
                             }, void 0, false, {
                                 fileName: "[project]/components/gallery.tsx",
-                                lineNumber: 162,
+                                lineNumber: 158,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -1707,7 +1739,7 @@ function Gallery() {
                                 children: project.title
                             }, void 0, false, {
                                 fileName: "[project]/components/gallery.tsx",
-                                lineNumber: 165,
+                                lineNumber: 161,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1715,7 +1747,7 @@ function Gallery() {
                                 children: project.tagline
                             }, void 0, false, {
                                 fileName: "[project]/components/gallery.tsx",
-                                lineNumber: 168,
+                                lineNumber: 164,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1723,24 +1755,24 @@ function Gallery() {
                                 children: "View project"
                             }, void 0, false, {
                                 fileName: "[project]/components/gallery.tsx",
-                                lineNumber: 171,
+                                lineNumber: 167,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/gallery.tsx",
-                        lineNumber: 161,
+                        lineNumber: 157,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/gallery.tsx",
-                lineNumber: 140,
+                lineNumber: 136,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/components/gallery.tsx",
-            lineNumber: 134,
+            lineNumber: 130,
             columnNumber: 7
         }, this);
     }
@@ -1758,7 +1790,7 @@ function Gallery() {
                             children: "Our Work"
                         }, void 0, false, {
                             fileName: "[project]/components/gallery.tsx",
-                            lineNumber: 188,
+                            lineNumber: 184,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -1768,26 +1800,26 @@ function Gallery() {
                                 children: "Featured Projects"
                             }, void 0, false, {
                                 fileName: "[project]/components/gallery.tsx",
-                                lineNumber: 202,
+                                lineNumber: 198,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/components/gallery.tsx",
-                            lineNumber: 196,
+                            lineNumber: 192,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                             className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["cn"])("mt-4 max-w-2xl text-muted-foreground opacity-0", isVisible && "animate-fade-in-up animation-delay-400"),
-                            children: "Four signature works: three residences and a retreat resort. Select a project to view a concise project summary."
+                            children: "Four signature works across residential and retreat hospitality. Select a project to view a concise project summary."
                         }, void 0, false, {
                             fileName: "[project]/components/gallery.tsx",
-                            lineNumber: 204,
+                            lineNumber: 200,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/gallery.tsx",
-                    lineNumber: 187,
+                    lineNumber: 183,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1798,12 +1830,12 @@ function Gallery() {
                             onOpen: ()=>setModalProject(project)
                         }, project.id, false, {
                             fileName: "[project]/components/gallery.tsx",
-                            lineNumber: 217,
+                            lineNumber: 213,
                             columnNumber: 13
                         }, this))
                 }, void 0, false, {
                     fileName: "[project]/components/gallery.tsx",
-                    lineNumber: 215,
+                    lineNumber: 211,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Dialog"], {
@@ -1824,12 +1856,12 @@ function Gallery() {
                                     priority: true
                                 }, void 0, false, {
                                     fileName: "[project]/components/gallery.tsx",
-                                    lineNumber: 236,
+                                    lineNumber: 232,
                                     columnNumber: 17
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/components/gallery.tsx",
-                                lineNumber: 235,
+                                lineNumber: 231,
                                 columnNumber: 15
                             }, this),
                             modalProject.images.length > 1 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1844,17 +1876,17 @@ function Gallery() {
                                             sizes: "200px"
                                         }, void 0, false, {
                                             fileName: "[project]/components/gallery.tsx",
-                                            lineNumber: 252,
+                                            lineNumber: 248,
                                             columnNumber: 23
                                         }, this)
                                     }, src, false, {
                                         fileName: "[project]/components/gallery.tsx",
-                                        lineNumber: 248,
+                                        lineNumber: 244,
                                         columnNumber: 21
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/components/gallery.tsx",
-                                lineNumber: 246,
+                                lineNumber: 242,
                                 columnNumber: 17
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DialogHeader"], {
@@ -1865,7 +1897,7 @@ function Gallery() {
                                         children: modalProject.category
                                     }, void 0, false, {
                                         fileName: "[project]/components/gallery.tsx",
-                                        lineNumber: 264,
+                                        lineNumber: 260,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DialogTitle"], {
@@ -1873,7 +1905,7 @@ function Gallery() {
                                         children: modalProject.title
                                     }, void 0, false, {
                                         fileName: "[project]/components/gallery.tsx",
-                                        lineNumber: 267,
+                                        lineNumber: 263,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DialogDescription"], {
@@ -1883,29 +1915,29 @@ function Gallery() {
                                             children: modalProject.detail
                                         }, void 0, false, {
                                             fileName: "[project]/components/gallery.tsx",
-                                            lineNumber: 271,
+                                            lineNumber: 267,
                                             columnNumber: 19
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/components/gallery.tsx",
-                                        lineNumber: 270,
+                                        lineNumber: 266,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/gallery.tsx",
-                                lineNumber: 263,
+                                lineNumber: 259,
                                 columnNumber: 15
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/gallery.tsx",
-                        lineNumber: 231,
+                        lineNumber: 227,
                         columnNumber: 13
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/components/gallery.tsx",
-                    lineNumber: 226,
+                    lineNumber: 222,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1920,7 +1952,7 @@ function Gallery() {
                                     children: "More work"
                                 }, void 0, false, {
                                     fileName: "[project]/components/gallery.tsx",
-                                    lineNumber: 286,
+                                    lineNumber: 282,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -1928,7 +1960,7 @@ function Gallery() {
                                     children: "Concepts & design studies"
                                 }, void 0, false, {
                                     fileName: "[project]/components/gallery.tsx",
-                                    lineNumber: 294,
+                                    lineNumber: 290,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1936,13 +1968,13 @@ function Gallery() {
                                     children: "Explorations, competition entries, and early-phase ideas that inform our built work."
                                 }, void 0, false, {
                                     fileName: "[project]/components/gallery.tsx",
-                                    lineNumber: 302,
+                                    lineNumber: 298,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/gallery.tsx",
-                            lineNumber: 285,
+                            lineNumber: 281,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1963,14 +1995,14 @@ function Gallery() {
                                             sizes: "(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
                                         }, void 0, false, {
                                             fileName: "[project]/components/gallery.tsx",
-                                            lineNumber: 327,
+                                            lineNumber: 323,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                             className: "absolute inset-0 bg-foreground/0 transition-colors duration-300 group-hover:bg-foreground/50"
                                         }, void 0, false, {
                                             fileName: "[project]/components/gallery.tsx",
-                                            lineNumber: 334,
+                                            lineNumber: 330,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1981,7 +2013,7 @@ function Gallery() {
                                                     children: item.type
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/gallery.tsx",
-                                                    lineNumber: 336,
+                                                    lineNumber: 332,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1989,42 +2021,42 @@ function Gallery() {
                                                     children: item.title
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/gallery.tsx",
-                                                    lineNumber: 339,
+                                                    lineNumber: 335,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/gallery.tsx",
-                                            lineNumber: 335,
+                                            lineNumber: 331,
                                             columnNumber: 19
                                         }, this)
                                     ]
                                 }, item.title, true, {
                                     fileName: "[project]/components/gallery.tsx",
-                                    lineNumber: 317,
+                                    lineNumber: 313,
                                     columnNumber: 17
                                 }, this);
                             })
                         }, void 0, false, {
                             fileName: "[project]/components/gallery.tsx",
-                            lineNumber: 313,
+                            lineNumber: 309,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/gallery.tsx",
-                    lineNumber: 281,
+                    lineNumber: 277,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/components/gallery.tsx",
-            lineNumber: 186,
+            lineNumber: 182,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/components/gallery.tsx",
-        lineNumber: 181,
+        lineNumber: 177,
         columnNumber: 5
     }, this);
 }
@@ -2050,7 +2082,7 @@ const benefits = [
     "Understand the complete design-build process from vision to completion",
     "Gain clarity on realistic timelines and budget considerations",
     "Explore your project goals with an experienced architectural perspective",
-    "Receive expert guidance tailored to Costa Rica's unique context",
+    "Receive expert guidance tailored to your region, including Costa Rica, Hawaii, and beyond",
     "Learn how ecological design can enhance both value and experience"
 ];
 function Consultation() {
@@ -2179,7 +2211,7 @@ function Consultation() {
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("blockquote", {
                                     className: "mt-6 font-serif text-xl leading-relaxed text-primary-foreground/90 md:text-2xl",
-                                    children: "“Working with Ecovida transformed our vision into something far more beautiful and thoughtful than we imagined. Their deep understanding of ecological systems and refined aesthetics created a home that feels both luxurious and completely at peace with its surroundings.”"
+                                    children: "“Working with Eco-Vida Designs transformed our vision into something far more beautiful and thoughtful than we imagined. Their deep understanding of ecological systems and refined aesthetics created a home that feels both luxurious and completely at peace with its surroundings.”"
                                 }, void 0, false, {
                                     fileName: "[project]/components/consultation.tsx",
                                     lineNumber: 115,
@@ -2264,7 +2296,7 @@ const resources = [
         id: "faq",
         icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$question$2d$mark$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__HelpCircle$3e$__["HelpCircle"],
         title: "Frequently Asked Questions",
-        description: "Find answers to common questions about our design process, timelines, and what to expect when working with Ecovida.",
+        description: "Find answers to common questions about our design process, timelines, and what to expect when working with Eco-Vida Designs.",
         href: "#faq",
         linkText: "Browse FAQ"
     },
@@ -2272,7 +2304,7 @@ const resources = [
         id: "articles",
         icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$file$2d$text$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__FileText$3e$__["FileText"],
         title: "Articles & Insights",
-        description: "Explore our thoughts on ecological architecture, sustainable living, and the future of design in tropical environments.",
+        description: "Explore our thoughts on ecological architecture, sustainable living, and design for tropical and temperate climates worldwide.",
         href: "#articles",
         linkText: "Read Articles"
     }
@@ -2655,6 +2687,35 @@ function ContactSection() {
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                className: "mt-3 text-sm text-muted-foreground leading-relaxed",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                        className: "font-medium text-foreground",
+                                        children: "WhatsApp:"
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/contact-section.tsx",
+                                        lineNumber: 46,
+                                        columnNumber: 15
+                                    }, this),
+                                    " ",
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                        href: "https://wa.me/18026968230",
+                                        target: "_blank",
+                                        rel: "noopener noreferrer",
+                                        className: "text-primary underline-offset-4 hover:underline",
+                                        children: "+1 802 696 8230"
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/contact-section.tsx",
+                                        lineNumber: 47,
+                                        columnNumber: 15
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/components/contact-section.tsx",
+                                lineNumber: 45,
+                                columnNumber: 13
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                 className: "mt-4 rounded-md border border-border bg-background/80 px-4 py-3 text-xs text-muted-foreground leading-relaxed",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2662,7 +2723,7 @@ function ContactSection() {
                                         children: "Preview note:"
                                     }, void 0, false, {
                                         fileName: "[project]/components/contact-section.tsx",
-                                        lineNumber: 46,
+                                        lineNumber: 57,
                                         columnNumber: 15
                                     }, this),
                                     " ",
@@ -2670,7 +2731,7 @@ function ContactSection() {
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/contact-section.tsx",
-                                lineNumber: 45,
+                                lineNumber: 56,
                                 columnNumber: 13
                             }, this)
                         ]
@@ -2690,7 +2751,7 @@ function ContactSection() {
                                     children: "Thank you for your interest."
                                 }, void 0, false, {
                                     fileName: "[project]/components/contact-section.tsx",
-                                    lineNumber: 58,
+                                    lineNumber: 69,
                                     columnNumber: 17
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2698,7 +2759,7 @@ function ContactSection() {
                                     children: "In this preview build, your message was not transmitted. When email is configured, this form will deliver to our studio inbox."
                                 }, void 0, false, {
                                     fileName: "[project]/components/contact-section.tsx",
-                                    lineNumber: 61,
+                                    lineNumber: 72,
                                     columnNumber: 17
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -2709,13 +2770,13 @@ function ContactSection() {
                                     children: "Submit another message"
                                 }, void 0, false, {
                                     fileName: "[project]/components/contact-section.tsx",
-                                    lineNumber: 65,
+                                    lineNumber: 76,
                                     columnNumber: 17
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/contact-section.tsx",
-                            lineNumber: 54,
+                            lineNumber: 65,
                             columnNumber: 15
                         }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
                             onSubmit: handleSubmit,
@@ -2732,7 +2793,7 @@ function ContactSection() {
                                                     children: "Full name"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/contact-section.tsx",
-                                                    lineNumber: 81,
+                                                    lineNumber: 92,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
@@ -2743,13 +2804,13 @@ function ContactSection() {
                                                     placeholder: "Your name"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/contact-section.tsx",
-                                                    lineNumber: 82,
+                                                    lineNumber: 93,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/contact-section.tsx",
-                                            lineNumber: 80,
+                                            lineNumber: 91,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2760,7 +2821,7 @@ function ContactSection() {
                                                     children: "Email"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/contact-section.tsx",
-                                                    lineNumber: 91,
+                                                    lineNumber: 102,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
@@ -2770,34 +2831,6 @@ function ContactSection() {
                                                     required: true,
                                                     autoComplete: "email",
                                                     placeholder: "you@example.com"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/components/contact-section.tsx",
-                                                    lineNumber: 92,
-                                                    columnNumber: 21
-                                                }, this)
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "[project]/components/contact-section.tsx",
-                                            lineNumber: 90,
-                                            columnNumber: 19
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "space-y-2",
-                                            children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$label$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Label"], {
-                                                    htmlFor: "contact-phone",
-                                                    children: "Phone (optional)"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/components/contact-section.tsx",
-                                                    lineNumber: 102,
-                                                    columnNumber: 21
-                                                }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
-                                                    id: "contact-phone",
-                                                    name: "phone",
-                                                    type: "tel",
-                                                    autoComplete: "tel",
-                                                    placeholder: "+506 …"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/contact-section.tsx",
                                                     lineNumber: 103,
@@ -2813,11 +2846,39 @@ function ContactSection() {
                                             className: "space-y-2",
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$label$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Label"], {
+                                                    htmlFor: "contact-phone",
+                                                    children: "Phone (optional)"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/components/contact-section.tsx",
+                                                    lineNumber: 113,
+                                                    columnNumber: 21
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
+                                                    id: "contact-phone",
+                                                    name: "phone",
+                                                    type: "tel",
+                                                    autoComplete: "tel",
+                                                    placeholder: "+506 …"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/components/contact-section.tsx",
+                                                    lineNumber: 114,
+                                                    columnNumber: 21
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/components/contact-section.tsx",
+                                            lineNumber: 112,
+                                            columnNumber: 19
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "space-y-2",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$label$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Label"], {
                                                     htmlFor: "contact-type",
                                                     children: "Project type"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/contact-section.tsx",
-                                                    lineNumber: 112,
+                                                    lineNumber: 123,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
@@ -2833,7 +2894,7 @@ function ContactSection() {
                                                             children: "Select a category"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/contact-section.tsx",
-                                                            lineNumber: 123,
+                                                            lineNumber: 134,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -2841,7 +2902,7 @@ function ContactSection() {
                                                             children: "Residential"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/contact-section.tsx",
-                                                            lineNumber: 126,
+                                                            lineNumber: 137,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -2849,7 +2910,7 @@ function ContactSection() {
                                                             children: "Resort / hospitality"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/contact-section.tsx",
-                                                            lineNumber: 127,
+                                                            lineNumber: 138,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -2857,7 +2918,7 @@ function ContactSection() {
                                                             children: "Commercial"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/contact-section.tsx",
-                                                            lineNumber: 128,
+                                                            lineNumber: 139,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -2865,7 +2926,7 @@ function ContactSection() {
                                                             children: "Master planning"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/contact-section.tsx",
-                                                            lineNumber: 129,
+                                                            lineNumber: 140,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -2873,19 +2934,19 @@ function ContactSection() {
                                                             children: "Other"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/contact-section.tsx",
-                                                            lineNumber: 130,
+                                                            lineNumber: 141,
                                                             columnNumber: 23
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/contact-section.tsx",
-                                                    lineNumber: 113,
+                                                    lineNumber: 124,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/contact-section.tsx",
-                                            lineNumber: 111,
+                                            lineNumber: 122,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2896,7 +2957,7 @@ function ContactSection() {
                                                     children: "Site or region (optional)"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/contact-section.tsx",
-                                                    lineNumber: 134,
+                                                    lineNumber: 145,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
@@ -2905,13 +2966,13 @@ function ContactSection() {
                                                     placeholder: "e.g. Guanacaste, Costa Rica"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/contact-section.tsx",
-                                                    lineNumber: 137,
+                                                    lineNumber: 148,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/contact-section.tsx",
-                                            lineNumber: 133,
+                                            lineNumber: 144,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2922,7 +2983,7 @@ function ContactSection() {
                                                     children: "Project summary"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/contact-section.tsx",
-                                                    lineNumber: 144,
+                                                    lineNumber: 155,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$textarea$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Textarea"], {
@@ -2934,19 +2995,19 @@ function ContactSection() {
                                                     className: "min-h-[120px]"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/contact-section.tsx",
-                                                    lineNumber: 145,
+                                                    lineNumber: 156,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/contact-section.tsx",
-                                            lineNumber: 143,
+                                            lineNumber: 154,
                                             columnNumber: 19
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/contact-section.tsx",
-                                    lineNumber: 79,
+                                    lineNumber: 90,
                                     columnNumber: 17
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -2956,18 +3017,18 @@ function ContactSection() {
                                     children: "Send inquiry"
                                 }, void 0, false, {
                                     fileName: "[project]/components/contact-section.tsx",
-                                    lineNumber: 155,
+                                    lineNumber: 166,
                                     columnNumber: 17
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/contact-section.tsx",
-                            lineNumber: 75,
+                            lineNumber: 86,
                             columnNumber: 15
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/contact-section.tsx",
-                        lineNumber: 52,
+                        lineNumber: 63,
                         columnNumber: 11
                     }, this)
                 ]

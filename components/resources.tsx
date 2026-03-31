@@ -11,7 +11,7 @@ const resources = [
     icon: HelpCircle,
     title: "Frequently Asked Questions",
     description:
-      "Find answers to common questions about our design process, timelines, and what to expect when working with Ecovida.",
+      "Find answers to common questions about our design process, timelines, and what to expect when working with Eco-Vida Designs.",
     href: "#faq",
     linkText: "Browse FAQ",
   },
@@ -20,7 +20,7 @@ const resources = [
     icon: FileText,
     title: "Articles & Insights",
     description:
-      "Explore our thoughts on ecological architecture, sustainable living, and the future of design in tropical environments.",
+      "Explore our thoughts on ecological architecture, sustainable living, and design for tropical and temperate climates worldwide.",
     href: "#articles",
     linkText: "Read Articles",
   },
