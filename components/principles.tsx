@@ -1,31 +1,59 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
+import {
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+  type ReactNode,
+} from "react"
+import { Leaf, PiggyBank, Shield, Sun } from "lucide-react"
 import { cn } from "@/lib/utils"
-import { Leaf, Sun, Droplets } from "lucide-react"
+import { useT } from "@/lib/i18n/use-t"
 
-const principles = [
-  {
-    icon: Leaf,
-    title: "Ecological Integration",
-    description:
-      "Every design begins with a deep study of the site's ecosystems, ensuring our structures enhance rather than diminish the natural environment.",
-  },
-  {
-    icon: Sun,
-    title: "Climate Responsiveness",
-    description:
-      "Passive design strategies and natural ventilation reduce energy dependence while maximizing comfort in tropical climates.",
-  },
-  {
-    icon: Droplets,
-    title: "Natural Materials",
-    description:
-      "We prioritize locally-sourced, sustainable materials that age gracefully and connect inhabitants to their surroundings.",
-  },
-]
+type PhilosophyBlock = {
+  id: string
+  icon: typeof Leaf
+  title: string
+  description: ReactNode
+}
 
 export function Principles() {
+  const t = useT()
+  const philosophyBlocks = useMemo((): PhilosophyBlock[] => {
+    return [
+      {
+        id: "ecological",
+        icon: Leaf,
+        title: t("principles.ecological.title"),
+        description: <p>{t("principles.ecological.body")}</p>,
+      },
+      {
+        id: "climate",
+        icon: Sun,
+        title: t("principles.climate.title"),
+        description: <p>{t("principles.climate.body")}</p>,
+      },
+      {
+        id: "durability",
+        icon: Shield,
+        title: t("principles.durability.title"),
+        description: (
+          <>
+            <p className="mb-3 last:mb-0">{t("principles.durability.p1")}</p>
+            <p>{t("principles.durability.p2")}</p>
+          </>
+        ),
+      },
+      {
+        id: "cost",
+        icon: PiggyBank,
+        title: t("principles.cost.title"),
+        description: <p>{t("principles.cost.body")}</p>,
+      },
+    ]
+  }, [t])
+
   const [isVisible, setIsVisible] = useState(false)
   const sectionRef = useRef<HTMLElement>(null)
 
@@ -50,7 +78,7 @@ export function Principles() {
   return (
     <section
       ref={sectionRef}
-      id="principles"
+      id="philosophy"
       className="scroll-mt-24 bg-secondary py-24 md:py-32 lg:scroll-mt-28"
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -61,7 +89,7 @@ export function Principles() {
               isVisible && "animate-fade-in-up"
             )}
           >
-            Our Philosophy
+            {t("principles.kicker")}
           </span>
           <h2
             className={cn(
@@ -69,7 +97,7 @@ export function Principles() {
               isVisible && "animate-fade-in-up animation-delay-200"
             )}
           >
-            <span className="text-balance">Design Principles</span>
+            <span className="text-balance">{t("principles.h2")}</span>
           </h2>
           <p
             className={cn(
@@ -77,31 +105,31 @@ export function Principles() {
               isVisible && "animate-fade-in-up animation-delay-400"
             )}
           >
-            The foundational values that guide every project we undertake
+            {t("principles.intro")}
           </p>
         </div>
 
-        <div className="mx-auto mt-16 grid max-w-5xl gap-8 md:grid-cols-3">
-          {principles.map((principle, index) => (
+        <div className="mx-auto mt-16 grid max-w-7xl grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4 xl:gap-7">
+          {philosophyBlocks.map((block, index) => (
             <div
-              key={principle.title}
+              key={block.id}
               className={cn(
-                "group relative bg-background p-8 opacity-0 transition-shadow hover:shadow-lg",
+                "group relative flex flex-col rounded-2xl border border-border/80 bg-background p-8 opacity-0 shadow-sm backdrop-blur-sm transition-[box-shadow,border-color] hover:border-primary/25 hover:shadow-md md:p-9",
                 isVisible && "animate-fade-in-up"
               )}
               style={{
-                animationDelay: isVisible ? `${(index + 2) * 100}ms` : "0ms",
+                animationDelay: isVisible ? `${(index + 2) * 80}ms` : "0ms",
               }}
             >
-              <div className="flex h-10 w-10 items-center justify-center text-primary">
-                <principle.icon className="h-6 w-6" strokeWidth={1.5} />
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-primary/20 bg-primary/5 text-primary transition-colors group-hover:border-primary/40 group-hover:bg-primary/10">
+                <block.icon className="h-6 w-6" strokeWidth={1.5} />
               </div>
-              <h3 className="mt-4 font-serif text-xl text-foreground">
-                {principle.title}
+              <h3 className="mt-6 font-serif text-xl leading-snug text-foreground md:text-[1.35rem]">
+                {block.title}
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                {principle.description}
-              </p>
+              <div className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground md:text-[15px]">
+                {block.description}
+              </div>
             </div>
           ))}
         </div>

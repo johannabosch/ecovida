@@ -1,61 +1,48 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useMemo, useRef, useState } from "react"
 import { cn } from "@/lib/utils"
-import { Compass, Grid3X3, Leaf, MessageSquare } from "lucide-react"
-
-const services = [
-  {
-    icon: Compass,
-    title: "EcoArchitectural design, suited for any climate in any region of the world",
-    description:
-      "Full-service architectural design from concept through construction documentation, tailored to tropical climates and ecological principles.",
-    features: [
-      "Site analysis & master planning",
-      "Schematic design development",
-      "Construction documents",
-      "Project administration",
-    ],
-  },
-  {
-    icon: Grid3X3,
-    title: "Master Planning",
-    description:
-      "Comprehensive site planning for hospitality, residential, and mixed-use developments that honor natural systems and community needs.",
-    features: [
-      "Land use optimization",
-      "Infrastructure planning",
-      "Phasing strategies",
-      "Community integration",
-    ],
-  },
-  {
-    icon: Leaf,
-    title: "Ecological Systems",
-    description:
-      "Integration of sustainable technologies and natural systems to create regenerative buildings that give back to their environment.",
-    features: [
-      "Rainwater harvesting",
-      "Solar & renewable energy",
-      "Natural wastewater treatment",
-      "Landscape integration",
-    ],
-  },
-  {
-    icon: MessageSquare,
-    title: "Consultation",
-    description:
-      "Expert guidance for clients at any stage of their project, whether refining a vision or troubleshooting existing designs.",
-    features: [
-      "Design review & critique",
-      "Feasibility studies",
-      "Sustainability consulting",
-      "Material selection",
-    ],
-  },
-]
+import { useT } from "@/lib/i18n/use-t"
+import { ClipboardList, FileStack, PenLine, Sparkles, Sun } from "lucide-react"
 
 export function Services() {
+  const t = useT()
+  const serviceItems = useMemo(
+    () => [
+      {
+        id: "i1",
+        icon: FileStack,
+        title: t("services.i1.title"),
+        description: t("services.i1.body"),
+      },
+      {
+        id: "i2",
+        icon: PenLine,
+        title: t("services.i2.title"),
+        description: t("services.i2.body"),
+      },
+      {
+        id: "i3",
+        icon: Sparkles,
+        title: t("services.i3.title"),
+        description: t("services.i3.body"),
+      },
+      {
+        id: "i4",
+        icon: ClipboardList,
+        title: t("services.i4.title"),
+        description: t("services.i4.body"),
+      },
+      {
+        id: "i5",
+        icon: Sun,
+        title: t("services.i5.title"),
+        description: t("services.i5.body"),
+      },
+    ],
+    [t]
+  )
+
   const [isVisible, setIsVisible] = useState(false)
   const sectionRef = useRef<HTMLElement>(null)
 
@@ -67,7 +54,7 @@ export function Services() {
           observer.disconnect()
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.08 }
     )
 
     if (sectionRef.current) {
@@ -91,7 +78,7 @@ export function Services() {
               isVisible && "animate-fade-in-up"
             )}
           >
-            What We Offer
+            {t("services.kicker")}
           </span>
           <h2
             className={cn(
@@ -99,7 +86,7 @@ export function Services() {
               isVisible && "animate-fade-in-up animation-delay-200"
             )}
           >
-            <span className="text-balance">Our Services</span>
+            <span className="text-balance">{t("services.h2")}</span>
           </h2>
           <p
             className={cn(
@@ -107,42 +94,31 @@ export function Services() {
               isVisible && "animate-fade-in-up animation-delay-400"
             )}
           >
-            Comprehensive architectural services for discerning clients
+            {t("services.intro")}
           </p>
         </div>
 
-        <div className="mt-16 grid gap-8 md:grid-cols-2">
-          {services.map((service, index) => (
+        <div className="mx-auto mt-12 grid max-w-5xl gap-6 md:grid-cols-2 md:gap-6 lg:mt-14">
+          {serviceItems.map((service, index) => (
             <div
-              key={service.title}
+              key={service.id}
               className={cn(
-                "group bg-background p-8 opacity-0 transition-shadow hover:shadow-lg md:p-10",
+                "group border border-border/80 bg-background p-6 opacity-0 transition-shadow hover:shadow-md md:p-7",
                 isVisible && "animate-fade-in-up"
               )}
               style={{
-                animationDelay: isVisible ? `${(index + 2) * 100}ms` : "0ms",
+                animationDelay: isVisible ? `${(index + 1) * 80}ms` : "0ms",
               }}
             >
-              <div className="flex h-12 w-12 items-center justify-center border border-border text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
-                <service.icon className="h-6 w-6" strokeWidth={1.5} />
+              <div className="flex h-10 w-10 items-center justify-center border border-border text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+                <service.icon className="h-4 w-4" strokeWidth={1.5} />
               </div>
-              <h3 className="mt-6 font-serif text-xl leading-snug text-foreground text-balance md:text-2xl">
+              <h3 className="mt-4 font-serif text-base leading-snug text-foreground text-balance md:text-lg">
                 {service.title}
               </h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+              <p className="mt-2.5 text-[13px] leading-relaxed text-muted-foreground md:text-sm">
                 {service.description}
               </p>
-              <ul className="mt-6 space-y-2">
-                {service.features.map((feature) => (
-                  <li
-                    key={feature}
-                    className="flex items-center text-sm text-foreground"
-                  >
-                    <span className="mr-3 h-1 w-1 rounded-full bg-primary" />
-                    {feature}
-                  </li>
-                ))}
-              </ul>
             </div>
           ))}
         </div>

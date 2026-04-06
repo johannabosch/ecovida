@@ -176,8 +176,73 @@ html {
   animation-delay: 600ms;
 }
 
+/* Hero: calmer entrance, less travel, slower ease */
+@keyframes hero-fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.hero-animate-fade-in-up {
+  animation: hero-fade-in-up 1.35s cubic-bezier(0.33, 0.12, 0.24, 1) forwards;
+}
+
+.hero-animate-fade-in {
+  animation: hero-fade-in 1.15s cubic-bezier(0.33, 0.12, 0.24, 1) forwards;
+}
+
+.hero-animation-delay-200 {
+  animation-delay: 280ms;
+}
+
+.hero-animation-delay-400 {
+  animation-delay: 520ms;
+}
+
+.hero-animation-delay-600 {
+  animation-delay: 780ms;
+}
+
 /* Hero background: object-cover defaults to center; pin crop to the top edge of the photo */
 .hero-background-image {
   object-fit: cover !important;
   object-position: center top !important;
+}
+
+/* About: portrait reveal */
+@keyframes about-image-reveal {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.about-image-reveal {
+  animation: about-image-reveal 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-image-reveal {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
 }

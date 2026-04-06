@@ -1,48 +1,59 @@
+"use client"
+
 import Link from "next/link"
 import { SiteLogo } from "@/components/site-logo"
+import { LanguageToggle } from "@/components/i18n/language-toggle"
+import { useT } from "@/lib/i18n/use-t"
 import { Instagram, Linkedin, Facebook } from "lucide-react"
 
-const navigation = {
-  main: [
-    { name: "Home", href: "#hero" },
-    { name: "About", href: "#about" },
-    { name: "Portfolio", href: "#portfolio" },
-    { name: "Services", href: "#services" },
-    { name: "Resources", href: "#resources" },
-    { name: "Contact", href: "#contact" },
-  ],
-  portfolio: [
-    { name: "Residences", href: "#residences" },
-    { name: "Resorts", href: "#resorts" },
-    { name: "Conceptual", href: "#conceptual" },
-  ],
-  contact: [
-    { name: "Bookings", href: "#contact" },
-    { name: "General Info", href: "#contact" },
-  ],
-  social: [
-    { name: "Instagram", href: "#", icon: Instagram },
-    { name: "LinkedIn", href: "#", icon: Linkedin },
-    { name: "Facebook", href: "#", icon: Facebook },
-  ],
-}
+const social = [
+  { name: "Instagram", href: "#", icon: Instagram },
+  { name: "LinkedIn", href: "#", icon: Linkedin },
+  { name: "Facebook", href: "#", icon: Facebook },
+] as const
 
 export function Footer() {
+  const t = useT()
+  const year = new Date().getFullYear()
+
+  const mainLinks = [
+    { name: t("footer.link.home"), href: "#hero" },
+    { name: t("footer.link.about"), href: "#about" },
+    { name: t("footer.link.recognition"), href: "#recognition" },
+    { name: t("footer.link.philosophy"), href: "#philosophy" },
+    { name: t("footer.link.services"), href: "#services" },
+    { name: t("footer.link.work"), href: "#work" },
+    { name: t("footer.link.getInTouch"), href: "#book-consultation" },
+    { name: t("footer.link.resources"), href: "#resources" },
+    { name: t("footer.link.contact"), href: "#contact-form" },
+  ]
+
+  const portfolioLinks = [
+    { name: t("footer.link.featured"), href: "#work" },
+    { name: t("footer.link.studio"), href: "#studio-gallery" },
+    { name: t("footer.link.plans"), href: "#conceptual" },
+    { name: t("footer.link.residences"), href: "#residences" },
+    { name: t("footer.link.resorts"), href: "#resorts" },
+  ]
+
+  const contactLinks = [
+    { name: t("footer.link.bookings"), href: "#contact-form" },
+    { name: t("footer.link.generalInfo"), href: "#contact-form" },
+  ]
+
   return (
     <footer className="border-t border-border bg-background">
       <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8 lg:py-20">
         <div className="grid gap-12 lg:grid-cols-4">
-          {/* Brand */}
           <div className="lg:col-span-1">
             <Link href="#hero" className="inline-block">
               <SiteLogo className="h-9 w-auto md:h-10" />
             </Link>
             <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-              Spatial Enhanced Wellness Living. Based in Costa Rica and Hawaii,
-              serving clients worldwide.
+              {t("footer.tagline")}
             </p>
             <div className="mt-6 flex gap-4">
-              {navigation.social.map((item) => (
+              {social.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
@@ -55,14 +66,13 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Navigation */}
           <div>
             <h3 className="text-xs font-medium tracking-widest text-foreground uppercase">
-              Navigation
+              {t("footer.col.navigation")}
             </h3>
             <ul className="mt-4 space-y-3">
-              {navigation.main.map((item) => (
-                <li key={item.name}>
+              {mainLinks.map((item) => (
+                <li key={item.href + item.name}>
                   <Link
                     href={item.href}
                     className="text-sm text-muted-foreground transition-colors hover:text-foreground"
@@ -74,14 +84,13 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Portfolio */}
           <div>
             <h3 className="text-xs font-medium tracking-widest text-foreground uppercase">
-              Portfolio
+              {t("footer.col.portfolio")}
             </h3>
             <ul className="mt-4 space-y-3">
-              {navigation.portfolio.map((item) => (
-                <li key={item.name}>
+              {portfolioLinks.map((item) => (
+                <li key={item.href + item.name}>
                   <Link
                     href={item.href}
                     className="text-sm text-muted-foreground transition-colors hover:text-foreground"
@@ -93,14 +102,13 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Contact */}
           <div>
             <h3 className="text-xs font-medium tracking-widest text-foreground uppercase">
-              Contact
+              {t("footer.col.contact")}
             </h3>
             <ul className="mt-4 space-y-3">
-              {navigation.contact.map((item) => (
-                <li key={item.name}>
+              {contactLinks.map((item) => (
+                <li key={item.href + item.name}>
                   <Link
                     href={item.href}
                     className="text-sm text-muted-foreground transition-colors hover:text-foreground"
@@ -134,31 +142,33 @@ export function Footer() {
                   rel="noopener noreferrer"
                   className="text-sm text-muted-foreground transition-colors hover:text-foreground"
                 >
-                  WhatsApp +1 802 696 8230
+                  {t("footer.whatsappLine")}
                 </a>
               </li>
             </ul>
           </div>
         </div>
 
-        {/* Bottom */}
         <div className="mt-16 border-t border-border pt-8">
           <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
-            <p className="text-xs text-muted-foreground">
-              &copy; {new Date().getFullYear()} Eco-Vida Designs. All rights reserved.
-            </p>
+            <div className="flex flex-col items-center gap-3 md:flex-row md:items-center md:gap-6">
+              <p className="text-xs text-muted-foreground">
+                © {year} {t("footer.rights")}
+              </p>
+              <LanguageToggle variant="footer" />
+            </div>
             <div className="flex gap-6">
               <Link
-                href="#contact"
+                href="#contact-form"
                 className="text-xs text-muted-foreground transition-colors hover:text-foreground"
               >
-                Privacy Policy
+                {t("footer.privacy")}
               </Link>
               <Link
-                href="#contact"
+                href="#contact-form"
                 className="text-xs text-muted-foreground transition-colors hover:text-foreground"
               >
-                Terms of Service
+                {t("footer.terms")}
               </Link>
             </div>
           </div>

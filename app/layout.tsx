@@ -9,6 +9,8 @@ import '@fontsource/playfair-display/latin-500.css'
 import '@fontsource/playfair-display/latin-600.css'
 import '@fontsource/playfair-display/latin-700.css'
 import './globals.css'
+import { Providers } from './providers'
+import { WhatsAppFloat } from '@/components/whatsapp-float'
 
 export const metadata: Metadata = {
   title: 'Eco-Vida Designs | EcoArchitecture, EcoHome & EcoRetreat Design',
@@ -52,7 +54,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="font-sans antialiased">
-        {children}
+        <Providers>
+          {children}
+          <WhatsAppFloat />
+        </Providers>
         <Analytics />
       </body>
     </html>

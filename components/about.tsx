@@ -2,112 +2,114 @@
 
 import { useEffect, useRef, useState } from "react"
 import Image from "next/image"
+import Link from "next/link"
 import { cn } from "@/lib/utils"
+import { useT } from "@/lib/i18n/use-t"
 
 export function About() {
-  const [isVisible, setIsVisible] = useState(false)
+  const t = useT()
   const sectionRef = useRef<HTMLElement>(null)
+  const [introVisible, setIntroVisible] = useState(false)
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
+    const el = sectionRef.current
+    if (!el) return
+    const obs = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible(true)
-          observer.disconnect()
+          setIntroVisible(true)
+          obs.disconnect()
         }
       },
-      { threshold: 0.2 }
+      { threshold: 0.06, rootMargin: "0px 0px -5% 0px" }
     )
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current)
-    }
-
-    return () => observer.disconnect()
+    obs.observe(el)
+    return () => obs.disconnect()
   }, [])
 
   return (
     <section
       ref={sectionRef}
       id="about"
-      className="scroll-mt-24 bg-background py-24 md:py-32 lg:scroll-mt-28"
+      className="relative scroll-mt-24 overflow-x-hidden bg-background py-16 md:py-24 lg:scroll-mt-28"
     >
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
-          {/* Image */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="absolute -right-24 top-16 h-[min(28rem,70vw)] w-[min(28rem,70vw)] rounded-full bg-primary/[0.065] blur-3xl motion-reduce:blur-none" />
+        <div className="absolute -left-28 bottom-24 h-[min(22rem,60vw)] w-[min(22rem,60vw)] rounded-full bg-secondary/55 blur-3xl motion-reduce:blur-none" />
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
+      </div>
+
+      <div className="relative z-[1] mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-3xl lg:max-w-4xl">
           <div
             className={cn(
-              "relative aspect-[4/5] overflow-hidden opacity-0",
-              isVisible && "animate-fade-in-up"
+              "mb-8 flex flex-col items-center text-center sm:mb-9",
+              introVisible && "about-image-reveal",
+              !introVisible && "opacity-0"
             )}
           >
-            <Image
-              src="/images/about.jpg"
-              alt="Eco-Vida Designs architectural studio"
-              fill
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-            />
-          </div>
-
-          {/* Content */}
-          <div className="flex flex-col justify-center">
+            <div className="relative h-[4.5rem] w-[min(280px,85vw)] shrink-0 drop-shadow-md sm:h-28 md:h-32">
+              <Image
+                src="/logo.png"
+                alt={t("gate.brand")}
+                fill
+                className="object-contain object-center"
+                sizes="(max-width: 640px) 85vw, 320px"
+                priority
+              />
+            </div>
             <span
               className={cn(
-                "text-xs tracking-widest text-muted-foreground uppercase opacity-0",
-                isVisible && "animate-fade-in-up"
+                "mt-6 text-xs tracking-widest text-muted-foreground uppercase",
+                !introVisible && "opacity-0",
+                introVisible && "animate-fade-in-up"
               )}
             >
-              About Eco-Vida Designs
+              {t("about.kicker")}
             </span>
+          </div>
+
+          <div className="flex min-w-0 flex-col justify-center">
             <h2
               className={cn(
-                "mt-4 font-serif text-4xl tracking-tight text-foreground opacity-0 md:text-5xl",
-                isVisible && "animate-fade-in-up animation-delay-200"
+                "text-center font-serif text-[2rem] leading-tight tracking-tight text-foreground sm:text-4xl md:text-5xl",
+                !introVisible && "opacity-0",
+                introVisible && "animate-fade-in-up animation-delay-200"
               )}
             >
-              <span className="text-balance">EcoArchitecture in harmony with nature</span>
+              <span className="text-balance">
+                {t("about.h2")}
+              </span>
             </h2>
             <div
               className={cn(
-                "mt-6 space-y-4 text-muted-foreground opacity-0",
-                isVisible && "animate-fade-in-up animation-delay-400"
+                "mt-5 space-y-4 text-[15px] leading-relaxed text-muted-foreground sm:mt-6 sm:text-base",
+                !introVisible && "opacity-0",
+                introVisible && "animate-fade-in-up animation-delay-400"
               )}
             >
-              <p className="leading-relaxed">
-                With over two decades of experience designing in tropical environments, 
-                we approach each project as an opportunity to create spaces that honor 
-                both human wellbeing and ecological integrity.
-              </p>
-              <p className="leading-relaxed">
-                Our practice is rooted in the belief that exceptional architecture 
-                emerges from deep understanding of place: its climate, materials,
-                culture, and rhythms. Every design decision we make serves the
-                greater purpose of creating environments that restore and inspire.
-              </p>
-              <p className="leading-relaxed">
-                From private residences to wellness retreats, our work across Costa Rica,
-                Hawaii, and the wider world shows sustainable design and refined
-                aesthetics working together as essential partners. Our designs have been
-                built around the world.
-              </p>
+              <p>{t("about.p1")}</p>
+              <p>{t("about.p2")}</p>
+              <p>{t("about.p3")}</p>
             </div>
             <div
               className={cn(
-                "mt-8 opacity-0",
-                isVisible && "animate-fade-in-up animation-delay-600"
+                "mt-7 flex justify-center sm:mt-8",
+                !introVisible && "opacity-0",
+                introVisible && "animate-fade-in-up animation-delay-600"
               )}
             >
-              <a
-                href="#principles"
-                className="inline-flex items-center text-sm font-medium tracking-wide text-primary transition-colors hover:text-accent"
+              <Link
+                href="#philosophy"
+                className="group inline-flex items-center text-sm font-medium tracking-wide text-primary transition-colors hover:text-accent"
               >
-                Learn More About Our Approach
+                {t("about.learnMore")}
                 <svg
-                  className="ml-2 h-4 w-4"
+                  className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-0.5"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
+                  aria-hidden
                 >
                   <path
                     strokeLinecap="round"
@@ -116,10 +118,11 @@ export function About() {
                     d="M17 8l4 4m0 0l-4 4m4-4H3"
                   />
                 </svg>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
+
       </div>
     </section>
   )

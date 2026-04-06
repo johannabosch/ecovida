@@ -1,32 +1,36 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useMemo, useRef, useState } from "react"
 import Link from "next/link"
 import { cn } from "@/lib/utils"
+import { useT } from "@/lib/i18n/use-t"
 import { FileText, HelpCircle, ArrowRight } from "lucide-react"
 
-const resources = [
-  {
-    id: "faq" as const,
-    icon: HelpCircle,
-    title: "Frequently Asked Questions",
-    description:
-      "Find answers to common questions about our design process, timelines, and what to expect when working with Eco-Vida Designs.",
-    href: "#faq",
-    linkText: "Browse FAQ",
-  },
-  {
-    id: "articles" as const,
-    icon: FileText,
-    title: "Articles & Insights",
-    description:
-      "Explore our thoughts on ecological architecture, sustainable living, and design for tropical and temperate climates worldwide.",
-    href: "#articles",
-    linkText: "Read Articles",
-  },
-]
-
 export function Resources() {
+  const t = useT()
+  const resources = useMemo(
+    () =>
+      [
+        {
+          id: "faq" as const,
+          icon: HelpCircle,
+          title: t("resources.faq.title"),
+          description: t("resources.faq.desc"),
+          href: "#faq",
+          linkText: t("resources.faq.link"),
+        },
+        {
+          id: "articles" as const,
+          icon: FileText,
+          title: t("resources.articles.title"),
+          description: t("resources.articles.desc"),
+          href: "#articles",
+          linkText: t("resources.articles.link"),
+        },
+      ],
+    [t]
+  )
+
   const [isVisible, setIsVisible] = useState(false)
   const sectionRef = useRef<HTMLElement>(null)
 
@@ -62,7 +66,7 @@ export function Resources() {
               isVisible && "animate-fade-in-up"
             )}
           >
-            Learn More
+            {t("resources.kicker")}
           </span>
           <h2
             className={cn(
@@ -70,7 +74,7 @@ export function Resources() {
               isVisible && "animate-fade-in-up animation-delay-200"
             )}
           >
-            <span className="text-balance">Resources</span>
+            <span className="text-balance">{t("resources.h2")}</span>
           </h2>
           <p
             className={cn(
@@ -78,14 +82,14 @@ export function Resources() {
               isVisible && "animate-fade-in-up animation-delay-400"
             )}
           >
-            Helpful information to guide your architectural journey
+            {t("resources.intro")}
           </p>
         </div>
 
         <div className="mx-auto mt-12 grid max-w-4xl gap-8 md:grid-cols-2">
           {resources.map((resource, index) => (
             <div
-              key={resource.title}
+              key={resource.id}
               id={resource.id}
               className="scroll-mt-24 lg:scroll-mt-28"
             >
