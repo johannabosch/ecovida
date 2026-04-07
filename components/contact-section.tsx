@@ -57,15 +57,6 @@ export function ContactSection() {
                 {t("contact.intro")}
               </p>
               <p className="mt-6 text-sm text-muted-foreground leading-relaxed">
-                <span className="font-medium text-foreground">{t("contact.directEmail")}</span>{" "}
-                <a
-                  href="mailto:info@eco-vidadesigns.com"
-                  className="text-primary underline-offset-4 hover:underline"
-                >
-                  info@eco-vidadesigns.com
-                </a>
-              </p>
-              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 <span className="font-medium text-foreground">{t("contact.whatsappLabel")}</span>{" "}
                 <a
                   href="https://wa.me/18026968230"
@@ -123,15 +114,6 @@ export function ContactSection() {
               {t("contact.intro")}
             </p>
             <p className="mt-6 text-sm text-muted-foreground leading-relaxed">
-              <span className="font-medium text-foreground">{t("contact.directEmail")}</span>{" "}
-              <a
-                href="mailto:info@eco-vidadesigns.com"
-                className="text-primary underline-offset-4 hover:underline"
-              >
-                info@eco-vidadesigns.com
-              </a>
-            </p>
-            <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
               <span className="font-medium text-foreground">{t("contact.whatsappLabel")}</span>{" "}
               <a
                 href="https://wa.me/18026968230"

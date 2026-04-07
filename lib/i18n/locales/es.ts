@@ -155,13 +155,12 @@ export const es: Partial<Record<EnKeys, string>> = {
   "contact.h2": "Agende su consulta",
   "contact.intro":
     "Comparta un resumen de su proyecto. Revisamos cada consulta y respondemos con los siguientes pasos para una primera conversación.",
-  "contact.directEmail": "Correo directo:",
   "contact.whatsappLabel": "WhatsApp:",
   "contact.notice":
     "Los envíos llegan de forma segura a nuestro estudio. Respondemos en unos días hábiles.",
   "contact.successTitle": "Gracias — su mensaje fue enviado.",
   "contact.successBody":
-    "Le responderemos al correo indicado. Si no tiene noticias en unos días, revise spam o escriba a info@eco-vidadesigns.com.",
+    "Le responderemos al correo indicado. Si no tiene noticias en unos días, revise la carpeta de spam.",
   "contact.sendAnother": "Enviar otro mensaje",
 
   "form.fullName": "Nombre completo",
@@ -189,7 +188,7 @@ export const es: Partial<Record<EnKeys, string>> = {
     "Cuéntenos sobre usted y su proyecto. Todo permanece en esta página.",
   "inquiry.successTitle": "Mensaje enviado",
   "inquiry.successBody":
-    "Gracias. Revisaremos su consulta y responderemos al correo indicado. También en info@eco-vidadesigns.com.",
+    "Gracias. Revisaremos su consulta y responderemos al correo indicado.",
   "inquiry.close": "Cerrar",
   "inquiry.cancel": "Cancelar",
   "inquiry.send": "Enviar mensaje",

@@ -119,14 +119,6 @@ export function Footer() {
               ))}
               <li>
                 <a
-                  href="mailto:info@eco-vidadesigns.com"
-                  className="text-sm text-muted-foreground transition-colors hover:text-foreground"
-                >
-                  info@eco-vidadesigns.com
-                </a>
-              </li>
-              <li>
-                <a
                   href="https://www.eco-vidadesigns.com"
                   target="_blank"
                   rel="noopener noreferrer"

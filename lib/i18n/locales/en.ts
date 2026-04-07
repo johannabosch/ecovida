@@ -154,13 +154,12 @@ export const en = {
   "contact.h2": "Schedule your consultation",
   "contact.intro":
     "Share a brief overview of your project. We review every inquiry and respond with next steps for an introductory conversation.",
-  "contact.directEmail": "Direct email:",
   "contact.whatsappLabel": "WhatsApp:",
   "contact.notice":
     "Submissions are sent securely to our studio inbox. We aim to reply within a few business days.",
   "contact.successTitle": "Thank you — your message was sent.",
   "contact.successBody":
-    "We'll get back to you at the email you provided. If you don't hear from us within a few days, check spam or reach out directly at info@eco-vidadesigns.com.",
+    "We'll get back to you at the email you provided. If you don't hear from us within a few days, please check your spam folder.",
   "contact.sendAnother": "Send another message",
 
   "form.fullName": "Full name",
@@ -189,7 +188,7 @@ export const en = {
     "Tell us a bit about you and your project. Everything stays on this page—nothing opens in a new tab.",
   "inquiry.successTitle": "Message sent",
   "inquiry.successBody":
-    "Thank you. We'll review your inquiry and reply to the email you provided. You can also reach us at info@eco-vidadesigns.com.",
+    "Thank you. We'll review your inquiry and reply to the email you provided.",
   "inquiry.close": "Close",
   "inquiry.cancel": "Cancel",
   "inquiry.send": "Send message",
