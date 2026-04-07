@@ -64,7 +64,7 @@ export const fr: Partial<Record<EnKeys, string>> = {
     ". Clients dont le studio de Sheryl Crow, des profils à Los Angeles, Telluride, Hawaï, Afrique du Sud, Vermont et au-delà.",
   "recognition.slideAria": "Diapositives de distinctions",
 
-  "principles.kicker": "Principes de conception",
+  "principles.kicker": "Nos valeurs",
   "principles.h2": "Écologie, climat, résilience et valeur",
   "principles.intro":
     "L’intégration écologique aligne écosystèmes et matériaux. La réponse climatique assure le confort passif sous les tropiques. La durabilité couvre tempêtes, séismes et structure à long terme. L’efficacité des coûts aligne plan et budget réels.",
@@ -72,8 +72,10 @@ export const fr: Partial<Record<EnKeys, string>> = {
   "principles.ecological.body":
     "Chaque conception commence par une étude approfondie des écosystèmes du site, pour que nos ouvrages renforcent plutôt qu’ils ne diminuent l’environnement naturel.",
   "principles.climate.title": "Réponse au climat",
-  "principles.climate.body":
+  "principles.climate.p1":
     "Sous les tropiques, le confort quotidien est d’abord un problème climatique. Nous misons sur le design passif et la ventilation naturelle pour réduire les besoins énergétiques tout en gardant un air qui circule naturellement à l’intérieur.",
+  "principles.climate.p2":
+    "Ces approches passives s’associent à des systèmes renouvelables intégrés—solaire, récupération d’eau, stockage et autres solutions adaptées au site—pour que l’architecture et l’infrastructure forment un ensemble cohérent face au climat. Autour du bâtiment, le paysage s’inspire de la permaculture : plantations économes en eau, production alimentaire et espaces extérieurs qui renforcent le confort, l’écologie et le lien vivant au lieu.",
   "principles.durability.title": "Durabilité",
   "principles.durability.p1":
     "Le confort n’est qu’une partie du récit. Les mêmes projets sont calculés pour résister aux séismes et aux vents de cyclone. Les fondations sur pieux hélicoïdaux ancrent l’ouvrage.",
@@ -129,7 +131,7 @@ export const fr: Partial<Record<EnKeys, string>> = {
     "Aperçu limité. Plans complets après demande.",
   "planDesigns.previewStamp": "Aperçu · reproduction interdite",
   "planDesigns.devHint":
-    "Ajoutez des images dans public/images/plans/{folder}/",
+    "Ajoutez plan1.jpg, plan2.jpg et plan3.jpg dans public/images/plans/.",
 
   "consultation.kicker": "Commencez votre parcours",
   "consultation.h2": "Nous contacter",

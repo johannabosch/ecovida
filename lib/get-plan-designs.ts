@@ -9,9 +9,9 @@ export type PlanDesignCard = {
 }
 
 const PLAN_CARD_IMAGES = [
-  "/images/plan1.jpg",
-  "/images/plan2.jpg",
-  "/images/plan3.jpg",
+  "/images/plans/plan1.jpg",
+  "/images/plans/plan2.jpg",
+  "/images/plans/plan3.jpg",
 ] as const
 
 const PLAN_DESIGN_META: Omit<PlanDesignCard, "images">[] = [

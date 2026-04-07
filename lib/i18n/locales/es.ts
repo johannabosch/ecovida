@@ -63,7 +63,7 @@ export const es: Partial<Record<EnKeys, string>> = {
     ". Clientes incluyen el estudio de Sheryl Crow, clientes destacados en LA, Telluride, Hawái, Sudáfrica, Vermont y más.",
   "recognition.slideAria": "Diapositivas de reconocimientos",
 
-  "principles.kicker": "Principios de diseño",
+  "principles.kicker": "Nuestros valores",
   "principles.h2": "Ecología, clima, resiliencia y valor",
   "principles.intro":
     "La integración ecológica alinea ecosistemas y materiales. La respuesta climática ofrece confort pasivo en el trópico. La durabilidad cubre tormentas, sismos y estructura a largo plazo. La eficiencia de costos alinea plan y presupuesto real.",
@@ -71,8 +71,10 @@ export const es: Partial<Record<EnKeys, string>> = {
   "principles.ecological.body":
     "Cada diseño comienza con un estudio profundo de los ecosistemas del sitio, para que nuestras estructuras mejoren el entorno natural.",
   "principles.climate.title": "Respuesta climática",
-  "principles.climate.body":
+  "principles.climate.p1":
     "En el trópico, el confort diario es primero un problema climático. Apostamos por diseño pasivo y ventilación natural para reducir energía y mantener aire que circula de forma natural en el interior.",
+  "principles.climate.p2":
+    "Ese enfoque pasivo va junto con sistemas renovables integrados—solar, captación de agua, almacenamiento y otras soluciones adecuadas al sitio—para que arquitectura e infraestructura funcionen como un conjunto inteligente frente al clima. En el entorno, el paisaje sigue criterios de permacultura: plantación eficiente en agua, producción de alimentos y espacios exteriores que refuerzan confort, ecología y vínculo cotidiano con el lugar.",
   "principles.durability.title": "Durabilidad",
   "principles.durability.p1":
     "El confort es solo una parte. Los mismos proyectos se calculan para sismos y vientos de huracán. Cimientos con micropilotes anclan la obra.",
@@ -126,7 +128,8 @@ export const es: Partial<Record<EnKeys, string>> = {
   "planDesigns.getDesign": "Obtener este diseño",
   "planDesigns.previewNote": "Vista previa limitada. Planos completos tras la consulta.",
   "planDesigns.previewStamp": "Vista previa · no reproducir",
-  "planDesigns.devHint": "Añada imágenes en public/images/plans/{folder}/",
+  "planDesigns.devHint":
+    "Añada plan1.jpg, plan2.jpg y plan3.jpg en public/images/plans/.",
 
   "consultation.kicker": "Comience su camino",
   "consultation.h2": "Contacto",

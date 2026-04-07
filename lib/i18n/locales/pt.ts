@@ -63,7 +63,7 @@ export const pt: Partial<Record<EnKeys, string>> = {
     ". Clientes incluem o estúdio de Sheryl Crow, clientes de topo em LA, Telluride, Havai, África do Sul, Vermont e mais.",
   "recognition.slideAria": "Diapositivos de distinções",
 
-  "principles.kicker": "Princípios de desenho",
+  "principles.kicker": "Os nossos valores",
   "principles.h2": "Ecologia, clima, resiliência e valor",
   "principles.intro":
     "A integração ecológica alinha ecossistemas e materiais. A resposta climática oferece conforto passivo nos trópicos. A durabilidade cobre tempestades, sismos e estrutura a longo prazo. A eficiência de custos alinha plano e orçamento real.",
@@ -71,8 +71,10 @@ export const pt: Partial<Record<EnKeys, string>> = {
   "principles.ecological.body":
     "Cada projecto começa com um estudo profundo dos ecossistemas do sítio, para que as nossas estruturas fortaleçam o ambiente natural.",
   "principles.climate.title": "Resposta climática",
-  "principles.climate.body":
+  "principles.climate.p1":
     "Nos trópicos, o conforto diário é primeiro um problema climático. Apostamos em desenho passivo e ventilação natural para reduzir energia e manter ar a circular naturalmente no interior.",
+  "principles.climate.p2":
+    "Esta abordagem passiva combina-se com sistemas renováveis integrados—solar, captação de água, armazenamento e outras soluções adequadas ao sítio—para que arquitectura e infra-estrutura funcionem como um todo coerente face ao clima. Em redor do edifício, a paisagem segue princípios de permacultura: plantação poupadora de água, produção de alimentos e espaços exteriores que reforçam conforto, ecologia e uma ligação viva ao lugar.",
   "principles.durability.title": "Durabilidade",
   "principles.durability.p1":
     "O conforto é só parte da história. Os mesmos projectos são calculados para sismos e ventos de furacão. Fundações em micropilotes ancoram a obra.",
@@ -126,7 +128,8 @@ export const pt: Partial<Record<EnKeys, string>> = {
   "planDesigns.getDesign": "Obter este desenho",
   "planDesigns.previewNote": "Pré-visualização limitada. Plantas completas após pedido.",
   "planDesigns.previewStamp": "Pré-visualização · não reproduzir",
-  "planDesigns.devHint": "Adicione imagens em public/images/plans/{folder}/",
+  "planDesigns.devHint":
+    "Adicione plan1.jpg, plan2.jpg e plan3.jpg em public/images/plans/.",
 
   "consultation.kicker": "Comece a sua jornada",
   "consultation.h2": "Contacto",

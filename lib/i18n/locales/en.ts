@@ -62,7 +62,7 @@ export const en = {
     ". Clients include Sheryl Crow's recording studio, A-list clients in LA, Telluride, Hawaii, South Africa, Vermont, and beyond.",
   "recognition.slideAria": "Accolade slides",
 
-  "principles.kicker": "Design principles",
+  "principles.kicker": "Our Values",
   "principles.h2": "Ecology, climate, resilience, and value",
   "principles.intro":
     "Ecological integration aligns site ecosystems and materials. Climate responsiveness delivers passive comfort in the tropics. Durability covers storms, seismic loads, and long-term structure. Cost efficiency keeps your plan and build aligned with real budgets.",
@@ -70,8 +70,10 @@ export const en = {
   "principles.ecological.body":
     "Every design begins with a deep study of the site's ecosystems, ensuring our structures enhance rather than diminish the natural environment. We specify timber, stone, and finishes for durability, low embodied impact, and an honest connection to place, often locally sourced, compatible with our post-and-beam systems, and left to age gracefully in the climate where they belong.",
   "principles.climate.title": "Climate Responsiveness",
-  "principles.climate.body":
+  "principles.climate.p1":
     "In the tropics, daily comfort is a climate problem first. We lean on passive design and natural ventilation so your building needs less energy to stay pleasant, while air keeps moving in a way that feels natural indoors.",
+  "principles.climate.p2":
+    "Those passive moves pair with integrated renewable systems—solar, water harvesting, storage, and other site-appropriate solutions—so the architecture and infrastructure work as one climate-smart whole. Around the building, landscape design is permaculture-informed: water-wise planting, food production, and outdoor rooms that reinforce comfort, ecology, and a living connection to place.",
   "principles.durability.title": "Durability",
   "principles.durability.p1":
     "Comfort is only half the story. The same projects are engineered for durability in earthquakes and hurricane-force winds. Helical-pile foundations anchor the work, and our forms borrow from long study with masters of traditional architecture worldwide, so structure and site read as one system.",
@@ -125,7 +127,8 @@ export const en = {
   "planDesigns.getDesign": "Get this design",
   "planDesigns.previewNote": "Limited preview. Full drawings provided after inquiry.",
   "planDesigns.previewStamp": "Preview · not for reproduction",
-  "planDesigns.devHint": "Add images in public/images/plans/{folder}/",
+  "planDesigns.devHint":
+    "Add plan1.jpg, plan2.jpg, and plan3.jpg to public/images/plans/.",
 
   "consultation.kicker": "Begin Your Journey",
   "consultation.h2": "Get in touch",

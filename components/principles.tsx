@@ -32,7 +32,12 @@ export function Principles() {
         id: "climate",
         icon: Sun,
         title: t("principles.climate.title"),
-        description: <p>{t("principles.climate.body")}</p>,
+        description: (
+          <>
+            <p className="mb-3 last:mb-0">{t("principles.climate.p1")}</p>
+            <p>{t("principles.climate.p2")}</p>
+          </>
+        ),
       },
       {
         id: "durability",

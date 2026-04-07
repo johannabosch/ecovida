@@ -15,11 +15,9 @@ const PLAN_PREVIEW_FADE_MS = 2200
 
 function PlanDesignImageStack({
   images,
-  folderId,
   planTitle,
 }: {
   images: string[]
-  folderId: string
   planTitle: string
 }) {
   const t = useT()
@@ -87,7 +85,7 @@ function PlanDesignImageStack({
           </div>
         ) : (
           <div className="flex h-full min-h-[12rem] items-center justify-center p-4 text-center text-xs leading-snug text-muted-foreground">
-            {t("planDesigns.devHint").replace("{folder}", folderId)}
+            {t("planDesigns.devHint")}
           </div>
         )}
         <div className="pointer-events-none absolute inset-0 z-[3] bg-gradient-to-t from-background/25 to-transparent" />
@@ -223,7 +221,6 @@ export function PlanDesignsSection({ plans }: { plans: PlanDesignCard[] }) {
                   <div className="mx-auto w-full max-w-[10rem] shrink-0 sm:max-w-[18rem] md:mx-0 md:w-[min(100%,17rem)] lg:w-[min(100%,18rem)]">
                     <PlanDesignImageStack
                       images={plan.images}
-                      folderId={plan.id}
                       planTitle={plan.title}
                     />
                     <p className="mt-3 text-center text-[10px] leading-snug text-muted-foreground/90 md:text-left">
