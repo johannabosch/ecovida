@@ -19,19 +19,19 @@ const PLAN_DESIGN_META: Omit<PlanDesignCard, "images">[] = [
     id: "PostBeamSeries",
     title: "Modern off-grid post and beam series",
     description:
-      "Structural rhythm and layout logic for our Hale Hawaii EcoHome featured project: post-and-beam clarity, off-grid-ready planning, and calm tropical living.",
+      "Hale Hawaii EcoHome rhythm: clear post-and-beam structure, off-grid-ready planning, calm tropical living.",
   },
   {
     id: "QuadEcoDwelling",
     title: "Quad eco dwelling: interconnected hexagons",
     description:
-      "A four-unit eco-ag dwelling system with shared infrastructure and hexagonal modules linked into a coherent landscape strategy.",
+      "Four linked units with shared services and hex modules tied to the landscape.",
   },
   {
     id: "SingleEcoHome",
     title: "Single eco home",
     description:
-      "Floor plans for a one-structure eco residence: efficient footprint, legible circulation, and adaptable room layouts.",
+      "One-structure residence: efficient footprint, clear circulation, flexible rooms.",
   },
 ]
 

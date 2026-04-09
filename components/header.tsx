@@ -125,13 +125,15 @@ export function Header() {
             href="#hero"
             className="-m-1 flex items-center p-1 lg:-m-1.5 lg:p-1.5"
           >
-            <SiteLogo priority className="h-14 w-auto md:h-16 lg:h-20" />
+            <SiteLogo
+              priority
+              className="h-9 max-h-10 w-auto max-w-[min(11rem,46vw)] object-contain object-left sm:h-11 sm:max-h-none sm:max-w-none md:h-16 lg:h-20"
+            />
           </Link>
         </div>
 
-        {/* Mobile: language + menu */}
-        <div className="flex items-center gap-2 lg:hidden">
-          <LanguageToggle variant="header" className="max-w-[min(100%,14rem)]" />
+        {/* Mobile: menu only (language lives inside the slide-out panel) */}
+        <div className="flex items-center lg:hidden">
           <button
             type="button"
             className="-m-2 inline-flex items-center justify-center rounded-md p-2 text-foreground lg:-m-2.5 lg:p-2.5"
@@ -246,7 +248,16 @@ export function Header() {
               <X className="h-6 w-6" aria-hidden="true" />
             </button>
           </div>
-          <div className="mt-10 flow-root">
+          <div className="mt-6 border-b border-border pb-6">
+            <p className="mb-2 text-[11px] font-semibold tracking-widest text-muted-foreground uppercase">
+              {t("common.language")}
+            </p>
+            <LanguageToggle
+              variant="header"
+              className="h-10 w-full max-w-none justify-between gap-2 px-3"
+            />
+          </div>
+          <div className="mt-8 flow-root">
             <div className="-my-6 divide-y divide-border">
               <div className="space-y-1 py-6">
                 {navigation.map((item) =>

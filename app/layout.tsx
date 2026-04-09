@@ -15,12 +15,14 @@ import { WhatsAppFloat } from '@/components/whatsapp-float'
 export const metadata: Metadata = {
   title: 'Eco-Vida Designs | EcoArchitecture, EcoHome & EcoRetreat Design',
   description:
-    'Designing refined, ecological spaces rooted in wellness and place in Costa Rica, Hawaii, and the world. Where ecoluxury and enhanced wellness living come to life.',
+    'Designing refined, ecological spaces rooted in wellness and place. Completed work in Costa Rica, Hawaii, the United States, and Portugal. Ecoluxury and enhanced wellness living.',
   keywords: [
     'architecture',
     'ecological design',
     'Costa Rica',
     'Hawaii',
+    'United States',
+    'Portugal',
     'eco home',
     'eco resort',
     'eco retreat',
@@ -28,13 +30,12 @@ export const metadata: Metadata = {
     'wellness design',
     'sustainable architecture',
     'luxury homes',
-    'worldwide',
   ],
   authors: [{ name: 'Eco-Vida Designs' }],
   openGraph: {
     title: 'Eco-Vida Designs | EcoArchitecture & Enhanced Wellness Living',
     description:
-      'Ecoluxury and enhanced wellness living in Costa Rica, Hawaii, and beyond.',
+      'Ecoluxury and enhanced wellness living. Work in Costa Rica, Hawaii, the United States, and Portugal.',
     type: 'website',
     locale: 'en_US',
   },

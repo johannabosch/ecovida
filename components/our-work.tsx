@@ -50,12 +50,12 @@ function FeaturedProjectDialogBody({ project }: { project: FeaturedProject }) {
             className="w-full"
           >
             <CarouselContent className="ml-0">
-              {project.images.map((src) => (
+              {project.images.map((src, imgIndex) => (
                 <CarouselItem key={src} className="pl-0">
                   <div className="relative aspect-[16/10] w-full">
                     <Image
                       src={src}
-                      alt=""
+                      alt={`${project.title} gallery image ${imgIndex + 1} of ${total}. ${project.tagline}. ${t("ourWork.imageAltSuffix")}`}
                       fill
                       className="object-cover"
                       sizes="(max-width: 672px) 100vw, 672px"
@@ -179,7 +179,7 @@ export function OurWork({ projects }: { projects: FeaturedProject[] }) {
           {project.images[0] ? (
             <Image
               src={project.images[0]}
-              alt=""
+              alt={`${project.title}. ${project.tagline}. ${t("ourWork.imageAltSuffix")}`}
               fill
               className="object-cover transition-transform duration-700 group-hover:scale-105"
               sizes={sizesHint}

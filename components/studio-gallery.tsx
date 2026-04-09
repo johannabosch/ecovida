@@ -66,7 +66,7 @@ export function StudioGallery({ images }: { images: string[] }) {
           </p>
         </div>
         <div className="mt-10 grid grid-cols-2 gap-2.5 sm:gap-3 md:grid-cols-3 lg:grid-cols-4">
-          {images.map((src) => {
+          {images.map((src, imgIndex) => {
             const delayIndex = i++
             return (
               <div
@@ -81,7 +81,7 @@ export function StudioGallery({ images }: { images: string[] }) {
               >
                 <Image
                   src={src}
-                  alt=""
+                  alt={`${t("studio.imageAlt")} (${imgIndex + 1})`}
                   fill
                   className="object-cover"
                   sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"

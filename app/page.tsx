@@ -25,12 +25,12 @@ export default async function Home() {
       <Header />
       <Hero />
       <About />
-      <Recognition />
-      <Principles />
-      <Services />
       <OurWork projects={featuredProjects} />
       <StudioGallery images={otherGalleryImages} />
       <PlanDesignsSection plans={planDesigns} />
+      <Recognition />
+      <Principles />
+      <Services />
       <Consultation />
       <Resources />
       <ContactSection />

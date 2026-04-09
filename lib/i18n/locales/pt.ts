@@ -30,23 +30,27 @@ export const pt: Partial<Record<EnKeys, string>> = {
   "header.openMenu": "Abrir menu principal",
   "header.closeMenu": "Fechar menu",
 
-  "hero.line1": "Bem-estar reforçado",
-  "hero.line2": "Desenho EcoLiving",
-  "hero.body":
-    "A Eco-Vida Designs ajuda-o a moldar uma casa ou retiro que se adeque ao seu terreno e à sua vida, com pacotes de plantas, EcoArch à medida e acompanhamento desde a primeira ideia até à entrega pronta para construir.",
+  "hero.line1": "Integração ecológica",
+  "hero.line2": "Ligações naturais",
+  "hero.line3": "Durabilidade serena",
+  "hero.line4": "Bem-estar reforçado",
+  "hero.eyebrow": "Ecoliving Designs",
   "hero.cta": "Comece o seu projecto",
   "hero.scroll": "Deslizar",
-  "hero.scrollAria": "Ir para a secção seguinte",
-  "hero.imageAlt": "Eco-resort e eco-casa de luxo",
+  "hero.scrollAria": "Ir para a secção Sobre",
+  "hero.imageAlt":
+    "Eco-Vida Designs: arquitectura ecológica, resorts e residências eco-luxo, desenho passivo tropical, EcoArch poste e viga, pacotes de plantas, integração renovável e entrega pronta a construir. Projectos concluídos na Costa Rica, no Havai, nos Estados Unidos e em Portugal.",
 
   "about.kicker": "Sobre a Eco-Vida Designs",
-  "about.h2": "Eco-arquitectura em harmonia com a natureza",
-  "about.p1":
-    "Michael Bond-Crowley lidera a Eco-Vida Designs. Foi aprendiz de Mike Reynolds (Earthships) e estudou arquitectura na Universidade da Costa Rica (UCR), combinando ofício ecológico e formação académica.",
+  "about.h2": "Arquitectura em harmonia com a natureza",
+  "about.logoAlt":
+    "Logótipo Eco-Vida Designs, atelier de arquitectura ecológica liderado por Michael Bond-Crowley.",
+  "about.p1a":
+    "Michael Bond-Crowley lidera a Eco-Vida Designs com licenciatura em arquitectura pela Universidade da Costa Rica (UCR) e mais de quatro décadas em arquitectura ecológica. O atelier assenta num processo rigoroso e criativo, assente no desempenho e no lugar, informado pelo estudo de ofícios de construção tradicionais em várias culturas e pela formação com Michael Reynolds (",
+  "about.earthshipsLink": "Earthships",
+  "about.p1b": ").",
   "about.p2":
-    "Com mais de quatro décadas de experiência em arquitectura ecológica, a Eco-Vida Designs é reconhecida por casas e retiros de luxo e sensíveis ao sítio, unindo desempenho ambiental e design intemporal.",
-  "about.p3":
-    "No centro do atelier está um processo arquitectónico rigoroso e criativo, assente no lugar e no desempenho, com espaço para a imaginação.",
+    "Adoramos este ofício. Na Eco-Vida Designs desenhamos casas e retiros de luxo que pertencem de verdade ao terreno: desempenho ambiental a sério e uma beleza calma que se mantém. O nosso quotidiano é desenho passivo tropical, EcoArch poste e viga, pacotes de plantas licenciados e encomendas à medida desde a primeira conversa até à entrega pronta para construir. A obra realizada abrange a Costa Rica, o Havai, os Estados Unidos e Portugal.",
   "about.learnMore": "Saiba mais sobre a nossa abordagem",
 
   "recognition.kicker": "Reconhecimento",
@@ -56,7 +60,7 @@ export const pt: Partial<Record<EnKeys, string>> = {
   "recognition.s2":
     "Os desenhos foram destacados pela Shelter Publications, com projectos na televisão e na Better Homes and Gardens.",
   "recognition.s3p1":
-    "A Eco-Vida Designs concluiu projectos para clientes privados de longa data e encomendas notáveis, incluindo residências ligadas ao legado Marlon Brando e um estúdio de gravação para Sheryl Crow.",
+    "A Eco-Vida Designs concluiu projectos para clientes privados de longa data e encomendas notáveis, incluindo residências ligadas ao legado Marlon Brando e um estúdio de gravação para Sheryl Crow. A obra construída abrange a Costa Rica, o Havai, os Estados Unidos e Portugal.",
   "recognition.s3p2a":
     "A Eco-Vida foi gestora de projecto na ilha de Marlon Brando, hoje ",
   "recognition.s3p2b":
@@ -64,9 +68,9 @@ export const pt: Partial<Record<EnKeys, string>> = {
   "recognition.slideAria": "Diapositivos de distinções",
 
   "principles.kicker": "Os nossos valores",
-  "principles.h2": "Ecologia, clima, resiliência e valor",
+  "principles.h2": "Ecologia, clima, solidez, valor",
   "principles.intro":
-    "A integração ecológica alinha ecossistemas e materiais. A resposta climática oferece conforto passivo nos trópicos. A durabilidade cobre tempestades, sismos e estrutura a longo prazo. A eficiência de custos alinha plano e orçamento real.",
+    "A integração ecológica trata o sítio e os materiais como um único sistema, e não como tópicos à parte. Daí segue o desenho climático para conforto passivo nos trópicos, a estrutura pensada para tempestades e sismos ao longo do tempo, e uma disciplina de custos que alinha plantas, âmbito e orçamento real de obra.",
   "principles.ecological.title": "Integração ecológica",
   "principles.ecological.body":
     "Cada projecto começa com um estudo profundo dos ecossistemas do sítio, para que as nossas estruturas fortaleçam o ambiente natural.",
@@ -74,7 +78,7 @@ export const pt: Partial<Record<EnKeys, string>> = {
   "principles.climate.p1":
     "Nos trópicos, o conforto diário é primeiro um problema climático. Apostamos em desenho passivo e ventilação natural para reduzir energia e manter ar a circular naturalmente no interior.",
   "principles.climate.p2":
-    "Esta abordagem passiva combina-se com sistemas renováveis integrados—solar, captação de água, armazenamento e outras soluções adequadas ao sítio—para que arquitectura e infra-estrutura funcionem como um todo coerente face ao clima. Em redor do edifício, a paisagem segue princípios de permacultura: plantação poupadora de água, produção de alimentos e espaços exteriores que reforçam conforto, ecologia e uma ligação viva ao lugar.",
+    "Esta abordagem passiva combina-se com sistemas renováveis integrados (solar, captação de água, armazenamento e outras soluções adequadas ao sítio) para que arquitectura e infra-estrutura funcionem como um todo coerente face ao clima. Em redor do edifício, a paisagem segue princípios de permacultura: plantação poupadora de água, produção de alimentos e espaços exteriores que reforçam conforto, ecologia e uma ligação viva ao lugar.",
   "principles.durability.title": "Durabilidade",
   "principles.durability.p1":
     "O conforto é só parte da história. Os mesmos projectos são calculados para sismos e ventos de furacão. Fundações em micropilotes ancoram a obra.",
@@ -107,7 +111,9 @@ export const pt: Partial<Record<EnKeys, string>> = {
   "ourWork.kicker": "Portefólio",
   "ourWork.h2": "O nosso trabalho",
   "ourWork.intro":
-    "Quatro obras de assinatura entre residencial e hospitalidade retiro. Abra um projecto para ver imagens e narrativa.",
+    "Residências e retiros em destaque. Abra um projecto para a história e as fotos.",
+  "ourWork.imageAltSuffix":
+    "Fotografia de portefólio Eco-Vida Designs. Arquitectura ecológica e desenho eco-luxo.",
   "ourWork.viewProject": "Ver projecto",
   "ourWork.dialog.concepts": "Conceitos de desenho",
   "ourWork.dialog.addImages":
@@ -116,14 +122,22 @@ export const pt: Partial<Record<EnKeys, string>> = {
   "studio.kicker": "Galeria do estúdio",
   "studio.h2": "Direcções de desenho e inspiração",
   "studio.body":
-    "Vistas de estudo, terreno e espaços: paisagens de ecoresort, shalas de yoga em geometria sagrada, módulos e mais. O que podemos moldar junto no seu projecto Eco-Vida.",
+    "Vistas de estudo e espaços que mostram o alcance do que podemos moldar consigo.",
+  "studio.imageAlt":
+    "Galeria do estúdio Eco-Vida Designs: paisagens de ecoresort, shalas de yoga em geometria sagrada, módulos tropicais, estudos de conforto climático e inspiração eco-hospitalidade a partir de trabalho na Costa Rica, no Havai, nos Estados Unidos e em Portugal.",
 
   "planDesigns.kicker": "Planos de desenho",
   "planDesigns.h2": "Conceitos e estudos",
   "planDesigns.p1":
-    "Pacotes de plantas licenciados desenvolvidos in-house. Peça um pacote à nossa equipa: âmbito, personalização e próximos passos.",
+    "Pacotes de plantas licenciados in-house. Fale connosco sobre âmbito, personalização e entregas.",
   "planDesigns.p2":
-    "Comprar uma planta começa com uma conversa: alinhamos o pacote ao seu sítio, normas e caminho de obra; depois entregamos os desenhos adequados.",
+    "Alinhamos o pacote ao seu sítio, regras e obra; depois emitimos os desenhos a partir do atelier.",
+  "planDesigns.alt1":
+    "Pré-visualização de plantas Eco-Vida Designs: série poste e viga off-grid, projecto Hale Hawaii EcoHome, estrutura clara, tropical passivo, pacote EcoArch licenciado.",
+  "planDesigns.alt2":
+    "Pré-visualização de plantas Eco-Vida Designs: habitação eco quádrupla com hexágonos ligados, infra-estrutura partilhada, hábitat eco-ag paisagístico. Estudos licenciados.",
+  "planDesigns.alt3":
+    "Pré-visualização de plantas Eco-Vida Designs: eco-casa unifamiliar, pegada eficiente, circulação clara, divisões flexíveis. Pacote de plantas licenciado.",
   "planDesigns.inquire": "Pedir informações sobre pacotes de plantas",
   "planDesigns.getDesign": "Obter este desenho",
   "planDesigns.previewNote": "Pré-visualização limitada. Plantas completas após pedido.",
@@ -134,11 +148,12 @@ export const pt: Partial<Record<EnKeys, string>> = {
   "consultation.kicker": "Comece a sua jornada",
   "consultation.h2": "Contacto",
   "consultation.body":
-    "Esteja a sonhar ou pronto para construir, uma consulta é o primeiro passo ideal. Trabalhamos com clientes em todo o mundo, presencial ou remoto.",
+    "Esteja a sonhar ou pronto para construir, uma consulta é o primeiro passo ideal. Reunimo-nos presencialmente ou à distância, com projectos concluídos na Costa Rica, no Havai, nos Estados Unidos e em Portugal.",
   "consultation.b1": "Percurso desenho-construção do primeiro esboço à conclusão",
   "consultation.b2": "Prazos e orçamentos planificáveis",
   "consultation.b3": "Os seus objectivos, revistos com um arquitecto",
-  "consultation.b4": "Conhecimento regional: Costa Rica, Havai e além",
+  "consultation.b4":
+    "Conhecimento regional: Costa Rica, Havai, Estados Unidos, Portugal",
   "consultation.b5": "Ecologia que protege o valor ao longo do tempo",
   "consultation.cta": "Agende a sua consulta",
 
@@ -161,7 +176,7 @@ export const pt: Partial<Record<EnKeys, string>> = {
   "contact.whatsappLabel": "WhatsApp:",
   "contact.notice":
     "Os envios chegam de forma segura ao nosso estúdio. Respondemos em alguns dias úteis.",
-  "contact.successTitle": "Obrigado — a sua mensagem foi enviada.",
+  "contact.successTitle": "Obrigado. A sua mensagem foi enviada.",
   "contact.successBody":
     "Responderemos ao e-mail indicado. Se não tiver notícias em alguns dias, verifique a pasta de spam.",
   "contact.sendAnother": "Enviar outra mensagem",
@@ -196,12 +211,13 @@ export const pt: Partial<Record<EnKeys, string>> = {
   "inquiry.cancel": "Cancelar",
   "inquiry.send": "Enviar mensagem",
   "inquiry.visionLabel": "A sua visão e ideias",
-  "inquiry.placeholder.location": "ex. Havai, Costa Rica",
+  "inquiry.placeholder.location":
+    "ex. Havai, Costa Rica, Portugal, EUA",
   "inquiry.placeholder.message":
     "Objectivos, estilo, prazo, orçamento e o que devemos saber.",
 
   "footer.tagline":
-    "Bem-estar espacial reforçado. Com sede na Costa Rica e no Havai, clientes em todo o mundo.",
+    "Bem-estar espacial reforçado. Obra realizada na Costa Rica, no Havai, nos Estados Unidos e em Portugal. Com sede na Costa Rica e no Havai.",
   "footer.col.navigation": "Navegação",
   "footer.col.portfolio": "Portefólio",
   "footer.col.contact": "Contacto",

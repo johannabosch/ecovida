@@ -48,10 +48,10 @@ export function About() {
               !introVisible && "opacity-0"
             )}
           >
-            <div className="relative h-[4.5rem] w-[min(280px,85vw)] shrink-0 drop-shadow-md sm:h-28 md:h-32">
+            <div className="relative h-[3.5rem] w-full max-w-[min(260px,calc(100vw-2rem))] shrink-0 drop-shadow-md sm:h-28 sm:max-w-[min(280px,85vw)] md:h-32">
               <Image
                 src="/logo.png"
-                alt={t("gate.brand")}
+                alt={t("about.logoAlt")}
                 fill
                 className="object-contain object-center"
                 sizes="(max-width: 640px) 85vw, 320px"
@@ -88,9 +88,19 @@ export function About() {
                 introVisible && "animate-fade-in-up animation-delay-400"
               )}
             >
-              <p>{t("about.p1")}</p>
+              <p>
+                {t("about.p1a")}
+                <a
+                  href="https://earthship.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-medium text-primary underline-offset-2 transition-colors hover:text-accent hover:underline"
+                >
+                  {t("about.earthshipsLink")}
+                </a>
+                {t("about.p1b")}
+              </p>
               <p>{t("about.p2")}</p>
-              <p>{t("about.p3")}</p>
             </div>
             <div
               className={cn(

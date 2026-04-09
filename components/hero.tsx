@@ -5,8 +5,15 @@ import Image from "next/image"
 import Link from "next/link"
 import { useLanguage } from "@/components/i18n/language-provider"
 import { HERO_SLIDES } from "@/lib/hero-slides"
-import { useT } from "@/lib/i18n/use-t"
+import { useT, type TranslationKey } from "@/lib/i18n/use-t"
 import { cn } from "@/lib/utils"
+
+const HERO_LINE_KEYS = [
+  "hero.line1",
+  "hero.line2",
+  "hero.line3",
+  "hero.line4",
+] as const satisfies readonly TranslationKey[]
 
 export function Hero() {
   const t = useT()
@@ -14,9 +21,12 @@ export function Hero() {
   const [activeSlide, setActiveSlide] = useState(0)
 
   const reveal = contentRevealed
+  /** One caption per slide; keep `HERO_LINE_KEYS` length in sync with `HERO_SLIDES`. */
+  const headlineIndex = activeSlide % HERO_LINE_KEYS.length
 
   useEffect(() => {
-    const SLIDE_MS = 9000
+    /** Same interval for background photos and headline (one tick advances both). */
+    const SLIDE_MS = 5500
     const timer = setInterval(() => {
       setActiveSlide((current) => (current + 1) % HERO_SLIDES.length)
     }, SLIDE_MS)
@@ -49,48 +59,37 @@ export function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center">
+      <div className="relative z-10 flex h-full flex-col items-center justify-center px-8 text-center sm:px-6 md:px-8">
         <div className="mx-auto flex w-full max-w-4xl flex-col items-center">
-          <h1
+          <p
             className={cn(
-              "font-serif text-5xl tracking-tight text-primary-foreground opacity-0 md:text-7xl lg:text-8xl",
+              "mb-3 max-w-2xl px-2 text-[11px] font-semibold tracking-[0.28em] text-primary-foreground/90 uppercase opacity-0 sm:mb-4 sm:text-xs md:text-[13px] md:tracking-[0.22em]",
               reveal && "hero-animate-fade-in-up"
             )}
           >
-            <span className="relative block min-h-[1.2em] w-full">
-              <span
-                className={cn(
-                  "absolute left-1/2 -translate-x-1/2 whitespace-nowrap text-center transition-opacity duration-[2200ms] ease-in-out will-change-[opacity]",
-                  activeSlide % 2 === 0 ? "opacity-100" : "opacity-0"
-                )}
-              >
-                {t("hero.line1")}
-              </span>
-              <span
-                className={cn(
-                  "absolute left-1/2 -translate-x-1/2 whitespace-nowrap text-center transition-opacity duration-[2200ms] ease-in-out will-change-[opacity]",
-                  activeSlide % 2 === 0 ? "opacity-0" : "opacity-100"
-                )}
-              >
-                {t("hero.line2")}
-              </span>
-            </span>
-          </h1>
-          <div
+            {t("hero.eyebrow")}
+          </p>
+          <h1
             className={cn(
-              "mx-auto mt-6 max-w-2xl opacity-0 md:mt-5 lg:max-w-3xl",
+              "w-full max-w-full px-2 font-serif text-[clamp(1.65rem,6.25vw,2.15rem)] leading-none tracking-tight text-primary-foreground opacity-0 sm:px-1 sm:text-6xl md:text-7xl lg:text-8xl",
               reveal && "hero-animate-fade-in-up hero-animation-delay-200"
             )}
           >
-            <p
-              className={cn(
-                "rounded-2xl border border-white/20 bg-black/45 px-5 py-4 text-left text-base font-medium leading-relaxed text-white shadow-[0_8px_32px_rgba(0,0,0,0.45)] backdrop-blur-md sm:text-center md:px-7 md:py-5 md:text-[17px] md:leading-relaxed lg:text-lg",
-                "[text-shadow:0_1px_2px_rgba(0,0,0,0.9)]"
-              )}
-            >
-              {t("hero.body")}
-            </p>
-          </div>
+            <span className="relative mx-auto block min-h-[2.65rem] w-full max-w-full sm:min-h-[4rem] md:min-h-[4.5rem] lg:min-h-[5.25rem]">
+              {HERO_LINE_KEYS.map((key, i) => (
+                <span
+                  key={key}
+                  className={cn(
+                    "absolute inset-x-0 top-0 text-center transition-opacity duration-[2200ms] ease-in-out will-change-[opacity]",
+                    "whitespace-nowrap px-1",
+                    headlineIndex === i ? "opacity-100" : "opacity-0"
+                  )}
+                >
+                  {t(key)}
+                </span>
+              ))}
+            </span>
+          </h1>
           <div
             className={cn(
               "mt-10 opacity-0 md:mt-8",

@@ -4,7 +4,7 @@ import { useCallback, useEffect, useRef, useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { cn } from "@/lib/utils"
-import { useT } from "@/lib/i18n/use-t"
+import { useT, type TranslationKey } from "@/lib/i18n/use-t"
 import { Button } from "@/components/ui/button"
 import type { PlanDesignCard } from "@/lib/get-plan-designs"
 
@@ -13,12 +13,20 @@ export type { PlanDesignCard }
 const PLAN_PREVIEW_ROTATE_MS = 5500
 const PLAN_PREVIEW_FADE_MS = 2200
 
+const PLAN_IMAGE_ALTS: readonly TranslationKey[] = [
+  "planDesigns.alt1",
+  "planDesigns.alt2",
+  "planDesigns.alt3",
+]
+
 function PlanDesignImageStack({
   images,
   planTitle,
+  imageAlt,
 }: {
   images: string[]
   planTitle: string
+  imageAlt: string
 }) {
   const t = useT()
   const [failed, setFailed] = useState(() => images.length === 0)
@@ -53,7 +61,7 @@ function PlanDesignImageStack({
       style={{ WebkitTouchCallout: "none" } as React.CSSProperties}
     >
       <div
-        className="group relative aspect-[4/3] w-full max-h-[11rem] overflow-hidden rounded-xl border border-border/50 bg-muted/80 shadow-[0_12px_40px_-16px_rgba(0,0,0,0.12)] ring-1 ring-black/[0.04] sm:max-h-[12rem] md:aspect-[5/4] md:max-h-[13rem] lg:max-h-[14rem]"
+        className="group relative aspect-[4/3] w-full max-h-[14rem] overflow-hidden rounded-xl border border-border/50 bg-muted/80 shadow-[0_16px_48px_-18px_rgba(0,0,0,0.14)] ring-1 ring-black/[0.04] sm:max-h-[16rem] md:aspect-[5/4] md:max-h-[17rem] lg:max-h-[19rem]"
         aria-hidden={failed}
       >
         {!failed && images.length > 0 ? (
@@ -63,7 +71,7 @@ function PlanDesignImageStack({
                 <Image
                   key={src}
                   src={src}
-                  alt=""
+                  alt={imageAlt}
                   fill
                   className={cn(
                     "absolute inset-0 object-cover object-center contrast-[0.96]",
@@ -137,8 +145,6 @@ export function PlanDesignsSection({ plans }: { plans: PlanDesignCard[] }) {
     return () => observer.disconnect()
   }, [])
 
-  let animIndex = 0
-
   return (
     <section
       ref={sectionRef}
@@ -152,7 +158,7 @@ export function PlanDesignsSection({ plans }: { plans: PlanDesignCard[] }) {
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto max-w-3xl rounded-3xl border border-border/60 bg-card/40 p-8 text-center shadow-[0_24px_80px_-32px_rgba(0,0,0,0.12)] backdrop-blur-sm md:p-11">
+        <div className="mx-auto max-w-3xl text-center">
           <span
             className={cn(
               "text-[11px] font-semibold tracking-[0.2em] text-muted-foreground uppercase opacity-0",
@@ -163,65 +169,35 @@ export function PlanDesignsSection({ plans }: { plans: PlanDesignCard[] }) {
           </span>
           <h2
             className={cn(
-              "mt-4 font-serif text-[1.75rem] font-normal tracking-[-0.02em] text-foreground opacity-0 sm:text-3xl md:text-[2.125rem] md:leading-[1.15]",
+              "mt-3 font-serif text-[1.75rem] font-normal tracking-[-0.02em] text-foreground opacity-0 sm:text-3xl md:text-[2.125rem] md:leading-[1.15]",
               isVisible && "animate-fade-in-up animation-delay-200"
             )}
           >
             <span className="text-balance">{t("planDesigns.h2")}</span>
           </h2>
-          <p
-            className={cn(
-              "mx-auto mt-5 max-w-xl text-[15px] leading-relaxed text-muted-foreground opacity-0 md:text-base",
-              isVisible && "animate-fade-in-up animation-delay-400"
-            )}
-          >
-            {t("planDesigns.p1")}
-          </p>
-          <p
-            className={cn(
-              "mx-auto mt-5 max-w-xl text-sm leading-relaxed text-muted-foreground/90 opacity-0",
-              isVisible && "animate-fade-in-up animation-delay-600"
-            )}
-          >
-            {t("planDesigns.p2")}
-          </p>
-          <div
-            className={cn(
-              "mt-10 flex flex-col items-center gap-3 opacity-0",
-              isVisible && "animate-fade-in-up"
-            )}
-            style={{ animationDelay: isVisible ? "520ms" : "0ms" }}
-          >
-            <Button
-              variant="default"
-              size="lg"
-              className="h-11 rounded-full px-8 text-xs font-semibold tracking-[0.14em] uppercase shadow-md transition-[transform,box-shadow] hover:shadow-lg active:scale-[0.98]"
-              asChild
-            >
-              <Link href="#book-consultation">{t("planDesigns.inquire")}</Link>
-            </Button>
-          </div>
         </div>
 
-        <ul className="mt-12 flex list-none flex-col gap-6 md:mt-14 md:gap-7 lg:mx-auto lg:max-w-4xl">
-          {plans.map((plan) => {
-            const index = animIndex++
+        <ul className="mt-10 flex list-none flex-col gap-7 md:mt-12 md:gap-8 lg:mx-auto lg:max-w-5xl">
+          {plans.map((plan, planIndex) => {
+            const index = planIndex
+            const altKey = PLAN_IMAGE_ALTS[planIndex]
             return (
               <li
                 key={plan.id}
                 className={cn(
-                  "rounded-2xl border border-border/50 bg-card/30 p-6 opacity-0 shadow-sm ring-1 ring-black/[0.03] transition-[box-shadow,border-color] hover:border-border hover:shadow-md md:p-8",
+                  "rounded-2xl border border-border/50 bg-card/30 p-5 opacity-0 shadow-sm ring-1 ring-black/[0.03] transition-[box-shadow,border-color] hover:border-border hover:shadow-md sm:p-6 md:p-8",
                   isVisible && "animate-fade-in-up"
                 )}
                 style={{
-                  animationDelay: isVisible ? `${(index + 2) * 90}ms` : "0ms",
+                  animationDelay: isVisible ? `${(index + 1) * 90}ms` : "0ms",
                 }}
               >
-                <div className="flex flex-col gap-8 md:flex-row md:items-center md:gap-10 lg:gap-12">
-                  <div className="mx-auto w-full max-w-[10rem] shrink-0 sm:max-w-[18rem] md:mx-0 md:w-[min(100%,17rem)] lg:w-[min(100%,18rem)]">
+                <div className="flex flex-col gap-7 md:flex-row md:items-center md:gap-12 lg:gap-14">
+                  <div className="mx-auto w-full max-w-[min(100%,22rem)] shrink-0 sm:max-w-[24rem] md:mx-0 md:w-[min(100%,26rem)]">
                     <PlanDesignImageStack
                       images={plan.images}
                       planTitle={plan.title}
+                      imageAlt={t(altKey)}
                     />
                     <p className="mt-3 text-center text-[10px] leading-snug text-muted-foreground/90 md:text-left">
                       {t("planDesigns.previewNote")}
@@ -251,15 +227,30 @@ export function PlanDesignsSection({ plans }: { plans: PlanDesignCard[] }) {
           })}
         </ul>
 
-        <p
+        <div
           className={cn(
-            "mx-auto mt-10 max-w-xl text-center text-xs leading-relaxed text-muted-foreground/80 opacity-0 md:mt-12",
+            "mx-auto mt-12 max-w-2xl text-center opacity-0 md:mt-14",
             isVisible && "animate-fade-in-up"
           )}
-          style={{ animationDelay: isVisible ? "480ms" : "0ms" }}
+          style={{ animationDelay: isVisible ? "200ms" : "0ms" }}
         >
-          {t("planDesigns.p2")}
-        </p>
+          <p className="text-[15px] leading-relaxed text-muted-foreground md:text-base">
+            {t("planDesigns.p1")}
+          </p>
+          <p className="mt-4 text-sm leading-relaxed text-muted-foreground/90">
+            {t("planDesigns.p2")}
+          </p>
+          <div className="mt-8 flex flex-col items-center gap-3">
+            <Button
+              variant="default"
+              size="lg"
+              className="h-11 rounded-full px-8 text-xs font-semibold tracking-[0.14em] uppercase shadow-md transition-[transform,box-shadow] hover:shadow-lg active:scale-[0.98]"
+              asChild
+            >
+              <Link href="#book-consultation">{t("planDesigns.inquire")}</Link>
+            </Button>
+          </div>
+        </div>
       </div>
     </section>
   )
