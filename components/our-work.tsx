@@ -42,7 +42,7 @@ function FeaturedProjectDialogBody({ project }: { project: FeaturedProject }) {
   return (
     <>
       {total > 0 ? (
-        <div className="relative w-full shrink-0 overflow-hidden rounded-t-2xl bg-muted">
+        <div className="relative w-full shrink-0 overflow-hidden rounded-t-2xl bg-muted shadow-xl ring-1 ring-black/[0.06]">
           <Carousel
             key={project.id}
             opts={{ loop: total > 1 }}
@@ -57,7 +57,7 @@ function FeaturedProjectDialogBody({ project }: { project: FeaturedProject }) {
                       src={src}
                       alt={`${project.title} gallery image ${imgIndex + 1} of ${total}. ${project.tagline}. ${t("ourWork.imageAltSuffix")}`}
                       fill
-                      className="object-cover"
+                      className="object-cover object-center"
                       sizes="(max-width: 672px) 100vw, 672px"
                       priority={src === project.images[0]}
                     />
@@ -167,7 +167,7 @@ export function OurWork({ projects }: { projects: FeaturedProject[] }) {
           type="button"
           onClick={onOpen}
           className={cn(
-            "group relative w-full cursor-pointer overflow-hidden rounded-2xl border border-transparent text-left opacity-0 outline-none transition-[border-color,box-shadow] focus-visible:border-ring focus-visible:ring-2 focus-visible:ring-ring/50",
+            "group relative w-full cursor-pointer overflow-hidden rounded-2xl border border-transparent text-left opacity-0 shadow-lg outline-none ring-1 ring-black/[0.05] transition-[border-color,box-shadow] hover:shadow-xl focus-visible:border-ring focus-visible:ring-2 focus-visible:ring-ring/50",
             "aspect-[4/3] md:aspect-[5/4]",
             isVisible && "animate-fade-in-up"
           )}
@@ -181,7 +181,7 @@ export function OurWork({ projects }: { projects: FeaturedProject[] }) {
               src={project.images[0]}
               alt={`${project.title}. ${project.tagline}. ${t("ourWork.imageAltSuffix")}`}
               fill
-              className="object-cover transition-transform duration-700 group-hover:scale-105"
+              className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
               sizes={sizesHint}
             />
           ) : (

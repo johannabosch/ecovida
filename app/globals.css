@@ -130,6 +130,13 @@
   }
 }
 
+/* Desktop: bump root size ~two steps so rem-based type scales site-wide */
+@media (min-width: 1024px) {
+  html {
+    font-size: 125%;
+  }
+}
+
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;

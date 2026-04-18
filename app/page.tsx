@@ -17,7 +17,11 @@ import { listSortedPublicImagePaths } from "@/lib/portfolio-images"
 
 export default async function Home() {
   const featuredProjects = await getFeaturedProjects()
-  const otherGalleryImages = await listSortedPublicImagePaths("other")
+  const [otherGalleryImages, templeGalleryImages] = await Promise.all([
+    listSortedPublicImagePaths("other"),
+    listSortedPublicImagePaths("temple"),
+  ])
+  const studioGalleryImages = [...otherGalleryImages, ...templeGalleryImages]
   const planDesigns = await getPlanDesignCards()
 
   return (
@@ -26,7 +30,7 @@ export default async function Home() {
       <Hero />
       <About />
       <OurWork projects={featuredProjects} />
-      <StudioGallery images={otherGalleryImages} />
+      <StudioGallery images={studioGalleryImages} />
       <PlanDesignsSection plans={planDesigns} />
       <Recognition />
       <Principles />

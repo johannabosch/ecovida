@@ -23,10 +23,12 @@ function PlanDesignImageStack({
   images,
   planTitle,
   imageAlt,
+  imageObjectClassName,
 }: {
   images: string[]
   planTitle: string
   imageAlt: string
+  imageObjectClassName: string
 }) {
   const t = useT()
   const [failed, setFailed] = useState(() => images.length === 0)
@@ -61,7 +63,7 @@ function PlanDesignImageStack({
       style={{ WebkitTouchCallout: "none" } as React.CSSProperties}
     >
       <div
-        className="group relative aspect-[4/3] w-full max-h-[14rem] overflow-hidden rounded-xl border border-border/50 bg-muted/80 shadow-[0_16px_48px_-18px_rgba(0,0,0,0.14)] ring-1 ring-black/[0.04] sm:max-h-[16rem] md:aspect-[5/4] md:max-h-[17rem] lg:max-h-[19rem]"
+        className="group relative aspect-[4/3] w-full max-h-[14rem] overflow-hidden rounded-xl border border-border/50 bg-muted/80 shadow-[0_20px_56px_-16px_rgba(0,0,0,0.22),0_8px_24px_-12px_rgba(0,0,0,0.12)] ring-1 ring-black/[0.06] sm:max-h-[16rem] md:aspect-[5/4] md:max-h-[17rem] lg:max-h-[19rem]"
         aria-hidden={failed}
       >
         {!failed && images.length > 0 ? (
@@ -74,7 +76,8 @@ function PlanDesignImageStack({
                   alt={imageAlt}
                   fill
                   className={cn(
-                    "absolute inset-0 object-cover object-center contrast-[0.96]",
+                    "absolute inset-0 contrast-[0.96]",
+                    imageObjectClassName,
                     "transition-opacity ease-in-out",
                     activeIndex === i ? "opacity-100" : "opacity-0"
                   )}
@@ -198,6 +201,7 @@ export function PlanDesignsSection({ plans }: { plans: PlanDesignCard[] }) {
                       images={plan.images}
                       planTitle={plan.title}
                       imageAlt={t(altKey)}
+                      imageObjectClassName={plan.imageObjectClassName}
                     />
                     <p className="mt-3 text-center text-[10px] leading-snug text-muted-foreground/90 md:text-left">
                       {t("planDesigns.previewNote")}

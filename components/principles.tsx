@@ -114,7 +114,7 @@ export function Principles() {
           </p>
         </div>
 
-        <div className="mx-auto mt-16 grid max-w-7xl grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4 xl:gap-7">
+        <div className="mx-auto mt-16 grid max-w-7xl grid-cols-1 gap-6 md:grid-cols-2 md:gap-7 lg:gap-8 xl:gap-10">
           {philosophyBlocks.map((block, index) => (
             <div
               key={block.id}

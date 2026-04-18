@@ -127,7 +127,7 @@ export function Header() {
           >
             <SiteLogo
               priority
-              className="h-9 max-h-10 w-auto max-w-[min(11rem,46vw)] object-contain object-left sm:h-11 sm:max-h-none sm:max-w-none md:h-16 lg:h-20"
+              className="h-11 max-h-[2.85rem] w-auto max-w-[min(14rem,56vw)] object-contain object-left sm:h-12 sm:max-h-none sm:max-w-none md:h-16 lg:h-20"
             />
           </Link>
         </div>

@@ -48,7 +48,7 @@ export function About() {
               !introVisible && "opacity-0"
             )}
           >
-            <div className="relative h-[3.5rem] w-full max-w-[min(260px,calc(100vw-2rem))] shrink-0 drop-shadow-md sm:h-28 sm:max-w-[min(280px,85vw)] md:h-32">
+            <div className="relative h-[3.5rem] w-full max-w-[min(260px,calc(100vw-2rem))] shrink-0 rounded-lg shadow-xl ring-1 ring-black/[0.06] sm:h-28 sm:max-w-[min(280px,85vw)] md:h-32">
               <Image
                 src="/logo.png"
                 alt={t("about.logoAlt")}

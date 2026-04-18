@@ -13,6 +13,9 @@ const HERO_LINE_KEYS = [
   "hero.line2",
   "hero.line3",
   "hero.line4",
+  "hero.line5",
+  "hero.line6",
+  "hero.line7",
 ] as const satisfies readonly TranslationKey[]
 
 export function Hero() {
@@ -21,7 +24,7 @@ export function Hero() {
   const [activeSlide, setActiveSlide] = useState(0)
 
   const reveal = contentRevealed
-  /** One caption per slide; keep `HERO_LINE_KEYS` length in sync with `HERO_SLIDES`. */
+  /** One caption per slide; keep `HERO_LINE_KEYS` and `HERO_SLIDES` counts aligned. */
   const headlineIndex = activeSlide % HERO_LINE_KEYS.length
 
   useEffect(() => {
@@ -92,7 +95,7 @@ export function Hero() {
           </h1>
           <div
             className={cn(
-              "mt-10 opacity-0 md:mt-8",
+              "mt-10 hidden opacity-0 md:mt-8 md:block",
               reveal && "hero-animate-fade-in-up hero-animation-delay-400"
             )}
           >

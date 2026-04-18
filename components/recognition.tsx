@@ -133,7 +133,7 @@ export function Recognition() {
             <CarouselContent className="-ml-2 md:-ml-3">
               <CarouselItem className="basis-full pl-2 md:pl-3">
                 <SlideSurface centered>
-                  <div className="relative h-24 w-full max-w-[13.5rem] shrink-0 sm:h-28 md:h-[7.5rem]">
+                  <div className="relative h-24 w-full max-w-[13.5rem] shrink-0 rounded-md bg-muted/30 p-3 shadow-lg ring-1 ring-black/[0.05] sm:h-28 md:h-[7.5rem]">
                     <Image
                       src={GWI_LOGO_SRC}
                       alt="Global Wellness Institute"
@@ -148,7 +148,7 @@ export function Recognition() {
 
               <CarouselItem className="basis-full pl-2 md:pl-3">
                 <SlideSurface centered>
-                  <div className="relative h-[4.5rem] w-full max-w-[11rem] shrink-0 sm:h-24 md:h-28">
+                  <div className="relative h-[4.5rem] w-full max-w-[11rem] shrink-0 rounded-md bg-muted/30 p-3 shadow-lg ring-1 ring-black/[0.05] sm:h-24 md:h-28">
                     <Image
                       src={SHELTER_LOGO_SRC}
                       alt="Shelter Publications"

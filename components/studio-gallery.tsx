@@ -72,7 +72,7 @@ export function StudioGallery({ images }: { images: string[] }) {
               <div
                 key={src}
                 className={cn(
-                  "relative aspect-[4/3] overflow-hidden rounded-xl opacity-0 ring-1 ring-border/60",
+                  "relative aspect-[4/3] overflow-hidden rounded-xl opacity-0 shadow-lg ring-1 ring-border/60",
                   isVisible && "animate-fade-in-up"
                 )}
                 style={{
