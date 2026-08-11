@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
-import { WHATSAPP_DISPLAY, WHATSAPP_URL } from "@/lib/contact"
 import { FORMSPREE_FORM_ID } from "@/lib/formspree"
 import { useT } from "@/lib/i18n/use-t"
 import { cn } from "@/lib/utils"
@@ -40,17 +39,6 @@ function ContactIntro() {
       </h2>
       <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
         {t("contact.intro")}
-      </p>
-      <p className="mt-4 text-sm text-muted-foreground">
-        <span className="font-medium text-foreground">{t("contact.whatsappLabel")}</span>{" "}
-        <a
-          href={WHATSAPP_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-primary underline-offset-4 hover:underline"
-        >
-          {WHATSAPP_DISPLAY}
-        </a>
       </p>
     </div>
   )

@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect, useRef, useMemo } from "react"
+import { createPortal } from "react-dom"
 import Link from "next/link"
 import { Menu, X, ChevronDown } from "lucide-react"
 import { cn } from "@/lib/utils"
@@ -69,7 +70,21 @@ export function Header() {
   const [openMobileSection, setOpenMobileSection] = useState<string | null>(null)
   const [isVisible, setIsVisible] = useState(false)
   const [openDropdown, setOpenDropdown] = useState<string | null>(null)
+  const [mounted, setMounted] = useState(false)
   const desktopNavRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  useEffect(() => {
+    if (!mobileMenuOpen) return
+    const previousOverflow = document.body.style.overflow
+    document.body.style.overflow = "hidden"
+    return () => {
+      document.body.style.overflow = previousOverflow
+    }
+  }, [mobileMenuOpen])
 
   useEffect(() => {
     if (!contentRevealed) {
@@ -82,6 +97,15 @@ export function Header() {
 
   useEffect(() => {
     if (!mobileMenuOpen) setOpenMobileSection(null)
+  }, [mobileMenuOpen])
+
+  useEffect(() => {
+    if (!mobileMenuOpen) return
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setMobileMenuOpen(false)
+    }
+    document.addEventListener("keydown", onKey)
+    return () => document.removeEventListener("keydown", onKey)
   }, [mobileMenuOpen])
 
   useEffect(() => {
@@ -133,11 +157,12 @@ export function Header() {
         </div>
 
         {/* Mobile: menu only (language lives inside the slide-out panel) */}
-        <div className="flex items-center lg:hidden">
+        <div className="relative z-[60] flex items-center lg:hidden">
           <button
             type="button"
             className="-m-2 inline-flex items-center justify-center rounded-md p-2 text-foreground lg:-m-2.5 lg:p-2.5"
-            onClick={() => setMobileMenuOpen(true)}
+            aria-expanded={mobileMenuOpen}
+            onClick={() => setMobileMenuOpen((open) => !open)}
           >
             <span className="sr-only">{t("header.openMenu")}</span>
             <Menu className="h-6 w-6" aria-hidden="true" />
@@ -225,112 +250,112 @@ export function Header() {
         </div>
       </nav>
 
-      {/* Mobile menu */}
-      <div
-        className={cn(
-          "lg:hidden",
-          mobileMenuOpen ? "fixed inset-0 z-50" : "hidden"
-        )}
-      >
-        <div
-          className="fixed inset-0 bg-foreground/20 backdrop-blur-sm"
-          onClick={() => setMobileMenuOpen(false)}
-        />
-        <div className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-background px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-border">
-          <div className="flex items-center justify-end">
-            <button
-              type="button"
-              className="-m-2.5 rounded-md p-2.5 text-foreground"
+      {mounted &&
+        mobileMenuOpen &&
+        createPortal(
+          <div className="fixed inset-0 z-[200] lg:hidden">
+            <div
+              className="absolute inset-0 bg-foreground/25 backdrop-blur-sm"
               onClick={() => setMobileMenuOpen(false)}
-            >
-              <span className="sr-only">{t("header.closeMenu")}</span>
-              <X className="h-6 w-6" aria-hidden="true" />
-            </button>
-          </div>
-          <div className="mt-6 border-b border-border pb-6">
-            <p className="mb-2 text-[11px] font-semibold tracking-widest text-muted-foreground uppercase">
-              {t("common.language")}
-            </p>
-            <LanguageToggle
-              variant="header"
-              className="h-10 w-full max-w-none justify-between gap-2 px-3"
+              aria-hidden
             />
-          </div>
-          <div className="mt-8 flow-root">
-            <div className="-my-6 divide-y divide-border">
-              <div className="space-y-1 py-6">
-                {navigation.map((item) =>
-                  item.children ? (
-                    <div key={item.id} className="-mx-3">
-                      <div className="flex w-full items-center gap-1 rounded-lg pr-1">
-                        <Link
-                          href={item.href}
-                          className="min-w-0 flex-1 px-3 py-2 text-left text-base font-medium text-foreground hover:bg-muted hover:font-bold"
-                          onClick={() => setMobileMenuOpen(false)}
-                        >
-                          {item.name}
-                        </Link>
-                        <button
-                          type="button"
-                          className="flex shrink-0 items-center justify-center rounded-md p-2 text-muted-foreground hover:bg-muted hover:text-foreground"
-                          aria-expanded={openMobileSection === item.id}
-                          aria-label={`${item.name} submenu`}
-                          onClick={() =>
-                            setOpenMobileSection((open) =>
-                              open === item.id ? null : item.id
-                            )
-                          }
-                        >
-                          <ChevronDown
-                            className={cn(
-                              "h-4 w-4 transition-transform duration-200",
-                              openMobileSection === item.id && "rotate-180"
-                            )}
-                            aria-hidden
-                          />
-                        </button>
-                      </div>
-                      {openMobileSection === item.id && (
-                        <div className="ml-2 mt-1 space-y-0.5 border-l border-border py-1 pl-3">
-                          {item.children.map((child) => (
-                            <Link
-                              key={child.id}
-                              href={child.href}
-                              className="block rounded-md py-2 text-sm text-muted-foreground hover:bg-muted/80 hover:font-bold hover:text-foreground"
-                              onClick={() => setMobileMenuOpen(false)}
-                            >
-                              {child.name}
-                            </Link>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-                  ) : (
-                    <div key={item.id} className="-mx-3">
-                      <Link
-                        href={item.href}
-                        className="block rounded-lg px-3 py-2 text-base font-medium text-foreground hover:bg-muted hover:font-bold"
-                        onClick={() => setMobileMenuOpen(false)}
-                      >
-                        {item.name}
-                      </Link>
-                    </div>
-                  )
-                )}
-              </div>
-              <div className="py-6">
-                <Link
-                  href="#contact-form"
-                  className="-mx-3 block rounded-full border-2 border-primary/45 bg-primary/[0.07] px-4 py-3 text-center text-base font-semibold text-foreground shadow-sm transition-all hover:scale-[1.02] hover:border-primary hover:bg-primary hover:font-bold hover:text-primary-foreground hover:shadow-md"
+            <div className="absolute inset-y-0 right-0 z-[201] w-full overflow-y-auto bg-background px-6 py-6 shadow-xl sm:max-w-sm sm:ring-1 sm:ring-border">
+              <div className="flex items-center justify-end">
+                <button
+                  type="button"
+                  className="-m-2.5 rounded-md p-2.5 text-foreground"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  {t("nav.contact")}
-                </Link>
+                  <span className="sr-only">{t("header.closeMenu")}</span>
+                  <X className="h-6 w-6" aria-hidden="true" />
+                </button>
+              </div>
+              <div className="mt-6 border-b border-border pb-6">
+                <p className="mb-2 text-[11px] font-semibold tracking-widest text-muted-foreground uppercase">
+                  {t("common.language")}
+                </p>
+                <LanguageToggle
+                  variant="header"
+                  className="h-10 w-full max-w-none justify-between gap-2 px-3"
+                />
+              </div>
+              <div className="mt-8 flow-root">
+                <div className="-my-6 divide-y divide-border">
+                  <div className="space-y-1 py-6">
+                    {navigation.map((item) =>
+                      item.children ? (
+                        <div key={item.id} className="-mx-3">
+                          <div className="flex w-full items-center gap-1 rounded-lg pr-1">
+                            <Link
+                              href={item.href}
+                              className="min-w-0 flex-1 px-3 py-2 text-left text-base font-medium text-foreground hover:bg-muted hover:font-bold"
+                              onClick={() => setMobileMenuOpen(false)}
+                            >
+                              {item.name}
+                            </Link>
+                            <button
+                              type="button"
+                              className="flex shrink-0 items-center justify-center rounded-md p-2 text-muted-foreground hover:bg-muted hover:text-foreground"
+                              aria-expanded={openMobileSection === item.id}
+                              aria-label={`${item.name} submenu`}
+                              onClick={() =>
+                                setOpenMobileSection((open) =>
+                                  open === item.id ? null : item.id
+                                )
+                              }
+                            >
+                              <ChevronDown
+                                className={cn(
+                                  "h-4 w-4 transition-transform duration-200",
+                                  openMobileSection === item.id && "rotate-180"
+                                )}
+                                aria-hidden
+                              />
+                            </button>
+                          </div>
+                          {openMobileSection === item.id && (
+                            <div className="ml-2 mt-1 space-y-0.5 border-l border-border py-1 pl-3">
+                              {item.children.map((child) => (
+                                <Link
+                                  key={child.id}
+                                  href={child.href}
+                                  className="block rounded-md py-2 text-sm text-muted-foreground hover:bg-muted/80 hover:font-bold hover:text-foreground"
+                                  onClick={() => setMobileMenuOpen(false)}
+                                >
+                                  {child.name}
+                                </Link>
+                              ))}
+                            </div>
+                          )}
+                        </div>
+                      ) : (
+                        <div key={item.id} className="-mx-3">
+                          <Link
+                            href={item.href}
+                            className="block rounded-lg px-3 py-2 text-base font-medium text-foreground hover:bg-muted hover:font-bold"
+                            onClick={() => setMobileMenuOpen(false)}
+                          >
+                            {item.name}
+                          </Link>
+                        </div>
+                      )
+                    )}
+                  </div>
+                  <div className="py-6">
+                    <Link
+                      href="#contact-form"
+                      className="-mx-3 block rounded-full border-2 border-primary/45 bg-primary/[0.07] px-4 py-3 text-center text-base font-semibold text-foreground shadow-sm transition-all hover:scale-[1.02] hover:border-primary hover:bg-primary hover:font-bold hover:text-primary-foreground hover:shadow-md"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      {t("nav.contact")}
+                    </Link>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
+          </div>,
+          document.body
+        )}
     </header>
   )
 }

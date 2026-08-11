@@ -162,7 +162,7 @@ export const en = {
     "Share a brief overview. We respond with next steps for an introductory conversation.",
   "contact.whatsappLabel": "WhatsApp:",
   "contact.notice":
-    "Submissions go to our studio inbox. We aim to reply within a few business days.",
+    "Use the form below to reach our studio. We aim to reply within a few business days.",
   "contact.successTitle": "Thank you. Your message was sent.",
   "contact.successBody":
     "We'll reply to the email you provided. Check spam if you don't hear back within a few days.",
