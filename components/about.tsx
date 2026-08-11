@@ -31,7 +31,7 @@ export function About() {
     <section
       ref={sectionRef}
       id="about"
-      className="relative scroll-mt-24 overflow-x-hidden bg-background py-16 md:py-24 lg:scroll-mt-28"
+      className="relative scroll-mt-24 overflow-x-hidden bg-background pb-10 pt-6 md:pb-12 md:pt-10 lg:scroll-mt-28"
     >
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="absolute -right-24 top-16 h-[min(28rem,70vw)] w-[min(28rem,70vw)] rounded-full bg-primary/[0.065] blur-3xl motion-reduce:blur-none" />
@@ -39,68 +39,55 @@ export function About() {
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
       </div>
 
+      <div
+        aria-hidden
+        className={cn(
+          "pointer-events-none absolute inset-x-0 top-0 z-0 flex justify-center",
+          introVisible && "about-image-reveal",
+          !introVisible && "opacity-0"
+        )}
+      >
+        <div className="relative -mt-4 h-[min(24rem,72vw)] w-[min(40rem,96vw)] opacity-[0.085] sm:-mt-6 sm:h-[min(28rem,68vw)] sm:w-[min(46rem,92vw)] md:h-[min(26rem,42vw)] md:w-[min(48rem,72vw)] lg:h-[min(24rem,36vw)]">
+          <Image
+            src="/logo.png"
+            alt=""
+            fill
+            className="object-contain object-top"
+            sizes="(max-width: 768px) 96vw, 780px"
+            loading="lazy"
+          />
+        </div>
+      </div>
+
       <div className="relative z-[1] mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl lg:max-w-4xl">
-          <div
-            className={cn(
-              "mb-8 flex flex-col items-center text-center sm:mb-9",
-              introVisible && "about-image-reveal",
-              !introVisible && "opacity-0"
-            )}
-          >
-            <div className="relative h-[3.5rem] w-full max-w-[min(260px,calc(100vw-2rem))] shrink-0 rounded-lg shadow-xl ring-1 ring-black/[0.06] sm:h-28 sm:max-w-[min(280px,85vw)] md:h-32">
-              <Image
-                src="/logo.png"
-                alt={t("about.logoAlt")}
-                fill
-                className="object-contain object-center"
-                sizes="(max-width: 640px) 85vw, 320px"
-                priority
-              />
-            </div>
+          <div className="flex min-w-0 flex-col justify-center pt-[min(10rem,30vw)] sm:pt-[min(12rem,28vw)] md:pt-[min(7rem,12vw)] lg:pt-[min(8rem,10vw)]">
             <span
               className={cn(
-                "mt-6 text-xs tracking-widest text-muted-foreground uppercase",
+                "text-center text-xs tracking-widest text-muted-foreground uppercase",
                 !introVisible && "opacity-0",
                 introVisible && "animate-fade-in-up"
               )}
             >
               {t("about.kicker")}
             </span>
-          </div>
-
-          <div className="flex min-w-0 flex-col justify-center">
             <h2
               className={cn(
-                "text-center font-serif text-[2rem] leading-tight tracking-tight text-foreground sm:text-4xl md:text-5xl",
+                "mt-4 text-center font-serif text-[2rem] leading-tight tracking-tight text-foreground sm:mt-5 sm:text-4xl md:text-5xl",
                 !introVisible && "opacity-0",
                 introVisible && "animate-fade-in-up animation-delay-200"
               )}
             >
-              <span className="text-balance">
-                {t("about.h2")}
-              </span>
+              <span className="text-balance">{t("about.h2")}</span>
             </h2>
             <div
               className={cn(
-                "mt-5 space-y-4 text-[15px] leading-relaxed text-muted-foreground sm:mt-6 sm:text-base",
+                "mt-5 text-[15px] leading-relaxed text-muted-foreground sm:mt-6 sm:text-base",
                 !introVisible && "opacity-0",
                 introVisible && "animate-fade-in-up animation-delay-400"
               )}
             >
-              <p>
-                {t("about.p1a")}
-                <a
-                  href="https://earthship.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-medium text-primary underline-offset-2 transition-colors hover:text-accent hover:underline"
-                >
-                  {t("about.earthshipsLink")}
-                </a>
-                {t("about.p1b")}
-              </p>
-              <p>{t("about.p2")}</p>
+              <p>{t("about.p1")}</p>
             </div>
             <div
               className={cn(
@@ -132,7 +119,6 @@ export function About() {
             </div>
           </div>
         </div>
-
       </div>
     </section>
   )

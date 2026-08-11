@@ -9,4 +9,11 @@ export const LOCALE_LABELS: Record<Locale, string> = {
   pt: "Português",
 }
 
+export const LOCALE_SHORT_LABELS: Record<Locale, string> = {
+  en: "Eng",
+  fr: "Fra",
+  es: "Esp",
+  pt: "Por",
+}
+
 export const STORAGE_KEY = "ecovida-locale"

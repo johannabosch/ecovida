@@ -1,12 +1,13 @@
 "use client"
 
+import { WHATSAPP_URL } from "@/lib/contact"
 import { useT } from "@/lib/i18n/use-t"
 
 export function WhatsAppFloat() {
   const t = useT()
   return (
     <a
-      href="https://wa.me/18026968230"
+      href={WHATSAPP_URL}
       target="_blank"
       rel="noopener noreferrer"
       className="fixed bottom-5 right-5 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg ring-2 ring-white/30 transition-[transform,box-shadow] hover:scale-105 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 md:bottom-8 md:right-8"

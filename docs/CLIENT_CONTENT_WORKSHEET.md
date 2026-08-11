@@ -41,7 +41,7 @@ Your answer
 Main email (inquiries)
 info@eco-vidadesigns.com
 Phone (optional — if you want it on the site)
-Whatsapp +1-802-696-8230
+Whatsapp +1-802-477-2377
 Public website URL (when live)
 eco-vidadesigns.com
 Instagram URL

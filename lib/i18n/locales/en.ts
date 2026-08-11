@@ -33,154 +33,139 @@ export const en = {
   "hero.line1": "Ecological Integration",
   "hero.line2": "Natural Connections",
   "hero.line3": "Quiet Durability",
-  "hero.line4": "Enhanced Wellness",
+  "hero.line4": "Craft & Climate",
   "hero.line5": "Place-Led Architecture",
   "hero.line6": "Regenerative Living",
-  "hero.line7": "Craft & Climate",
+  "hero.line7": "Enhanced Wellness",
   "hero.eyebrow": "Ecoliving Designs",
   "hero.cta": "Start Your Project",
   "hero.scroll": "Scroll",
   "hero.scrollAria": "Scroll to About section",
   "hero.imageAlt":
-    "Eco-Vida Designs ecological architecture and eco luxury resort and residential work: passive tropical design, post-and-beam EcoArch, site-responsive homes and wellness retreats, plan sets, custom EcoArch, renewable integration, and build-ready delivery. Completed projects in Costa Rica, Hawaii, the United States, and Portugal.",
+    "Eco-Vida Designs ecological architecture: passive tropical design, post-and-beam EcoArch, eco luxury homes and wellness retreats in Costa Rica, Hawaii, the United States, and Portugal.",
 
   "about.kicker": "About Eco-Vida Designs",
   "about.h2": "Architecture in harmony with nature",
   "about.logoAlt":
     "Eco-Vida Designs wordmark. Ecological architecture studio led by Michael Bond-Crowley.",
-  "about.p1a":
-    "Michael Bond-Crowley leads Eco-Vida Designs with a degree in architecture from the University of Costa Rica (UCR) and more than four decades in ecological architecture. The practice rests on a process that is rigorous and creative, grounded in performance and place, informed by the study of traditional building craft across cultures and by apprenticeship with Michael Reynolds (",
-  "about.earthshipsLink": "Earthships",
-  "about.p1b": ").",
-  "about.p2":
-    "We love this work. At Eco-Vida Designs we design luxury homes and wellness retreats that belong to their site: real environmental performance and a calm, lasting beauty in the same package. Our days go into passive tropical design, post-and-beam EcoArch, licensed plan sets, and bespoke projects from first conversation through build-ready drawings. Completed projects span Costa Rica, Hawaii, the United States, and Portugal.",
-  "about.learnMore": "Learn More About Our Approach",
+  "about.p1":
+    "Led by Michael Bond-Crowley, Eco-Vida Designs brings four decades of ecological architecture to luxury homes and wellness retreats—passive tropical design, post-and-beam EcoArch, and build-ready plan sets across Costa Rica, Hawaii, the U.S., and Portugal.",
+  "about.learnMore": "Our approach",
 
   "recognition.kicker": "Recognition",
   "recognition.h2": "Professional accolades",
   "recognition.s1":
-    "Chosen as Best Eco Designs on Earth by the Global Wellness Institute and Summit (2020). Global Wellness Institute. Global Wellness Institute / Global Wellness Summit",
+    "Best Eco Designs on Earth — Global Wellness Institute & Summit (2020).",
   "recognition.s2":
-    "Designs have been featured by Shelter Publications, with projects on television and in Better Homes and Gardens magazine. The firm's work and research have appeared in case studies and publications, including Shelter Publications' architectural journals in California.",
+    "Featured by Shelter Publications, television, and Better Homes and Gardens.",
   "recognition.s3p1":
-    "Eco-Vida Designs has completed projects for long-term private clients and notable commissions, including residences associated with the Marlon Brando estate and a recording studio project for Sheryl Crow. Built work spans Costa Rica, Hawaii, the United States, and Portugal.",
-  "recognition.s3p2a": "Eco-Vida was project manager and lead for Marlon Brando's island, now ",
-  "recognition.s3p2b":
-    ". Clients include Sheryl Crow's recording studio, A-list clients in LA, Telluride, Hawaii, South Africa, Vermont, and beyond.",
+    "Notable commissions include Marlon Brando estate residences and Sheryl Crow's recording studio. Built work in Costa Rica, Hawaii, the U.S., and Portugal.",
+  "recognition.s3p2a": "Project lead for Marlon Brando's island, now ",
+  "recognition.s3p2b": ".",
   "recognition.slideAria": "Accolade slides",
 
   "principles.kicker": "Our Values",
   "principles.h2": "Ecology, Climate, Strength, Value",
   "principles.intro":
-    "Ecological integration reads site ecosystems and building materials as one system, not as separate checklists. Climate-responsive design then delivers passive comfort in the tropics, structural thinking carries storms and seismic loads for the long haul, and disciplined costing keeps your drawings, scope, and build aligned with budgets you can actually stand behind.",
+    "Site ecology, passive comfort, resilient structure, and disciplined scope—designed as one system.",
   "principles.ecological.title": "Ecological Integration",
   "principles.ecological.body":
-    "Every design begins with a deep study of the site's ecosystems, ensuring our structures enhance rather than diminish the natural environment. We specify timber, stone, and finishes for durability, low embodied impact, and an honest connection to place, often locally sourced, compatible with our post-and-beam systems, and left to age gracefully in the climate where they belong.",
+    "Every project begins with the site's ecosystems—materials and form that enhance, not diminish, the land.",
   "principles.climate.title": "Climate Responsiveness",
-  "principles.climate.p1":
-    "In the tropics, daily comfort is a climate problem first. We lean on passive design and natural ventilation so your building needs less energy to stay pleasant, while air keeps moving in a way that feels natural indoors.",
-  "principles.climate.p2":
-    "Those passive moves pair with integrated renewable systems (solar, water harvesting, storage, and other site-fit solutions) so architecture and infrastructure read as one climate-smart whole. Landscape design is permaculture-informed: water-wise planting, food production, and outdoor rooms that reinforce comfort, ecology, and connection to place.",
+  "principles.climate.body":
+    "Passive ventilation and renewable systems—solar, water, storage—unified with permaculture-informed landscape.",
   "principles.durability.title": "Durability",
-  "principles.durability.p1":
-    "Comfort is only half the story. The same projects are engineered for durability in earthquakes and hurricane-force winds. Helical-pile foundations anchor the work, and our forms borrow from long study with masters of traditional architecture worldwide, so structure and site read as one system.",
-  "principles.durability.p2":
-    "Wind matters at the roofline and walls. We shape the envelope so hurricane-force flow can move around the building more easily than it can on blunt square corners, where turbulence and damaging eddies tend to form. When storms test your Eco-Vida home or ecoresort, that attention to both foundation and silhouette is what turns theory into confidence.",
+  "principles.durability.body":
+    "Helical-pile foundations and wind-aware envelopes—engineered for storms, seismic loads, and long horizons.",
   "principles.cost.title": "Cost efficiency",
   "principles.cost.body":
-    "Eco-Vida Designs outshines the rest: our unique, proprietary designs are extremely cost-efficient thanks to post-and-pier and post-and-beam construction, the latest helical-pile technology, and time-tested methods such as pre-treating wood with linseed oil and compatible products. Every design includes a cut list so your builder can fabricate all parts before construction, enabling fast assembly, durability, and lower labor and material costs. For example, in Costa Rica today the average turnkey build cost is often over $200 per square foot; Eco-Vida designs typically deliver turnkey around $80 per square foot, creating savings you can invest in landscaping and amenities for off-grid living.",
+    "Post-and-beam systems, cut lists, and prefabrication—faster builds, lower labor, lasting value.",
 
-  "services.kicker": "Eco-Vida Design Services",
-  "services.h2": "Our Services",
+  "services.kicker": "Services",
+  "services.h2": "What we offer",
   "services.intro":
-    "Five ways we support your project, from ready-to-build plans and full scale sets to project management and integrated off-grid systems.",
-  "services.i1.title": "Ready To Build",
+    "From licensed plan sets to full project delivery and off-grid integration.",
+  "services.i1.title": "Ready to build",
   "services.i1.body":
-    "We offer ready-to-build plan sets based on previous projects that we can apply directly to your specific property using Google Earth vectoring. We can create custom variations to suit your style and populate the plans with landscape and eco off-grid elements as well.",
-  "services.i2.title": "Full Scale Plan Sets",
+    "Plan sets adapted to your site via geolocation—custom variations, landscape, and off-grid elements.",
+  "services.i2.title": "Full plan sets",
   "services.i2.body":
-    "Custom full-scale eco architecture plans and elevation sets to bring your Eco-Vida dream to life. We use geolocation architecture to unify your designs with your land while ensuring every detail is right and your vision is enhanced and wellness-aligned.",
-  "services.i3.title": "Plan Sets, Consultations and Wellness Landscapes",
+    "Custom eco architecture plans and elevations—wellness-aligned, site-unified, build-ready.",
+  "services.i3.title": "Plans & landscapes",
   "services.i3.body":
-    "Eco-Vida Designs offers full-scale EcoArch plan sets and consultations with enhanced wellness property design and landscaping to elevate your entire project so that your eco-living is in harmony and deeply connected to your property.",
-  "services.i4.title": "Project Design and Mgmt",
+    "EcoArch plan sets with wellness property design and landscaping for harmony with place.",
+  "services.i4.title": "Design & management",
   "services.i4.body":
-    "With nearly four decades in design-build contracting and project management, Eco-Vida offers complete project consultation and management to ensure efficiency, clarity, and the peace of mind that only comes with wisdom in the eco build field.",
-  "services.i5.title": "Project Design, Mgmt and Off-Grid Integrated Systems",
+    "Four decades of design-build and project management—from concept through completion.",
+  "services.i5.title": "Off-grid integration",
   "services.i5.body":
-    "Eco-Vida offers all of our professional EcoArchitecture and management services plus complete integrated off-grid system designs, including solar, greywater return systems to grow your herbs, flowers, and veggies indoors, while ensuring your off-grid life is efficient, low-impact, and regenerative. Our off-grid consultations support a low-impact footprint and full autonomy in your Eco-Vida home or ecoresort.",
+    "Solar, greywater, and regenerative systems—full autonomy for homes and ecoresorts.",
 
   "ourWork.kicker": "Portfolio",
   "ourWork.h2": "Our Work",
-  "ourWork.intro":
-    "Signature residences and retreats. Open a project for the full story and image sets.",
+  "ourWork.intro": "Signature residences and retreats.",
   "ourWork.imageAltSuffix":
-    "Eco-Vida Designs portfolio photography. Ecological architecture and eco luxury design.",
+    "Eco-Vida Designs portfolio. Ecological architecture and eco luxury design.",
   "ourWork.viewProject": "View project",
   "ourWork.dialog.concepts": "Design concepts",
   "ourWork.dialog.addImages":
     "Add images to this project's folder in public/images to show them here.",
 
   "studio.kicker": "Studio gallery",
-  "studio.h2": "Design directions & inspiration",
-  "studio.body":
-    "Study views, grounds, and spaces that show the range of what we can shape with you.",
+  "studio.h2": "Design directions",
+  "studio.body": "Study views and spaces that show what we can shape with you.",
   "studio.imageAlt":
-    "Eco-Vida Designs studio gallery: ecoresort landscapes, sacred geometry yoga shalas, tropical pods and pavilions, passive climate design studies, and eco hospitality inspiration from work in Costa Rica, Hawaii, the United States, and Portugal.",
+    "Eco-Vida Designs studio gallery: ecoresort landscapes, yoga shalas, tropical pavilions, passive climate design in Costa Rica, Hawaii, the United States, and Portugal.",
 
   "planDesigns.kicker": "Plan designs",
-  "planDesigns.h2": "Concepts & design studies",
-  "planDesigns.p1":
-    "In-house licensed plan sets. Talk with us for scope, customization, and delivery.",
-  "planDesigns.p2":
-    "We align the package to your site, codes, and build path, then release drawings through the studio.",
+  "planDesigns.h2": "Concepts & studies",
+  "planDesigns.p1": "Licensed in-house plan sets. Scope and customization on inquiry.",
+  "planDesigns.p2": "Aligned to your site, codes, and build path.",
   "planDesigns.alt1":
-    "Eco-Vida Designs plan preview: modern off-grid post-and-beam series, Hale Hawaii EcoHome rhythm, structural clarity, tropical passive layout, off-grid planning, calm eco residential living. Licensed EcoArch plan set.",
+    "Eco-Vida Designs plan preview: off-grid post-and-beam series, Hale Hawaii EcoHome, tropical passive layout, licensed EcoArch plan set.",
   "planDesigns.alt2":
-    "Eco-Vida Designs plan preview: quad eco dwelling with interconnected hexagonal modules, shared infrastructure, four-unit eco-ag layout, landscape-linked eco housing. Licensed study drawings.",
+    "Eco-Vida Designs plan preview: quad eco dwelling, hexagonal modules, four-unit eco-ag layout, licensed study drawings.",
   "planDesigns.alt3":
-    "Eco-Vida Designs plan preview: single eco home floor plans, efficient footprint, clear circulation, adaptable rooms, one-structure eco residence. Licensed plan package.",
+    "Eco-Vida Designs plan preview: single eco home, efficient footprint, adaptable rooms, licensed plan package.",
   "planDesigns.inquire": "Inquire about plan sets",
   "planDesigns.getDesign": "Get this design",
-  "planDesigns.previewNote": "Limited preview. Full drawings provided after inquiry.",
+  "planDesigns.previewNote": "Limited preview. Full drawings after inquiry.",
   "planDesigns.previewStamp": "Preview · not for reproduction",
   "planDesigns.devHint":
     "Add plan1.jpg, plan2.jpg, and plan3.jpg to public/images/plans/.",
 
-  "consultation.kicker": "Begin Your Journey",
+  "consultation.kicker": "Begin",
   "consultation.h2": "Get in touch",
   "consultation.body":
-    "Whether you're in the early stages of dreaming or ready to break ground, a consultation is the ideal first step. We meet in person and remotely, with completed projects across Costa Rica, Hawaii, the United States, and Portugal.",
-  "consultation.b1": "Design-build path from first sketch to completion",
-  "consultation.b2": "Timelines and budgets you can plan around",
-  "consultation.b3": "Your goals, reviewed with an architect",
-  "consultation.b4":
-    "Regional know-how: Costa Rica, Hawaii, United States, Portugal",
-  "consultation.b5": "Ecology that protects value over time",
-  "consultation.cta": "Schedule Your Consultation",
+    "Early vision or ready to build—we meet in person and remotely worldwide.",
+  "consultation.b1": "Design-build from sketch to completion",
+  "consultation.b2": "Clear timelines and budgets",
+  "consultation.b3": "Regional expertise: Costa Rica, Hawaii, U.S., Portugal",
+  "consultation.b4": "",
+  "consultation.b5": "",
+  "consultation.cta": "Schedule consultation",
 
-  "resources.kicker": "Learn More",
-  "resources.h2": "Resources",
-  "resources.intro": "Helpful information to guide your architectural journey",
-  "resources.faq.title": "Frequently Asked Questions",
-  "resources.faq.desc":
-    "Find answers to common questions about our design process, timelines, and what to expect when working with Eco-Vida Designs.",
+  "resources.kicker": "Resources",
+  "resources.h2": "Learn more",
+  "resources.intro": "",
+  "resources.faq.title": "FAQ",
+  "resources.faq.desc": "Process, timelines, and what to expect.",
   "resources.faq.link": "Browse FAQ",
-  "resources.articles.title": "Articles & Insights",
+  "resources.articles.title": "Articles",
   "resources.articles.desc":
-    "Explore our thoughts on ecological architecture, sustainable living, and design for tropical and temperate climates worldwide.",
-  "resources.articles.link": "Read Articles",
+    "Ecological architecture and sustainable living worldwide.",
+  "resources.articles.link": "Read articles",
 
   "contact.kicker": "Contact",
   "contact.h2": "Schedule your consultation",
   "contact.intro":
-    "Share a brief overview of your project. We review every inquiry and respond with next steps for an introductory conversation.",
+    "Share a brief overview. We respond with next steps for an introductory conversation.",
   "contact.whatsappLabel": "WhatsApp:",
   "contact.notice":
-    "Submissions are sent securely to our studio inbox. We aim to reply within a few business days.",
+    "Submissions go to our studio inbox. We aim to reply within a few business days.",
   "contact.successTitle": "Thank you. Your message was sent.",
   "contact.successBody":
-    "We'll get back to you at the email you provided. If you don't hear from us within a few days, please check your spam folder.",
+    "We'll reply to the email you provided. Check spam if you don't hear back within a few days.",
   "contact.sendAnother": "Send another message",
 
   "form.fullName": "Full name",
@@ -200,16 +185,16 @@ export const en = {
   "form.placeholder.phone": "+506 …",
   "form.placeholder.location": "e.g. Guanacaste, Costa Rica",
   "form.placeholder.message":
-    "Scope, timeline, and any priorities you wish to discuss.",
+    "Scope, timeline, and priorities.",
   "form.submit": "Send inquiry",
   "form.sending": "Sending…",
 
   "inquiry.title": "Schedule a consultation",
   "inquiry.desc":
-    "Tell us a bit about you and your project. Everything stays on this page; nothing opens in a new tab.",
+    "Tell us about you and your project.",
   "inquiry.successTitle": "Message sent",
   "inquiry.successBody":
-    "Thank you. We'll review your inquiry and reply to the email you provided.",
+    "Thank you. We'll review your inquiry and reply by email.",
   "inquiry.close": "Close",
   "inquiry.cancel": "Cancel",
   "inquiry.send": "Send message",
@@ -217,10 +202,10 @@ export const en = {
   "inquiry.placeholder.location":
     "e.g. Hawaii, Costa Rica, Portugal, U.S.",
   "inquiry.placeholder.message":
-    "Goals, style, timeline, budget range, and anything else we should know.",
+    "Goals, style, timeline, budget range.",
 
   "footer.tagline":
-    "Spatial Enhanced Wellness Living. Completed work in Costa Rica, Hawaii, the United States, and Portugal. Based in Costa Rica and Hawaii.",
+    "Enhanced wellness living. Costa Rica, Hawaii, the United States, Portugal.",
   "footer.col.navigation": "Navigation",
   "footer.col.portfolio": "Portfolio",
   "footer.col.contact": "Contact",
@@ -240,12 +225,12 @@ export const en = {
   "footer.link.resorts": "Resorts",
   "footer.link.bookings": "Bookings",
   "footer.link.generalInfo": "General Info",
-  "footer.whatsappLine": "WhatsApp +1 802 696 8230",
+  "footer.whatsappLine": "WhatsApp +1 802 477 2377",
   "footer.privacy": "Privacy Policy",
   "footer.terms": "Terms of Service",
   "footer.rights": "Eco-Vida Designs. All rights reserved.",
 
-  "whatsapp.aria": "Chat on WhatsApp at +1 802 696 8230",
+  "whatsapp.aria": "Chat on WhatsApp at +1 802 477 2377",
 } as const
 
 export type EnKeys = keyof typeof en

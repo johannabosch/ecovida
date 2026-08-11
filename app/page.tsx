@@ -1,3 +1,4 @@
+import { SeoContent } from "@/components/seo-content"
 import { Header } from "@/components/header"
 import { Hero } from "@/components/hero"
 import { About } from "@/components/about"
@@ -26,6 +27,7 @@ export default async function Home() {
 
   return (
     <main className="min-h-screen">
+      <SeoContent />
       <Header />
       <Hero />
       <About />

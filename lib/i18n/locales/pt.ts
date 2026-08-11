@@ -33,10 +33,10 @@ export const pt: Partial<Record<EnKeys, string>> = {
   "hero.line1": "Integração ecológica",
   "hero.line2": "Ligações naturais",
   "hero.line3": "Durabilidade serena",
-  "hero.line4": "Bem-estar reforçado",
+  "hero.line4": "Ofício e clima",
   "hero.line5": "Arquitetura guiada pelo lugar",
   "hero.line6": "Vida regenerativa",
-  "hero.line7": "Ofício e clima",
+  "hero.line7": "Bem-estar reforçado",
   "hero.eyebrow": "Ecoliving Designs",
   "hero.cta": "Comece o seu projecto",
   "hero.scroll": "Deslizar",
@@ -48,13 +48,9 @@ export const pt: Partial<Record<EnKeys, string>> = {
   "about.h2": "Arquitectura em harmonia com a natureza",
   "about.logoAlt":
     "Logótipo Eco-Vida Designs, atelier de arquitectura ecológica liderado por Michael Bond-Crowley.",
-  "about.p1a":
-    "Michael Bond-Crowley lidera a Eco-Vida Designs com licenciatura em arquitectura pela Universidade da Costa Rica (UCR) e mais de quatro décadas em arquitectura ecológica. O atelier assenta num processo rigoroso e criativo, assente no desempenho e no lugar, informado pelo estudo de ofícios de construção tradicionais em várias culturas e pela formação com Michael Reynolds (",
-  "about.earthshipsLink": "Earthships",
-  "about.p1b": ").",
-  "about.p2":
-    "Adoramos este ofício. Na Eco-Vida Designs desenhamos casas e retiros de luxo que pertencem de verdade ao terreno: desempenho ambiental a sério e uma beleza calma que se mantém. O nosso quotidiano é desenho passivo tropical, EcoArch poste e viga, pacotes de plantas licenciados e encomendas à medida desde a primeira conversa até à entrega pronta para construir. A obra realizada abrange a Costa Rica, o Havai, os Estados Unidos e Portugal.",
-  "about.learnMore": "Saiba mais sobre a nossa abordagem",
+  "about.p1":
+    "Liderada por Michael Bond-Crowley, a Eco-Vida Designs traz quatro décadas de arquitectura ecológica para casas e retiros de luxo — desenho passivo tropical, EcoArch poste e viga, e plantas prontas a construir na Costa Rica, Havai, EUA e Portugal.",
+  "about.learnMore": "A nossa abordagem",
 
   "recognition.kicker": "Reconhecimento",
   "recognition.h2": "Distinções profissionais",
@@ -78,15 +74,11 @@ export const pt: Partial<Record<EnKeys, string>> = {
   "principles.ecological.body":
     "Cada projecto começa com um estudo profundo dos ecossistemas do sítio, para que as nossas estruturas fortaleçam o ambiente natural.",
   "principles.climate.title": "Resposta climática",
-  "principles.climate.p1":
-    "Nos trópicos, o conforto diário é primeiro um problema climático. Apostamos em desenho passivo e ventilação natural para reduzir energia e manter ar a circular naturalmente no interior.",
-  "principles.climate.p2":
-    "Esta abordagem passiva combina-se com sistemas renováveis integrados (solar, captação de água, armazenamento e outras soluções adequadas ao sítio) para que arquitectura e infra-estrutura funcionem como um todo coerente face ao clima. Em redor do edifício, a paisagem segue princípios de permacultura: plantação poupadora de água, produção de alimentos e espaços exteriores que reforçam conforto, ecologia e uma ligação viva ao lugar.",
+  "principles.climate.body":
+    "Ventilação passiva e renováveis — solar, água, armazenamento — com paisagem permacultural.",
   "principles.durability.title": "Durabilidade",
-  "principles.durability.p1":
-    "O conforto é só parte da história. Os mesmos projectos são calculados para sismos e ventos de furacão. Fundações em micropilotes ancoram a obra.",
-  "principles.durability.p2":
-    "O vento importa no remate e nas paredes. Moldamos o invólucro para o fluxo contornar o edifício melhor do que em cantos abruptos, onde se formam turbulências prejudiciais.",
+  "principles.durability.body":
+    "Fundações em micropilotes e envolvente para vento — calculada para tempestades e sismos.",
   "principles.cost.title": "Eficiência de custos",
   "principles.cost.body":
     "A Eco-Vida Designs destaca-se: desenhos únicos e muito eficientes graças a estruturas poste-estaca e poste-viga, micropilotes e métodos comprovados. Cada desenho inclui lista de corte para pré-fabricar antes da obra, acelerando montagem e reduzindo custos.",
@@ -240,10 +232,10 @@ export const pt: Partial<Record<EnKeys, string>> = {
   "footer.link.resorts": "Resorts",
   "footer.link.bookings": "Reservas",
   "footer.link.generalInfo": "Informações gerais",
-  "footer.whatsappLine": "WhatsApp +1 802 696 8230",
+  "footer.whatsappLine": "WhatsApp +1 802 477 2377",
   "footer.privacy": "Política de privacidade",
   "footer.terms": "Termos de serviço",
   "footer.rights": "Eco-Vida Designs. Todos os direitos reservados.",
 
-  "whatsapp.aria": "Conversar no WhatsApp no +1 802 696 8230",
+  "whatsapp.aria": "Conversar no WhatsApp no +1 802 477 2377",
 }

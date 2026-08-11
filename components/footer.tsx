@@ -1,8 +1,9 @@
 "use client"
 
 import Link from "next/link"
-import { SiteLogo } from "@/components/site-logo"
+import { WHATSAPP_URL } from "@/lib/contact"
 import { LanguageToggle } from "@/components/i18n/language-toggle"
+import { SiteLogo } from "@/components/site-logo"
 import { useT } from "@/lib/i18n/use-t"
 import { Instagram, Linkedin, Facebook } from "lucide-react"
 
@@ -42,17 +43,17 @@ export function Footer() {
   ]
 
   return (
-    <footer className="border-t border-border bg-background">
-      <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8 lg:py-20">
-        <div className="grid gap-12 lg:grid-cols-4">
+    <footer className="border-t border-border/50 bg-secondary/20">
+      <div className="mx-auto max-w-7xl px-6 py-10 lg:px-8 lg:py-12">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
           <div className="lg:col-span-1">
             <Link href="#hero" className="inline-block">
               <SiteLogo className="h-9 w-auto md:h-10" />
             </Link>
-            <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+            <p className="mt-3 text-[13px] leading-relaxed text-muted-foreground">
               {t("footer.tagline")}
             </p>
-            <div className="mt-6 flex gap-4">
+            <div className="mt-4 flex gap-3">
               {social.map((item) => (
                 <a
                   key={item.name}
@@ -70,7 +71,7 @@ export function Footer() {
             <h3 className="text-xs font-medium tracking-widest text-foreground uppercase">
               {t("footer.col.navigation")}
             </h3>
-            <ul className="mt-4 space-y-3">
+            <ul className="mt-3 space-y-2">
               {mainLinks.map((item) => (
                 <li key={item.href + item.name}>
                   <Link
@@ -88,7 +89,7 @@ export function Footer() {
             <h3 className="text-xs font-medium tracking-widest text-foreground uppercase">
               {t("footer.col.portfolio")}
             </h3>
-            <ul className="mt-4 space-y-3">
+            <ul className="mt-3 space-y-2">
               {portfolioLinks.map((item) => (
                 <li key={item.href + item.name}>
                   <Link
@@ -106,7 +107,7 @@ export function Footer() {
             <h3 className="text-xs font-medium tracking-widest text-foreground uppercase">
               {t("footer.col.contact")}
             </h3>
-            <ul className="mt-4 space-y-3">
+            <ul className="mt-3 space-y-2">
               {contactLinks.map((item) => (
                 <li key={item.href + item.name}>
                   <Link
@@ -129,7 +130,7 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="https://wa.me/18026968230"
+                  href={WHATSAPP_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-sm text-muted-foreground transition-colors hover:text-foreground"
@@ -141,7 +142,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 border-t border-border pt-8">
+        <div className="mt-8 border-t border-border/60 pt-6">
           <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
             <div className="flex flex-col items-center gap-3 md:flex-row md:items-center md:gap-6">
               <p className="text-xs text-muted-foreground">

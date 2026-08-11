@@ -1,14 +1,22 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useMemo, useRef, useState } from "react"
 import Image from "next/image"
 import { cn } from "@/lib/utils"
 import { useT } from "@/lib/i18n/use-t"
+
+const DESKTOP_MAX_ROWS = 3
 
 export function StudioGallery({ images }: { images: string[] }) {
   const t = useT()
   const [isVisible, setIsVisible] = useState(false)
   const sectionRef = useRef<HTMLElement>(null)
+
+  /** Enough columns on desktop so all images fit in at most 3 rows. */
+  const desktopColumns = useMemo(
+    () => Math.max(3, Math.ceil(images.length / DESKTOP_MAX_ROWS)),
+    [images.length]
+  )
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -65,7 +73,14 @@ export function StudioGallery({ images }: { images: string[] }) {
             {t("studio.body")}
           </p>
         </div>
-        <div className="mt-10 grid grid-cols-2 gap-2.5 sm:gap-3 md:grid-cols-3 lg:grid-cols-4">
+        <div
+          className="mt-10 grid grid-cols-2 gap-2.5 sm:gap-3 md:gap-4 md:[grid-template-columns:repeat(var(--studio-cols),minmax(0,1fr))]"
+          style={
+            {
+              "--studio-cols": desktopColumns,
+            } as React.CSSProperties
+          }
+        >
           {images.map((src, imgIndex) => {
             const delayIndex = i++
             return (
@@ -79,13 +94,18 @@ export function StudioGallery({ images }: { images: string[] }) {
                   animationDelay: isVisible ? `${Math.min(delayIndex * 60, 480)}ms` : "0ms",
                 }}
               >
-                <Image
-                  src={src}
-                  alt={`${t("studio.imageAlt")} (${imgIndex + 1})`}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                />
+                {isVisible ? (
+                  <Image
+                    src={src}
+                    alt={`${t("studio.imageAlt")} (${imgIndex + 1})`}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 50vw, 33vw"
+                    loading="lazy"
+                  />
+                ) : (
+                  <div className="absolute inset-0 bg-muted" aria-hidden />
+                )}
               </div>
             )
           })}

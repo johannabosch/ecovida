@@ -26,35 +26,25 @@ export function Principles() {
         id: "ecological",
         icon: Leaf,
         title: t("principles.ecological.title"),
-        description: <p>{t("principles.ecological.body")}</p>,
+        description: t("principles.ecological.body"),
       },
       {
         id: "climate",
         icon: Sun,
         title: t("principles.climate.title"),
-        description: (
-          <>
-            <p className="mb-3 last:mb-0">{t("principles.climate.p1")}</p>
-            <p>{t("principles.climate.p2")}</p>
-          </>
-        ),
+        description: t("principles.climate.body"),
       },
       {
         id: "durability",
         icon: Shield,
         title: t("principles.durability.title"),
-        description: (
-          <>
-            <p className="mb-3 last:mb-0">{t("principles.durability.p1")}</p>
-            <p>{t("principles.durability.p2")}</p>
-          </>
-        ),
+        description: t("principles.durability.body"),
       },
       {
         id: "cost",
         icon: PiggyBank,
         title: t("principles.cost.title"),
-        description: <p>{t("principles.cost.body")}</p>,
+        description: t("principles.cost.body"),
       },
     ]
   }, [t])
@@ -84,10 +74,10 @@ export function Principles() {
     <section
       ref={sectionRef}
       id="philosophy"
-      className="scroll-mt-24 bg-secondary py-24 md:py-32 lg:scroll-mt-28"
+      className="scroll-mt-24 bg-secondary py-14 md:py-16 lg:scroll-mt-28"
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl text-center">
+        <div className="max-w-2xl md:mx-auto md:text-center lg:mx-0 lg:text-left">
           <span
             className={cn(
               "text-xs tracking-widest text-muted-foreground uppercase opacity-0",
@@ -98,7 +88,7 @@ export function Principles() {
           </span>
           <h2
             className={cn(
-              "mt-4 font-serif text-4xl tracking-tight text-foreground opacity-0 md:text-5xl",
+              "mt-2 font-serif text-2xl tracking-tight text-foreground opacity-0 md:text-3xl",
               isVisible && "animate-fade-in-up animation-delay-200"
             )}
           >
@@ -106,7 +96,7 @@ export function Principles() {
           </h2>
           <p
             className={cn(
-              "mt-4 text-muted-foreground opacity-0",
+              "mt-2 text-sm leading-relaxed text-muted-foreground opacity-0",
               isVisible && "animate-fade-in-up animation-delay-400"
             )}
           >
@@ -114,26 +104,28 @@ export function Principles() {
           </p>
         </div>
 
-        <div className="mx-auto mt-16 grid max-w-7xl grid-cols-1 gap-6 md:grid-cols-2 md:gap-7 lg:gap-8 xl:gap-10">
+        <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:mt-9 lg:grid-cols-4 lg:gap-4">
           {philosophyBlocks.map((block, index) => (
             <div
               key={block.id}
               className={cn(
-                "group relative flex flex-col rounded-2xl border border-border/80 bg-background p-8 opacity-0 shadow-sm backdrop-blur-sm transition-[box-shadow,border-color] hover:border-primary/25 hover:shadow-md md:p-9",
+                "group flex gap-3.5 rounded-xl border border-border/60 bg-background/90 p-4 opacity-0 shadow-sm transition-[box-shadow,border-color] hover:border-primary/20 hover:shadow-md md:flex-col md:gap-0 md:p-5",
                 isVisible && "animate-fade-in-up"
               )}
               style={{
-                animationDelay: isVisible ? `${(index + 2) * 80}ms` : "0ms",
+                animationDelay: isVisible ? `${(index + 2) * 60}ms` : "0ms",
               }}
             >
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-primary/20 bg-primary/5 text-primary transition-colors group-hover:border-primary/40 group-hover:bg-primary/10">
-                <block.icon className="h-6 w-6" strokeWidth={1.5} />
+              <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-primary/15 bg-primary/5 text-primary md:mb-3">
+                <block.icon className="h-4 w-4" strokeWidth={1.5} />
               </div>
-              <h3 className="mt-6 font-serif text-xl leading-snug text-foreground md:text-[1.35rem]">
-                {block.title}
-              </h3>
-              <div className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground md:text-[15px]">
-                {block.description}
+              <div className="min-w-0 flex-1">
+                <h3 className="font-serif text-base leading-snug text-foreground md:text-[1.05rem]">
+                  {block.title}
+                </h3>
+                <p className="mt-1.5 text-[13px] leading-relaxed text-muted-foreground">
+                  {block.description}
+                </p>
               </div>
             </div>
           ))}

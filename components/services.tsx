@@ -68,10 +68,10 @@ export function Services() {
     <section
       ref={sectionRef}
       id="services"
-      className="scroll-mt-24 bg-muted py-24 md:py-32 lg:scroll-mt-28"
+      className="scroll-mt-24 border-t border-border/50 bg-secondary/40 py-12 md:py-14 lg:scroll-mt-28"
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl text-center">
+        <div className="max-w-2xl md:mx-auto md:text-center lg:mx-0 lg:text-left">
           <span
             className={cn(
               "text-xs tracking-widest text-muted-foreground uppercase opacity-0",
@@ -82,7 +82,7 @@ export function Services() {
           </span>
           <h2
             className={cn(
-              "mt-4 font-serif text-4xl tracking-tight text-foreground opacity-0 md:text-5xl",
+              "mt-2 font-serif text-2xl tracking-tight text-foreground opacity-0 md:text-3xl",
               isVisible && "animate-fade-in-up animation-delay-200"
             )}
           >
@@ -90,7 +90,7 @@ export function Services() {
           </h2>
           <p
             className={cn(
-              "mt-4 text-muted-foreground opacity-0",
+              "mt-2 text-sm leading-relaxed text-muted-foreground opacity-0",
               isVisible && "animate-fade-in-up animation-delay-400"
             )}
           >
@@ -98,27 +98,29 @@ export function Services() {
           </p>
         </div>
 
-        <div className="mx-auto mt-12 grid max-w-5xl gap-6 md:grid-cols-2 md:gap-6 lg:mt-14">
+        <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3 lg:gap-4 xl:grid-cols-5">
           {serviceItems.map((service, index) => (
             <div
               key={service.id}
               className={cn(
-                "group border border-border/80 bg-background p-6 opacity-0 transition-shadow hover:shadow-md md:p-7",
+                "group flex gap-3 rounded-xl border border-border/60 bg-background/90 p-4 opacity-0 transition-shadow hover:shadow-md lg:flex-col lg:gap-0",
                 isVisible && "animate-fade-in-up"
               )}
               style={{
-                animationDelay: isVisible ? `${(index + 1) * 80}ms` : "0ms",
+                animationDelay: isVisible ? `${(index + 1) * 60}ms` : "0ms",
               }}
             >
-              <div className="flex h-10 w-10 items-center justify-center border border-border text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
-                <service.icon className="h-4 w-4" strokeWidth={1.5} />
+              <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md border border-border/80 text-primary transition-colors group-hover:border-primary/30 group-hover:bg-primary/5 lg:mb-2.5">
+                <service.icon className="h-3.5 w-3.5" strokeWidth={1.5} />
               </div>
-              <h3 className="mt-4 font-serif text-base leading-snug text-foreground text-balance md:text-lg">
-                {service.title}
-              </h3>
-              <p className="mt-2.5 text-[13px] leading-relaxed text-muted-foreground md:text-sm">
-                {service.description}
-              </p>
+              <div className="min-w-0 flex-1">
+                <h3 className="font-serif text-sm leading-snug text-foreground text-balance lg:text-[0.95rem]">
+                  {service.title}
+                </h3>
+                <p className="mt-1 text-[12px] leading-relaxed text-muted-foreground lg:mt-1.5 lg:text-[13px]">
+                  {service.description}
+                </p>
+              </div>
             </div>
           ))}
         </div>

@@ -10,6 +10,8 @@ export type PlanDesignCard = {
   images: string[]
   /** Plan drawings read best as letterboxed, centered renders use cover */
   imageObjectClassName: string
+  /** Optional clockwise CSS rotation (degrees) for preview display */
+  imageRotationDeg?: number
 }
 
 const PLAN_CARD_IMAGES = [
@@ -25,14 +27,20 @@ const PLAN_IMAGE_FOLDERS = [
   "SingleEcoHome",
 ] as const
 
-const PLAN_DESIGN_META: Omit<PlanDesignCard, "images" | "imageObjectClassName">[] =
-  [
-    {
-      id: "PostBeamSeries",
-      title: "Modern off-grid post and beam series",
-      description:
-        "Hale Hawaii EcoHome rhythm: clear post-and-beam structure, off-grid-ready planning, calm tropical living.",
-    },
+const PLAN_DESIGN_META: (Omit<
+  PlanDesignCard,
+  "images" | "imageObjectClassName"
+> & {
+  imageObjectClassName?: string
+  imageRotationDeg?: number
+})[] = [
+  {
+    id: "PostBeamSeries",
+    title: "Modern off-grid post and beam series",
+    description:
+      "Hale Hawaii EcoHome rhythm: clear post-and-beam structure, off-grid-ready planning, calm tropical living.",
+    imageRotationDeg: 90,
+  },
     {
       id: "QuadEcoDwelling",
       title: "Quad eco dwelling: interconnected hexagons",
@@ -62,7 +70,9 @@ export async function getPlanDesignCards(): Promise<PlanDesignCard[]> {
       return {
         ...meta,
         images,
-        imageObjectClassName: PLAN_PREVIEW_OBJECT_CLASS,
+        imageObjectClassName:
+          meta.imageObjectClassName ?? PLAN_PREVIEW_OBJECT_CLASS,
+        imageRotationDeg: meta.imageRotationDeg,
       }
     })
   )

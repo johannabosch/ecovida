@@ -59,7 +59,6 @@ function FeaturedProjectDialogBody({ project }: { project: FeaturedProject }) {
                       fill
                       className="object-cover object-center"
                       sizes="(max-width: 672px) 100vw, 672px"
-                      priority={src === project.images[0]}
                     />
                   </div>
                 </CarouselItem>
@@ -148,27 +147,29 @@ export function OurWork({ projects }: { projects: FeaturedProject[] }) {
     project,
     onOpen,
     scrollId,
-    sizesHint = "(max-width: 1024px) 100vw, 896px",
+    sizesHint = "(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 560px",
+    isFirst = false,
   }: {
     project: FeaturedProject
     onOpen: () => void
     scrollId?: "residences" | "resorts"
     sizesHint?: string
+    isFirst?: boolean
   }) {
     const index = animIndex++
     return (
       <div
         id={scrollId}
         className={cn(
-          scrollId && "scroll-mt-24 lg:scroll-mt-28"
+          scrollId && "scroll-mt-24 lg:scroll-mt-28",
+          !isFirst && "border-t border-border/60 pt-8 md:border-t-0 md:pt-0"
         )}
       >
         <button
           type="button"
           onClick={onOpen}
           className={cn(
-            "group relative w-full cursor-pointer overflow-hidden rounded-2xl border border-transparent text-left opacity-0 shadow-lg outline-none ring-1 ring-black/[0.05] transition-[border-color,box-shadow] hover:shadow-xl focus-visible:border-ring focus-visible:ring-2 focus-visible:ring-ring/50",
-            "aspect-[4/3] md:aspect-[5/4]",
+            "group w-full cursor-pointer text-left opacity-0 outline-none focus-visible:ring-2 focus-visible:ring-ring/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background",
             isVisible && "animate-fade-in-up"
           )}
           style={{
@@ -176,34 +177,56 @@ export function OurWork({ projects }: { projects: FeaturedProject[] }) {
           }}
           aria-label={`View details: ${project.title}`}
         >
-          {project.images[0] ? (
-            <Image
-              src={project.images[0]}
-              alt={`${project.title}. ${project.tagline}. ${t("ourWork.imageAltSuffix")}`}
-              fill
-              className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
-              sizes={sizesHint}
-            />
-          ) : (
-            <div
-              className="absolute inset-0 bg-muted"
-              aria-hidden
-            />
-          )}
-          <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/20 to-transparent" />
-          <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-8">
-            <span className="text-xs tracking-widest text-primary-foreground/80 uppercase">
+          <div
+            className={cn(
+              "relative w-full overflow-hidden rounded-2xl border border-transparent shadow-lg ring-1 ring-black/[0.05] transition-[border-color,box-shadow] group-hover:shadow-xl focus-visible:border-ring",
+              "aspect-[4/3] md:aspect-[5/4]"
+            )}
+          >
+            {project.images[0] && isVisible ? (
+              <Image
+                src={project.images[0]}
+                alt={`${project.title}. ${project.tagline}. ${t("ourWork.imageAltSuffix")}`}
+                fill
+                className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                sizes={sizesHint}
+              />
+            ) : (
+              <div className="absolute inset-0 bg-muted" aria-hidden />
+            )}
+            <div className="absolute inset-0 bg-gradient-to-t from-foreground/75 via-foreground/15 to-transparent md:from-foreground/90 md:via-foreground/40 md:to-transparent" />
+            {/* Mobile: view project only on photo; text below card */}
+            <div className="absolute inset-0 flex flex-col justify-end p-5 md:hidden">
+              <span className="text-xs font-medium tracking-wide text-primary-foreground/90 uppercase">
+                {t("ourWork.viewProject")}
+              </span>
+            </div>
+            {/* Desktop: all copy anchored to bottom of photo */}
+            <div className="absolute inset-0 hidden flex-col justify-end p-6 lg:p-7 md:flex">
+              <span className="text-[10px] tracking-widest text-primary-foreground/85 uppercase lg:text-xs">
+                {project.category}
+              </span>
+              <h3 className="mt-1 font-serif text-xl leading-snug text-primary-foreground lg:text-2xl">
+                {project.title}
+              </h3>
+              <p className="mt-1.5 line-clamp-2 text-xs leading-relaxed text-primary-foreground/90 lg:text-sm">
+                {project.tagline}
+              </p>
+              <span className="mt-3 text-[10px] font-medium tracking-wide text-primary-foreground/75 uppercase lg:text-xs">
+                {t("ourWork.viewProject")}
+              </span>
+            </div>
+          </div>
+          <div className="mt-4 px-0.5 md:hidden">
+            <span className="text-xs tracking-widest text-muted-foreground uppercase">
               {project.category}
             </span>
-            <h3 className="mt-1 font-serif text-2xl text-primary-foreground md:text-3xl">
+            <h3 className="mt-1 font-serif text-2xl text-foreground">
               {project.title}
             </h3>
-            <p className="mt-2 max-w-md text-sm leading-relaxed text-primary-foreground/85">
+            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
               {project.tagline}
             </p>
-            <span className="mt-4 text-xs font-medium tracking-wide text-primary-foreground/70 uppercase">
-              {t("ourWork.viewProject")}
-            </span>
           </div>
         </button>
       </div>
@@ -214,7 +237,7 @@ export function OurWork({ projects }: { projects: FeaturedProject[] }) {
     <section
       ref={sectionRef}
       id="work"
-      className="scroll-mt-24 bg-background py-24 md:py-32 lg:scroll-mt-28"
+      className="scroll-mt-24 bg-background pb-20 pt-10 md:-mt-6 md:pb-28 md:pt-10 lg:scroll-mt-28"
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div>
@@ -244,12 +267,13 @@ export function OurWork({ projects }: { projects: FeaturedProject[] }) {
           </p>
         </div>
 
-        <div className="mt-12 flex flex-col gap-6 md:gap-8 lg:mx-auto lg:max-w-4xl">
-          {projects.map((project) => (
+        <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-6 lg:gap-8">
+          {projects.map((project, projectIndex) => (
             <FeaturedTile
               key={project.id}
               project={project}
               scrollId={project.scrollId}
+              isFirst={projectIndex === 0}
               onOpen={() => setModalProject(project)}
             />
           ))}

@@ -21,18 +21,21 @@ const PLAN_IMAGE_ALTS: readonly TranslationKey[] = [
 
 function PlanDesignImageStack({
   images,
-  planTitle,
   imageAlt,
   imageObjectClassName,
+  imageRotationDeg = 0,
+  loadImages = true,
 }: {
   images: string[]
-  planTitle: string
   imageAlt: string
   imageObjectClassName: string
+  imageRotationDeg?: number
+  loadImages?: boolean
 }) {
   const t = useT()
   const [failed, setFailed] = useState(() => images.length === 0)
   const [activeIndex, setActiveIndex] = useState(0)
+  const [renderedIndices, setRenderedIndices] = useState<number[]>([0])
   const [pauseRotation, setPauseRotation] = useState(false)
 
   const blockContext = useCallback((e: React.SyntheticEvent) => {
@@ -55,70 +58,94 @@ function PlanDesignImageStack({
     return () => window.clearInterval(id)
   }, [images.length, failed, pauseRotation])
 
+  useEffect(() => {
+    setRenderedIndices((current) =>
+      current.includes(activeIndex) ? current : [...current, activeIndex]
+    )
+
+    const timer = window.setTimeout(() => {
+      setRenderedIndices([activeIndex])
+    }, PLAN_PREVIEW_FADE_MS)
+
+    return () => window.clearTimeout(timer)
+  }, [activeIndex])
+
+  useEffect(() => {
+    if (images.length <= 1) return
+    const next = (activeIndex + 1) % images.length
+    const link = document.createElement("link")
+    link.rel = "preload"
+    link.as = "image"
+    link.href = images[next]
+    document.head.appendChild(link)
+    return () => {
+      document.head.removeChild(link)
+    }
+  }, [activeIndex, images])
+
   return (
     <div
-      className="relative w-full select-none"
+      className="relative w-full select-none border-b border-border/50 bg-muted/50"
       onContextMenu={blockContext}
       onDragStart={blockContext}
       style={{ WebkitTouchCallout: "none" } as React.CSSProperties}
     >
       <div
-        className="group relative aspect-[4/3] w-full max-h-[14rem] overflow-hidden rounded-xl border border-border/50 bg-muted/80 shadow-[0_20px_56px_-16px_rgba(0,0,0,0.22),0_8px_24px_-12px_rgba(0,0,0,0.12)] ring-1 ring-black/[0.06] sm:max-h-[16rem] md:aspect-[5/4] md:max-h-[17rem] lg:max-h-[19rem]"
+        className="relative aspect-[4/3] w-full overflow-hidden"
         aria-hidden={failed}
       >
-        {!failed && images.length > 0 ? (
-          <div className="absolute inset-0 overflow-hidden rounded-[inherit]">
-            <div className="relative h-full min-h-0 w-full transition-transform duration-500 ease-out will-change-transform md:group-hover:scale-[1.02]">
-              {images.map((src, i) => (
-                <Image
-                  key={src}
-                  src={src}
-                  alt={imageAlt}
-                  fill
-                  className={cn(
-                    "absolute inset-0 contrast-[0.96]",
-                    imageObjectClassName,
-                    "transition-opacity ease-in-out",
-                    activeIndex === i ? "opacity-100" : "opacity-0"
-                  )}
-                  style={{
-                    transitionDuration: `${PLAN_PREVIEW_FADE_MS}ms`,
-                    zIndex: activeIndex === i ? 2 : 1,
-                  }}
-                  sizes="(max-width: 768px) 90vw, 288px"
-                  draggable={false}
-                  priority={i === 0}
-                  onError={() => setFailed(true)}
-                  onContextMenu={blockContext}
-                />
-              ))}
-            </div>
+        {!failed && images.length > 0 && loadImages ? (
+          <div className="absolute inset-0 flex items-center justify-center overflow-hidden">
+            {renderedIndices.map((i) => (
+              <div
+                key={images[i]}
+                className={cn(
+                  "absolute inset-0 flex items-center justify-center transition-opacity ease-in-out",
+                  activeIndex === i ? "opacity-100" : "opacity-0"
+                )}
+                style={{
+                  transitionDuration: `${PLAN_PREVIEW_FADE_MS}ms`,
+                  zIndex: activeIndex === i ? 2 : 1,
+                }}
+              >
+                <div
+                  className="relative h-[135%] w-[135%] max-w-none"
+                  style={
+                    imageRotationDeg
+                      ? { transform: `rotate(${imageRotationDeg}deg)` }
+                      : undefined
+                  }
+                >
+                  <Image
+                    src={images[i]}
+                    alt={imageAlt}
+                    fill
+                    className={cn(
+                      "contrast-[0.96]",
+                      imageObjectClassName
+                    )}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 380px"
+                    draggable={false}
+                    onError={() => setFailed(true)}
+                    onContextMenu={blockContext}
+                  />
+                </div>
+              </div>
+            ))}
           </div>
         ) : (
-          <div className="flex h-full min-h-[12rem] items-center justify-center p-4 text-center text-xs leading-snug text-muted-foreground">
+          <div className="flex h-full min-h-[10rem] items-center justify-center p-4 text-center text-xs leading-snug text-muted-foreground">
             {t("planDesigns.devHint")}
           </div>
         )}
-        <div className="pointer-events-none absolute inset-0 z-[3] bg-gradient-to-t from-background/25 to-transparent" />
-        <p className="pointer-events-none absolute bottom-2.5 left-1/2 z-[4] max-w-[92%] -translate-x-1/2 rounded-full bg-background/85 px-3 py-1 text-center text-[9px] font-semibold uppercase tracking-[0.14em] text-muted-foreground backdrop-blur-sm transition-opacity duration-200 md:group-hover:opacity-0">
+        <div className="pointer-events-none absolute inset-0 z-[3] bg-gradient-to-t from-foreground/10 to-transparent" />
+        <p className="pointer-events-none absolute bottom-2 left-2 z-[4] rounded-md bg-background/90 px-2 py-0.5 text-[9px] font-semibold uppercase tracking-[0.12em] text-muted-foreground backdrop-blur-sm">
           {t("planDesigns.previewStamp")}
         </p>
-        {!failed && images.length > 0 && (
-          <div className="pointer-events-none absolute inset-0 z-[5] hidden items-center justify-center bg-foreground/40 opacity-0 backdrop-blur-[2px] transition-opacity duration-300 md:flex md:group-hover:opacity-100 md:group-focus-within:opacity-100">
-            <Button
-              variant="secondary"
-              size="default"
-              className="pointer-events-auto rounded-full px-6 text-xs font-semibold tracking-wide shadow-lg"
-              asChild
-            >
-              <Link
-                href="#contact-form"
-                aria-label={`${t("planDesigns.getDesign")}: ${planTitle}`}
-              >
-                {t("planDesigns.getDesign")}
-              </Link>
-            </Button>
-          </div>
+        {images.length > 1 && !failed && (
+          <p className="pointer-events-none absolute bottom-2 right-2 z-[4] rounded-md bg-background/90 px-2 py-0.5 text-[9px] tabular-nums text-muted-foreground backdrop-blur-sm">
+            {activeIndex + 1}/{images.length}
+          </p>
         )}
       </div>
     </div>
@@ -152,19 +179,15 @@ export function PlanDesignsSection({ plans }: { plans: PlanDesignCard[] }) {
     <section
       ref={sectionRef}
       id="conceptual"
-      className="relative scroll-mt-24 overflow-hidden border-t border-border/60 bg-gradient-to-b from-muted/25 via-background to-background py-20 md:py-28 lg:scroll-mt-28"
+      className="relative scroll-mt-24 overflow-hidden border-t border-border/60 bg-muted/20 py-16 md:py-20 lg:scroll-mt-28"
     >
-      <div
-        className="pointer-events-none absolute inset-x-0 top-0 h-[min(42vh,24rem)] bg-gradient-to-b from-primary/[0.07] to-transparent"
-        aria-hidden
-      />
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto max-w-3xl text-center">
+        <div className="mx-auto max-w-2xl text-center">
           <span
             className={cn(
-              "text-[11px] font-semibold tracking-[0.2em] text-muted-foreground uppercase opacity-0",
+              "text-xs tracking-widest text-muted-foreground uppercase opacity-0",
               isVisible && "animate-fade-in-up"
             )}
           >
@@ -172,59 +195,64 @@ export function PlanDesignsSection({ plans }: { plans: PlanDesignCard[] }) {
           </span>
           <h2
             className={cn(
-              "mt-3 font-serif text-[1.75rem] font-normal tracking-[-0.02em] text-foreground opacity-0 sm:text-3xl md:text-[2.125rem] md:leading-[1.15]",
+              "mt-3 font-serif text-3xl tracking-tight text-foreground opacity-0 md:text-4xl",
               isVisible && "animate-fade-in-up animation-delay-200"
             )}
           >
             <span className="text-balance">{t("planDesigns.h2")}</span>
           </h2>
+          <p
+            className={cn(
+              "mt-3 text-sm leading-relaxed text-muted-foreground opacity-0 md:text-[15px]",
+              isVisible && "animate-fade-in-up animation-delay-400"
+            )}
+          >
+            {t("planDesigns.p1")}{" "}
+            <span className="text-muted-foreground/80">{t("planDesigns.p2")}</span>
+          </p>
         </div>
 
-        <ul className="mt-10 flex list-none flex-col gap-7 md:mt-12 md:gap-8 lg:mx-auto lg:max-w-5xl">
+        <ul className="mt-10 grid list-none grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3 lg:mt-12">
           {plans.map((plan, planIndex) => {
-            const index = planIndex
             const altKey = PLAN_IMAGE_ALTS[planIndex]
             return (
               <li
                 key={plan.id}
                 className={cn(
-                  "rounded-2xl border border-border/50 bg-card/30 p-5 opacity-0 shadow-sm ring-1 ring-black/[0.03] transition-[box-shadow,border-color] hover:border-border hover:shadow-md sm:p-6 md:p-8",
+                  "flex flex-col overflow-hidden rounded-2xl border border-border/60 bg-background opacity-0 shadow-sm ring-1 ring-black/[0.03] transition-[box-shadow,border-color] hover:border-border hover:shadow-md",
                   isVisible && "animate-fade-in-up"
                 )}
                 style={{
-                  animationDelay: isVisible ? `${(index + 1) * 90}ms` : "0ms",
+                  animationDelay: isVisible ? `${(planIndex + 1) * 80}ms` : "0ms",
                 }}
               >
-                <div className="flex flex-col gap-7 md:flex-row md:items-center md:gap-12 lg:gap-14">
-                  <div className="mx-auto w-full max-w-[min(100%,22rem)] shrink-0 sm:max-w-[24rem] md:mx-0 md:w-[min(100%,26rem)]">
-                    <PlanDesignImageStack
-                      images={plan.images}
-                      planTitle={plan.title}
-                      imageAlt={t(altKey)}
-                      imageObjectClassName={plan.imageObjectClassName}
-                    />
-                    <p className="mt-3 text-center text-[10px] leading-snug text-muted-foreground/90 md:text-left">
-                      {t("planDesigns.previewNote")}
-                    </p>
-                    <div className="mt-4 md:hidden">
-                      <Button
-                        variant="default"
-                        className="h-10 w-full rounded-full text-xs font-semibold tracking-wide sm:w-auto"
-                        asChild
-                      >
-                        <Link href="#contact-form">{t("planDesigns.getDesign")}</Link>
-                      </Button>
-                    </div>
-                  </div>
-
-                  <div className="min-w-0 flex-1 text-center md:pt-0 md:text-left">
-                    <h3 className="font-serif text-xl leading-snug tracking-tight text-foreground sm:text-2xl md:text-[1.4rem] lg:text-[1.65rem]">
-                      {plan.title}
-                    </h3>
-                    <p className="mt-3 text-sm leading-relaxed text-muted-foreground md:mt-4 md:text-[15px] md:leading-relaxed">
-                      {plan.description}
-                    </p>
-                  </div>
+                <PlanDesignImageStack
+                  images={plan.images}
+                  imageAlt={t(altKey)}
+                  imageObjectClassName={plan.imageObjectClassName}
+                  imageRotationDeg={plan.imageRotationDeg}
+                  loadImages={isVisible}
+                />
+                <div className="flex flex-1 flex-col p-5 md:p-6">
+                  <span className="text-[10px] font-semibold tracking-[0.2em] text-primary/70 uppercase">
+                    {String(planIndex + 1).padStart(2, "0")}
+                  </span>
+                  <h3 className="mt-2 font-serif text-lg leading-snug tracking-tight text-foreground md:text-xl">
+                    {plan.title}
+                  </h3>
+                  <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
+                    {plan.description}
+                  </p>
+                  <p className="mt-3 text-[10px] leading-snug text-muted-foreground/75">
+                    {t("planDesigns.previewNote")}
+                  </p>
+                  <Button
+                    variant="outline"
+                    className="mt-4 h-9 w-full rounded-full text-xs font-semibold tracking-wide"
+                    asChild
+                  >
+                    <Link href="#contact-form">{t("planDesigns.getDesign")}</Link>
+                  </Button>
                 </div>
               </li>
             )
@@ -233,22 +261,19 @@ export function PlanDesignsSection({ plans }: { plans: PlanDesignCard[] }) {
 
         <div
           className={cn(
-            "mx-auto mt-12 max-w-2xl text-center opacity-0 md:mt-14",
+            "mx-auto mt-10 max-w-xl opacity-0 md:mt-12",
             isVisible && "animate-fade-in-up"
           )}
-          style={{ animationDelay: isVisible ? "200ms" : "0ms" }}
+          style={{ animationDelay: isVisible ? "320ms" : "0ms" }}
         >
-          <p className="text-[15px] leading-relaxed text-muted-foreground md:text-base">
-            {t("planDesigns.p1")}
-          </p>
-          <p className="mt-4 text-sm leading-relaxed text-muted-foreground/90">
-            {t("planDesigns.p2")}
-          </p>
-          <div className="mt-8 flex flex-col items-center gap-3">
+          <div className="flex flex-col items-center gap-4 rounded-2xl border border-border/60 bg-background/80 px-6 py-7 text-center shadow-sm md:flex-row md:justify-between md:gap-6 md:px-8 md:text-left">
+            <p className="text-sm leading-relaxed text-muted-foreground">
+              {t("planDesigns.p1")}
+            </p>
             <Button
               variant="default"
               size="lg"
-              className="h-11 rounded-full px-8 text-xs font-semibold tracking-[0.14em] uppercase shadow-md transition-[transform,box-shadow] hover:shadow-lg active:scale-[0.98]"
+              className="h-10 shrink-0 rounded-full px-7 text-xs font-semibold tracking-[0.12em] uppercase"
               asChild
             >
               <Link href="#book-consultation">{t("planDesigns.inquire")}</Link>

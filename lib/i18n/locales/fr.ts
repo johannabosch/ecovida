@@ -34,10 +34,10 @@ export const fr: Partial<Record<EnKeys, string>> = {
   "hero.line1": "Intégration écologique",
   "hero.line2": "Connexions naturelles",
   "hero.line3": "Durabilité paisible",
-  "hero.line4": "Bien-être renforcé",
+  "hero.line4": "Savoir-faire & climat",
   "hero.line5": "Architecture guidée par le lieu",
   "hero.line6": "Habitat régénératif",
-  "hero.line7": "Savoir-faire & climat",
+  "hero.line7": "Bien-être renforcé",
   "hero.eyebrow": "Ecoliving Designs",
   "hero.cta": "Lancer votre projet",
   "hero.scroll": "Défiler",
@@ -49,13 +49,9 @@ export const fr: Partial<Record<EnKeys, string>> = {
   "about.h2": "Architecture en harmonie avec la nature",
   "about.logoAlt":
     "Logo Eco-Vida Designs, cabinet d’architecture écologique dirigé par Michael Bond-Crowley.",
-  "about.p1a":
-    "Michael Bond-Crowley dirige Eco-Vida Designs avec un diplôme d’architecture de l’Université du Costa Rica (UCR) et plus de quatre décennies d’architecture écologique. Le cabinet repose sur un processus rigoureux et créatif, ancré dans la performance et le lieu, nourri par l’étude des savoir-faire constructifs traditionnels à travers les cultures et par son apprentissage auprès de Michael Reynolds (",
-  "about.earthshipsLink": "Earthships",
-  "about.p1b": ").",
-  "about.p2":
-    "Nous aimons ce métier. Chez Eco-Vida Designs, nous concevons des maisons et des retraites de luxe qui tiennent vraiment à leur terrain : une performance environnementale sérieuse et une beauté calme qui dure. Nos journées vont au design passif tropical, à la charpente post-and-beam, aux ensembles de plans agréés et aux mandats sur mesure du premier échange à la remise prête à construire. Les réalisations couvrent le Costa Rica, Hawaï, les États-Unis et le Portugal.",
-  "about.learnMore": "En savoir plus sur notre approche",
+  "about.p1":
+    "Dirigé par Michael Bond-Crowley, Eco-Vida Designs réunit plus de quatre décennies d’architecture écologique au service de maisons et retraites de luxe — design passif tropical, EcoArch post-and-beam et plans prêts à construire au Costa Rica, à Hawaï, aux États-Unis et au Portugal.",
+  "about.learnMore": "Notre approche",
 
   "recognition.kicker": "Reconnaissance",
   "recognition.h2": "Distinctions professionnelles",
@@ -79,15 +75,11 @@ export const fr: Partial<Record<EnKeys, string>> = {
   "principles.ecological.body":
     "Chaque conception commence par une étude approfondie des écosystèmes du site, pour que nos ouvrages renforcent plutôt qu’ils ne diminuent l’environnement naturel.",
   "principles.climate.title": "Réponse au climat",
-  "principles.climate.p1":
-    "Sous les tropiques, le confort quotidien est d’abord un problème climatique. Nous misons sur le design passif et la ventilation naturelle pour réduire les besoins énergétiques tout en gardant un air qui circule naturellement à l’intérieur.",
-  "principles.climate.p2":
-    "Ces approches passives s’associent à des systèmes renouvelables intégrés (solaire, récupération d’eau, stockage et autres solutions adaptées au site) pour que l’architecture et l’infrastructure forment un ensemble cohérent face au climat. Autour du bâtiment, le paysage s’inspire de la permaculture : plantations économes en eau, production alimentaire et espaces extérieurs qui renforcent le confort, l’écologie et le lien vivant au lieu.",
+  "principles.climate.body":
+    "Ventilation passive et renouvelables — solaire, eau, stockage — unis à un paysage permaculture.",
   "principles.durability.title": "Durabilité",
-  "principles.durability.p1":
-    "Le confort n’est qu’une partie du récit. Les mêmes projets sont calculés pour résister aux séismes et aux vents de cyclone. Les fondations sur pieux hélicoïdaux ancrent l’ouvrage.",
-  "principles.durability.p2":
-    "Le vent compte au faîtage et aux murs. Nous sculptons l’enveloppe pour que les vents violents contournent le bâtiment plus facilement que sur des angles vifs, où se forment turbulence et tourbillons dommageables.",
+  "principles.durability.body":
+    "Fondations sur pieux hélicoïdaux et enveloppe vent — calculée pour tempêtes et séismes.",
   "principles.cost.title": "Efficacité des coûts",
   "principles.cost.body":
     "Eco-Vida Designs se distingue : nos conceptions uniques sont très efficaces en coût grâce aux structures poteaux-pieux et poteaux-poutres, aux pieux hélicoïdaux récents et à des méthodes éprouvées. Chaque conception inclut une liste de coupe pour préfabriquer avant le chantier, accélérant le montage et réduisant coûts de main-d’œuvre et matériaux.",
@@ -242,10 +234,10 @@ export const fr: Partial<Record<EnKeys, string>> = {
   "footer.link.resorts": "Resorts",
   "footer.link.bookings": "Réservations",
   "footer.link.generalInfo": "Informations générales",
-  "footer.whatsappLine": "WhatsApp +1 802 696 8230",
+  "footer.whatsappLine": "WhatsApp +1 802 477 2377",
   "footer.privacy": "Politique de confidentialité",
   "footer.terms": "Conditions d’utilisation",
   "footer.rights": "Eco-Vida Designs. Tous droits réservés.",
 
-  "whatsapp.aria": "Discuter sur WhatsApp au +1 802 696 8230",
+  "whatsapp.aria": "Discuter sur WhatsApp au +1 802 477 2377",
 }

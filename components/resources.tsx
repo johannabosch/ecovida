@@ -56,10 +56,10 @@ export function Resources() {
     <section
       ref={sectionRef}
       id="resources"
-      className="scroll-mt-24 bg-background py-24 md:py-32 lg:scroll-mt-28"
+      className="scroll-mt-24 border-t border-border/50 bg-secondary/20 py-12 md:py-14 lg:scroll-mt-28"
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl text-center">
+        <div className="max-w-2xl md:mx-auto md:text-center lg:mx-0 lg:text-left">
           <span
             className={cn(
               "text-xs tracking-widest text-muted-foreground uppercase opacity-0",
@@ -70,53 +70,47 @@ export function Resources() {
           </span>
           <h2
             className={cn(
-              "mt-4 font-serif text-4xl tracking-tight text-foreground opacity-0 md:text-5xl",
+              "mt-2 font-serif text-2xl tracking-tight text-foreground opacity-0 md:text-3xl",
               isVisible && "animate-fade-in-up animation-delay-200"
             )}
           >
             <span className="text-balance">{t("resources.h2")}</span>
           </h2>
-          <p
-            className={cn(
-              "mt-4 text-muted-foreground opacity-0",
-              isVisible && "animate-fade-in-up animation-delay-400"
-            )}
-          >
-            {t("resources.intro")}
-          </p>
         </div>
 
-        <div className="mx-auto mt-12 grid max-w-4xl gap-8 md:grid-cols-2">
+        <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:mt-8">
           {resources.map((resource, index) => (
             <div
               key={resource.id}
               id={resource.id}
               className="scroll-mt-24 lg:scroll-mt-28"
             >
-            <Link
-              href={resource.href}
-              className={cn(
-                "group flex h-full flex-col border border-border p-8 opacity-0 transition-all hover:border-primary hover:shadow-lg",
-                isVisible && "animate-fade-in-up"
-              )}
-              style={{
-                animationDelay: isVisible ? `${(index + 2) * 100}ms` : "0ms",
-              }}
-            >
-              <div className="flex h-12 w-12 items-center justify-center text-primary">
-                <resource.icon className="h-6 w-6" strokeWidth={1.5} />
-              </div>
-              <h3 className="mt-6 font-serif text-xl text-foreground">
-                {resource.title}
-              </h3>
-              <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
-                {resource.description}
-              </p>
-              <div className="mt-6 flex items-center text-sm font-medium text-primary transition-colors group-hover:text-accent">
-                {resource.linkText}
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </div>
-            </Link>
+              <Link
+                href={resource.href}
+                className={cn(
+                  "group flex h-full gap-3.5 rounded-xl border border-border/60 bg-background/90 p-4 opacity-0 transition-all hover:border-primary/25 hover:shadow-md md:p-5",
+                  isVisible && "animate-fade-in-up"
+                )}
+                style={{
+                  animationDelay: isVisible ? `${(index + 2) * 60}ms` : "0ms",
+                }}
+              >
+                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-primary/15 bg-primary/5 text-primary">
+                  <resource.icon className="h-4 w-4" strokeWidth={1.5} />
+                </div>
+                <div className="min-w-0 flex-1">
+                  <h3 className="font-serif text-base text-foreground">
+                    {resource.title}
+                  </h3>
+                  <p className="mt-1 text-[13px] leading-relaxed text-muted-foreground">
+                    {resource.description}
+                  </p>
+                  <div className="mt-2.5 flex items-center text-xs font-medium text-primary transition-colors group-hover:text-accent">
+                    {resource.linkText}
+                    <ArrowRight className="ml-1.5 h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+                  </div>
+                </div>
+              </Link>
             </div>
           ))}
         </div>

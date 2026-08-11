@@ -116,18 +116,18 @@ export function Header() {
         contentRevealed &&
           !isVisible &&
           "lg:pointer-events-none lg:opacity-0",
-        "border-b border-border/80 bg-[#f8f3ed] shadow-sm"
+        "border-b border-border/45 bg-[#f8f3ed]/72 shadow-sm backdrop-blur-md transition-[background-color,border-color,backdrop-filter] duration-300 lg:hover:border-border/60 lg:hover:bg-[#f8f3ed] lg:hover:backdrop-blur-none"
       )}
     >
-      <nav className="mx-auto flex max-w-7xl items-center justify-between gap-2 px-4 py-3 lg:gap-3 lg:px-8 lg:py-5">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between gap-2 px-4 py-3 lg:gap-3 lg:px-8 lg:py-2">
         <div className="flex min-w-0 shrink-0 lg:flex-1">
           <Link
             href="#hero"
-            className="-m-1 flex items-center p-1 lg:-m-1.5 lg:p-1.5"
+            className="-m-1 flex items-center p-1 lg:-m-1 lg:p-0.5"
           >
             <SiteLogo
               priority
-              className="h-11 max-h-[2.85rem] w-auto max-w-[min(14rem,56vw)] object-contain object-left sm:h-12 sm:max-h-none sm:max-w-none md:h-16 lg:h-20"
+              className="h-11 max-h-[2.85rem] w-auto max-w-[min(14rem,56vw)] object-contain object-left sm:h-12 sm:max-h-none sm:max-w-none md:h-14 lg:h-11"
             />
           </Link>
         </div>
@@ -144,55 +144,54 @@ export function Header() {
           </button>
         </div>
 
-        {/* Desktop navigation: submenus open on click, not hover */}
+        {/* Desktop navigation: submenus open on hover */}
         <div
           ref={desktopNavRef}
           className="hidden lg:flex lg:gap-x-10"
         >
           {navigation.map((item) =>
             item.children ? (
-              <div key={item.id} className="relative flex items-center gap-0.5">
-                <Link
-                  href={item.href}
-                  className={cn(
-                    "text-sm font-medium tracking-wide text-foreground/90 transition-colors hover:font-bold hover:text-foreground",
-                    openDropdown === item.id && "text-foreground"
-                  )}
-                  onClick={() => setOpenDropdown(null)}
-                >
-                  {item.name}
-                </Link>
-                <button
-                  type="button"
-                  className={cn(
-                    "flex items-center rounded p-0.5 text-foreground/90 transition-colors hover:text-foreground",
-                    openDropdown === item.id && "text-foreground"
-                  )}
+              <div
+                key={item.id}
+                className="relative"
+                onMouseEnter={() => setOpenDropdown(item.id)}
+                onMouseLeave={() => setOpenDropdown(null)}
+              >
+                <div
+                  className="flex items-center gap-0.5"
                   aria-expanded={openDropdown === item.id}
                   aria-haspopup="true"
-                  aria-label={`${item.name} submenu`}
-                  onClick={() =>
-                    setOpenDropdown((open) =>
-                      open === item.id ? null : item.id
-                    )
-                  }
                 >
+                  <Link
+                    href={item.href}
+                    className={cn(
+                      "text-sm font-medium tracking-wide text-foreground/90 transition-colors hover:font-bold hover:text-foreground",
+                      openDropdown === item.id && "font-bold text-foreground"
+                    )}
+                    onClick={() => setOpenDropdown(null)}
+                  >
+                    {item.name}
+                  </Link>
                   <ChevronDown
                     className={cn(
-                      "h-3 w-3 shrink-0 transition-transform duration-200",
-                      openDropdown === item.id && "rotate-180"
+                      "h-3 w-3 shrink-0 text-foreground/90 transition-transform duration-200",
+                      openDropdown === item.id && "rotate-180 text-foreground"
                     )}
                     aria-hidden
                   />
-                </button>
+                </div>
 
                 {openDropdown === item.id && (
                   <div className="absolute left-0 top-full z-50 pt-2">
-                    <div className="w-56 rounded-sm border border-border bg-background py-2 shadow-lg">
+                    <div
+                      className="w-56 rounded-sm border border-border bg-background py-2 shadow-lg"
+                      role="menu"
+                    >
                       {item.children.map((child) => (
                         <Link
                           key={child.id}
                           href={child.href}
+                          role="menuitem"
                           className="block px-4 py-2 text-sm text-foreground transition-colors hover:bg-muted hover:font-bold"
                           onClick={() => setOpenDropdown(null)}
                         >
@@ -219,7 +218,7 @@ export function Header() {
           <LanguageToggle variant="header" />
           <Link
             href="#contact-form"
-            className="inline-flex shrink-0 items-center justify-center rounded-full border-2 border-primary/45 bg-primary/[0.07] px-5 py-2.5 text-sm font-semibold tracking-wide text-foreground shadow-sm transition-all duration-200 hover:scale-[1.03] hover:border-primary hover:bg-primary hover:font-bold hover:text-primary-foreground hover:shadow-md"
+            className="inline-flex shrink-0 items-center justify-center rounded-full border-2 border-primary/45 bg-primary/[0.07] px-5 py-2.5 text-sm font-semibold tracking-wide text-foreground shadow-sm transition-all duration-200 hover:scale-[1.03] hover:border-primary hover:bg-primary hover:font-bold hover:text-primary-foreground hover:shadow-md lg:px-4 lg:py-1.5 lg:text-xs"
           >
             {t("nav.contact")}
           </Link>

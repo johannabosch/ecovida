@@ -3,7 +3,7 @@
 import { Check, ChevronDown, Languages } from "lucide-react"
 import { useLanguage } from "@/components/i18n/language-provider"
 import { useT } from "@/lib/i18n/use-t"
-import { LOCALES, LOCALE_LABELS, type Locale } from "@/lib/i18n/types"
+import { LOCALES, LOCALE_LABELS, LOCALE_SHORT_LABELS, type Locale } from "@/lib/i18n/types"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import {
@@ -33,18 +33,29 @@ export function LanguageToggle({
           variant={variant === "header" ? "outline" : "ghost"}
           size="sm"
           className={cn(
-            "h-9 gap-1.5 border-border/90 px-2.5 text-xs font-medium shadow-sm",
+            variant === "header" &&
+              "h-7 gap-1 border-border/90 px-2 text-[11px] font-medium shadow-sm",
             variant === "footer" &&
-              "h-auto border-border/70 bg-muted/40 py-1.5 text-muted-foreground hover:bg-muted hover:text-foreground",
+              "h-auto gap-1.5 border-border/70 bg-muted/40 px-2.5 py-1.5 text-xs text-muted-foreground hover:bg-muted hover:text-foreground",
             className
           )}
           aria-label={t("common.language")}
         >
-          <Languages className="h-3.5 w-3.5 shrink-0 opacity-80" aria-hidden />
-          <span className="max-w-[10rem] truncate sm:max-w-none">
-            {LOCALE_LABELS[locale]}
-          </span>
-          <ChevronDown className="h-3 w-3 shrink-0 opacity-70" aria-hidden />
+          {variant === "header" ? (
+            <>
+              <Languages className="h-3 w-3 shrink-0 opacity-80" aria-hidden />
+              <span>{LOCALE_SHORT_LABELS[locale]}</span>
+              <ChevronDown className="h-2.5 w-2.5 shrink-0 opacity-70" aria-hidden />
+            </>
+          ) : (
+            <>
+              <Languages className="h-3.5 w-3.5 shrink-0 opacity-80" aria-hidden />
+              <span className="max-w-[10rem] truncate sm:max-w-none">
+                {LOCALE_LABELS[locale]}
+              </span>
+              <ChevronDown className="h-3 w-3 shrink-0 opacity-70" aria-hidden />
+            </>
+          )}
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent
